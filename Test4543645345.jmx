@@ -1,0 +1,1130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="2.4" jmeter="4.0">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test4543645345" enabled="true">
+      <stringProp name="TestPlan.comments">This test plan was created by the BlazeMeter converter v.2.3.14. Please contact support@blazemeter.com for further support.</stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager">
+        <collectionProp name="HeaderManager.headers">
+          <elementProp name="x-lima-username" elementType="Header">
+            <stringProp name="Header.name">x-lima-username</stringProp>
+            <stringProp name="Header.value">DKRILOV</stringProp>
+          </elementProp>
+          <elementProp name="x-datadirect-auth-token" elementType="Header">
+            <stringProp name="Header.name">x-datadirect-auth-token</stringProp>
+            <stringProp name="Header.value">3b8aaeafbd486d2d</stringProp>
+          </elementProp>
+          <elementProp name="x-limasig-dsa1024" elementType="Header">
+            <stringProp name="Header.name">x-limasig-dsa1024</stringProp>
+            <stringProp name="Header.value">MCwCFGq8tFZHxFWwLk6k5k8ut3pxzHtEAhQr6/zKsCPSyVotga78qu3kMZVscA==</stringProp>
+          </elementProp>
+          <elementProp name="User-Agent" elementType="Header">
+            <stringProp name="Header.name">User-Agent</stringProp>
+            <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36</stringProp>
+          </elementProp>
+          <elementProp name="x-lima-usertype" elementType="Header">
+            <stringProp name="Header.name">x-lima-usertype</stringProp>
+            <stringProp name="Header.value">EMPLOYEE</stringProp>
+          </elementProp>
+          <elementProp name="x-fds-application-client" elementType="Header">
+            <stringProp name="Header.name">x-fds-application-client</stringProp>
+            <stringProp name="Header.value">chromium-extension</stringProp>
+          </elementProp>
+          <elementProp name="x-lima-original-serial" elementType="Header">
+            <stringProp name="Header.name">x-lima-original-serial</stringProp>
+            <stringProp name="Header.value">FDS</stringProp>
+          </elementProp>
+          <elementProp name="x-lima-serial" elementType="Header">
+            <stringProp name="Header.name">x-lima-serial</stringProp>
+            <stringProp name="Header.value">FDS</stringProp>
+          </elementProp>
+          <elementProp name="x-lima-userstate" elementType="Header">
+            <stringProp name="Header.name">x-lima-userstate</stringProp>
+            <stringProp name="Header.value">INTERNAL</stringProp>
+          </elementProp>
+          <elementProp name="x-lima-created" elementType="Header">
+            <stringProp name="Header.name">x-lima-created</stringProp>
+            <stringProp name="Header.value">1569891034</stringProp>
+          </elementProp>
+          <elementProp name="x-lima-expiration" elementType="Header">
+            <stringProp name="Header.name">x-lima-expiration</stringProp>
+            <stringProp name="Header.value">1569919834</stringProp>
+          </elementProp>
+          <elementProp name="x-fds-override-name" elementType="Header">
+            <stringProp name="Header.name">x-fds-override-name</stringProp>
+            <stringProp name="Header.value">devel</stringProp>
+          </elementProp>
+          <elementProp name="x-fds-chrome-extension" elementType="Header">
+            <stringProp name="Header.name">x-fds-chrome-extension</stringProp>
+            <stringProp name="Header.value">eeebkinnohkilpighadhmliicniiamcf</stringProp>
+          </elementProp>
+          <elementProp name="x-lima-original-username" elementType="Header">
+            <stringProp name="Header.name">x-lima-original-username</stringProp>
+            <stringProp name="Header.value">DKRILOV</stringProp>
+          </elementProp>
+          <elementProp name="x-lima-36b9f434-8126-4341-9898-e961c4381534" elementType="Header">
+            <stringProp name="Header.name">x-lima-36b9f434-8126-4341-9898-e961c4381534</stringProp>
+            <stringProp name="Header.value">This is a random header to confirm correct token passing and validation. Only used in staging.</stringProp>
+          </elementProp>
+        </collectionProp>
+      </HeaderManager>
+      <hashTree/>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="BASE_URL_1" elementType="Argument">
+            <stringProp name="Argument.name">BASE_URL_1</stringProp>
+            <stringProp name="Argument.value">company-security.apps.factset.com</stringProp>
+          </elementProp>
+          <elementProp name="BASE_URL_2" elementType="Argument">
+            <stringProp name="Argument.name">BASE_URL_2</stringProp>
+            <stringProp name="Argument.value">my.apps.factset.com</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+        <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+          <collectionProp name="Arguments.arguments"/>
+        </elementProp>
+        <boolProp name="HTTPSampler.concurrentDwn">true</boolProp>
+        <boolProp name="HTTPSampler.image_parser">true</boolProp>
+        <intProp name="HTTPSampler.concurrentPool">6</intProp>
+      </ConfigTestElement>
+      <hashTree/>
+      <DNSCacheManager guiclass="DNSCachePanel" testclass="DNSCacheManager" testname="DNS Cache Manager" enabled="true">
+        <collectionProp name="DNSCacheManager.servers"/>
+        <boolProp name="DNSCacheManager.clearEachIteration">true</boolProp>
+      </DNSCacheManager>
+      <hashTree/>
+      <AuthManager guiclass="AuthPanel" testclass="AuthManager" testname="HTTP Authorization Manager">
+        <collectionProp name="AuthManager.auth_list"/>
+      </AuthManager>
+      <hashTree/>
+      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+        <collectionProp name="CookieManager.cookies"/>
+        <boolProp name="CookieManager.clearEachIteration">true</boolProp>
+      </CookieManager>
+      <hashTree/>
+      <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager">
+        <boolProp name="clearEachIteration">true</boolProp>
+        <boolProp name="useExpires">false</boolProp>
+      </CacheManager>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <longProp name="ThreadGroup.duration">0</longProp>
+        <longProp name="ThreadGroup.delay">0</longProp>
+      </ThreadGroup>
+      <hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testname="Test" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://company-security.apps.factset.com/all-estimates/7203-JP" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">all-estimates/7203-JP</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                  <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                  <stringProp name="Header.value">1</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                  <stringProp name="Header.value">navigate</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-User" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-User</stringProp>
+                  <stringProp name="Header.value">?1</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Site" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                  <stringProp name="Header.value">none</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+              <doubleProp>
+                <name>RandomTimer.range</name>
+                <value>0.0</value>
+                <savedValue>0.0</savedValue>
+              </doubleProp>
+              <stringProp name="ConstantTimer.delay">0</stringProp>
+              <stringProp name="TestPlan.comments">Recorded time was 0 milliseconds</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://my.apps.factset.com/services/entity/graphql?opname=SearchEntities" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;operationName&quot;:&quot;SearchEntities&quot;,&quot;variables&quot;:{&quot;all&quot;:{&quot;query&quot;:&quot;&quot;,&quot;universe&quot;:[{&quot;entityCategory&quot;:&quot;publicCompany&quot;},{&quot;entityCategory&quot;:&quot;index&quot;},{&quot;entityCategory&quot;:&quot;mutualFund&quot;},{&quot;entityCategory&quot;:&quot;mutualFundCanadaFundServ&quot;},{&quot;entityCategory&quot;:&quot;etf&quot;},{&quot;entityCategory&quot;:&quot;pevcFund&quot;},{&quot;entityCategory&quot;:&quot;debt&quot;},{&quot;entityCategory&quot;:&quot;loan&quot;},{&quot;entityCategory&quot;:&quot;privateCompany&quot;},{&quot;entityCategory&quot;:&quot;pevcFirm&quot;},{&quot;entityCategory&quot;:&quot;commodity&quot;},{&quot;entityCategory&quot;:&quot;future&quot;},{&quot;entityCategory&quot;:&quot;exchangeRate&quot;}],&quot;homeExchangeISO&quot;:&quot;US_COMPOSITE&quot;},&quot;equities&quot;:{&quot;query&quot;:&quot;&quot;,&quot;universe&quot;:[{&quot;entityCategory&quot;:&quot;publicCompany&quot;}],&quot;homeExchangeISO&quot;:&quot;US_COMPOSITE&quot;},&quot;indices&quot;:{&quot;query&quot;:&quot;&quot;,&quot;universe&quot;:[{&quot;entityCategory&quot;:&quot;index&quot;}],&quot;homeExchangeISO&quot;:&quot;US_COMPOSITE&quot;},&quot;mutualFunds&quot;:{&quot;query&quot;:&quot;&quot;,&quot;universe&quot;:[{&quot;entityCategory&quot;:&quot;mutualFund&quot;}],&quot;homeExchangeISO&quot;:&quot;US_COMPOSITE&quot;},&quot;caMutualFunds&quot;:{&quot;query&quot;:&quot;&quot;,&quot;universe&quot;:[{&quot;entityCategory&quot;:&quot;mutualFundCanadaFundServ&quot;}],&quot;homeExchangeISO&quot;:&quot;US_COMPOSITE&quot;},&quot;etFs&quot;:{&quot;query&quot;:&quot;&quot;,&quot;universe&quot;:[{&quot;entityCategory&quot;:&quot;etf&quot;}],&quot;homeExchangeISO&quot;:&quot;US_COMPOSITE&quot;},&quot;peVcFunds&quot;:{&quot;query&quot;:&quot;&quot;,&quot;universe&quot;:[{&quot;entityCategory&quot;:&quot;pevcFund&quot;}],&quot;homeExchangeISO&quot;:&quot;US_COMPOSITE&quot;},&quot;fixedIncome&quot;:{&quot;query&quot;:&quot;&quot;,&quot;universe&quot;:[{&quot;entityCategory&quot;:&quot;debt&quot;}],&quot;homeExchangeISO&quot;:&quot;US_COMPOSITE&quot;},&quot;loans&quot;:{&quot;query&quot;:&quot;&quot;,&quot;universe&quot;:[{&quot;entityCategory&quot;:&quot;loan&quot;}],&quot;homeExchangeISO&quot;:&quot;US_COMPOSITE&quot;},&quot;privateCompanies&quot;:{&quot;query&quot;:&quot;&quot;,&quot;universe&quot;:[{&quot;entityCategory&quot;:&quot;privateCompany&quot;}],&quot;homeExchangeISO&quot;:&quot;US_COMPOSITE&quot;},&quot;peVcFirms&quot;:{&quot;query&quot;:&quot;&quot;,&quot;universe&quot;:[{&quot;entityCategory&quot;:&quot;pevcFirm&quot;}],&quot;homeExchangeISO&quot;:&quot;US_COMPOSITE&quot;},&quot;commodities&quot;:{&quot;query&quot;:&quot;&quot;,&quot;universe&quot;:[{&quot;entityCategory&quot;:&quot;commodity&quot;}],&quot;homeExchangeISO&quot;:&quot;US_COMPOSITE&quot;},&quot;futures&quot;:{&quot;query&quot;:&quot;&quot;,&quot;universe&quot;:[{&quot;entityCategory&quot;:&quot;future&quot;}],&quot;homeExchangeISO&quot;:&quot;US_COMPOSITE&quot;},&quot;forex&quot;:{&quot;query&quot;:&quot;&quot;,&quot;universe&quot;:[{&quot;entityCategory&quot;:&quot;exchangeRate&quot;}],&quot;homeExchangeISO&quot;:&quot;US_COMPOSITE&quot;}},&quot;query&quot;:&quot;query SearchEntities($all: EntitySearchInput!, $equities: EntitySearchInput!, $indices: EntitySearchInput!, $mutualFunds: EntitySearchInput!, $caMutualFunds: EntitySearchInput!, $etFs: EntitySearchInput!, $peVcFunds: EntitySearchInput!, $fixedIncome: EntitySearchInput!, $loans: EntitySearchInput!, $privateCompanies: EntitySearchInput!, $peVcFirms: EntitySearchInput!, $commodities: EntitySearchInput!, $futures: EntitySearchInput!, $forex: EntitySearchInput!) {\n  all: searchEntities2(input: $all) {\n    entityCategory\n    tickerExchange\n    legacyMetadata\n    entity {\n      name\n      id\n      type\n      ... on PublicCompany {\n        tickerRegion\n        cusip\n        isin\n        sedol\n        entityId\n        holderId\n        primaryExch\n        industry\n        __typename\n      }\n      ... on Index {\n        tickerExchange\n        __typename\n      }\n      ... on MutualFund {\n        tickerRegion\n        cusip\n        isin\n        sedol\n        entityId\n        __typename\n      }\n      ... on Etf {\n        tickerRegion\n        cusip\n        isin\n        sedol\n        entityId\n        __typename\n      }\n      ... on PrivateCompany {\n        cusip\n        isin\n        sedol\n        entityId\n        holderId\n        isEquity\n        __typename\n      }\n      ... on Debt {\n        cusip\n        isin\n        sedol\n        entityId\n        issueStatus\n        __typename\n      }\n      ... on BankLoan {\n        issuerName\n        __typename\n      }\n      ... on PrivateCompany {\n        cusip\n        isin\n        sedol\n        entityId\n        holderId\n        isEquity\n        industry\n        country\n        __typename\n      }\n      ... on PrivateCompany {\n        cusip\n        isin\n        sedol\n        entityId\n        holderId\n        isEquity\n        __typename\n      }\n      ... on Future {\n        tickerExchange\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n  equities: searchEntities2(input: $equities) {\n    entityCategory\n    tickerExchange\n    legacyMetadata\n    entity {\n      name\n      id\n      type\n      ... on PublicCompany {\n        tickerRegion\n        cusip\n        isin\n        sedol\n        entityId\n        holderId\n        primaryExch\n        industry\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n  indices: searchEntities2(input: $indices) {\n    entityCategory\n    tickerExchange\n    legacyMetadata\n    entity {\n      name\n      id\n      type\n      ... on Index {\n        tickerExchange\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n  mutualFunds: searchEntities2(input: $mutualFunds) {\n    entityCategory\n    tickerExchange\n    legacyMetadata\n    entity {\n      name\n      id\n      type\n      ... on MutualFund {\n        tickerRegion\n        cusip\n        isin\n        sedol\n        entityId\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n  caMutualFunds: searchEntities2(input: $caMutualFunds) {\n    entityCategory\n    tickerExchange\n    legacyMetadata\n    entity {\n      name\n      id\n      type\n      __typename\n    }\n    __typename\n  }\n  etFs: searchEntities2(input: $etFs) {\n    entityCategory\n    tickerExchange\n    legacyMetadata\n    entity {\n      name\n      id\n      type\n      ... on Etf {\n        tickerRegion\n        cusip\n        isin\n        sedol\n        entityId\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n  peVcFunds: searchEntities2(input: $peVcFunds) {\n    entityCategory\n    tickerExchange\n    legacyMetadata\n    entity {\n      name\n      id\n      type\n      ... on PrivateCompany {\n        cusip\n        isin\n        sedol\n        entityId\n        holderId\n        isEquity\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n  fixedIncome: searchEntities2(input: $fixedIncome) {\n    entityCategory\n    tickerExchange\n    legacyMetadata\n    entity {\n      name\n      id\n      type\n      ... on Debt {\n        cusip\n        isin\n        sedol\n        entityId\n        issueStatus\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n  loans: searchEntities2(input: $loans) {\n    entityCategory\n    tickerExchange\n    legacyMetadata\n    entity {\n      name\n      id\n      type\n      ... on BankLoan {\n        issuerName\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n  privateCompanies: searchEntities2(input: $privateCompanies) {\n    entityCategory\n    tickerExchange\n    legacyMetadata\n    entity {\n      name\n      id\n      type\n      ... on PrivateCompany {\n        cusip\n        isin\n        sedol\n        entityId\n        holderId\n        isEquity\n        industry\n        country\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n  peVcFirms: searchEntities2(input: $peVcFirms) {\n    entityCategory\n    tickerExchange\n    legacyMetadata\n    entity {\n      name\n      id\n      type\n      ... on PrivateCompany {\n        cusip\n        isin\n        sedol\n        entityId\n        holderId\n        isEquity\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n  commodities: searchEntities2(input: $commodities) {\n    entityCategory\n    tickerExchange\n    legacyMetadata\n    entity {\n      name\n      id\n      type\n      __typename\n    }\n    __typename\n  }\n  futures: searchEntities2(input: $futures) {\n    entityCategory\n    tickerExchange\n    legacyMetadata\n    entity {\n      name\n      id\n      type\n      ... on Future {\n        tickerExchange\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n  forex: searchEntities2(input: $forex) {\n    entityCategory\n    tickerExchange\n    legacyMetadata\n    entity {\n      name\n      id\n      type\n      __typename\n    }\n    __typename\n  }\n}\n&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">services/entity/graphql?opname=SearchEntities</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="accept" elementType="Header">
+                  <stringProp name="Header.name">accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="Origin" elementType="Header">
+                  <stringProp name="Header.name">Origin</stringProp>
+                  <stringProp name="Header.value">https://my.apps.factset.com</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                  <stringProp name="Header.value">cors</stringProp>
+                </elementProp>
+                <elementProp name="content-type" elementType="Header">
+                  <stringProp name="Header.name">content-type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Site" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                  <stringProp name="Header.value">same-origin</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[2]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+              <doubleProp>
+                <name>RandomTimer.range</name>
+                <value>7296.0</value>
+                <savedValue>0.0</savedValue>
+              </doubleProp>
+              <stringProp name="ConstantTimer.delay">3648</stringProp>
+              <stringProp name="TestPlan.comments">Recorded time was 7296 milliseconds</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://my.apps.factset.com/navigator/api/company-security/LHP/7203-JP?entityType=publicCompany&amp;retry=false" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="entityType" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">entityType</stringProp>
+                  <stringProp name="Argument.value">publicCompany</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="retry" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">retry</stringProp>
+                  <stringProp name="Argument.value">false</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">navigator/api/company-security/LHP/7203-JP</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                  <stringProp name="Header.value">cors</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Site" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                  <stringProp name="Header.value">same-origin</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[3]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://my.apps.factset.com/navigator/api/company-security/reports" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">navigator/api/company-security/reports</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                  <stringProp name="Header.value">cors</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Site" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                  <stringProp name="Header.value">same-origin</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[4]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://my.apps.factset.com/services/UserSettings/settings?section=navigator" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;company-security&quot;:{&quot;navPaneMinimized&quot;:false}}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">services/UserSettings/settings?section=navigator</stringProp>
+            <stringProp name="HTTPSampler.method">PUT</stringProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Origin" elementType="Header">
+                  <stringProp name="Header.name">Origin</stringProp>
+                  <stringProp name="Header.value">https://my.apps.factset.com</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                  <stringProp name="Header.value">cors</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json;charset=UTF-8</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Site" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                  <stringProp name="Header.value">same-origin</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[5]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+              <doubleProp>
+                <name>RandomTimer.range</name>
+                <value>27.0</value>
+                <savedValue>0.0</savedValue>
+              </doubleProp>
+              <stringProp name="ConstantTimer.delay">13.5</stringProp>
+              <stringProp name="TestPlan.comments">Recorded time was 27 milliseconds</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://my.apps.factset.com/services/fds-web-frame/graphql?opname=allAvailableTabs,userTabs,UserInfo,menuBookmarks,toolbarBookmarks,showHelpOverlay,initDborder,activeEntity,SidebarSettings,showUAG" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">[{&quot;operationName&quot;:&quot;allAvailableTabs&quot;,&quot;variables&quot;:{},&quot;query&quot;:&quot;fragment allFields on App {\n  id\n  iconUrl\n  description\n  url\n  name\n  secondaryAppId\n  allowMultiple\n  children {\n    id\n    secondaryAppId\n    url\n    __typename\n  }\n  __typename\n}\n\nquery allAvailableTabs {\n  allAvailableTabs {\n    ...allFields\n    __typename\n  }\n}\n&quot;},{&quot;operationName&quot;:&quot;userTabs&quot;,&quot;variables&quot;:{},&quot;query&quot;:&quot;query userTabs {\n  userTabs {\n    id\n    name\n    url\n    children {\n      id\n      name\n      url\n      __typename\n    }\n    secondaryAppId\n    tabDefinition {\n      id\n      url\n      name\n      allowMultiple\n      children {\n        id\n        url\n        name\n        allowMultiple\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}\n&quot;},{&quot;operationName&quot;:&quot;UserInfo&quot;,&quot;variables&quot;:{},&quot;query&quot;:&quot;query UserInfo {\n  userInfo {\n    username\n    serial\n    isInhouse\n    bml\n    ubs\n    wmt\n    dbw\n    __typename\n  }\n}\n&quot;},{&quot;operationName&quot;:&quot;menuBookmarks&quot;,&quot;variables&quot;:{},&quot;query&quot;:&quot;query menuBookmarks {\n  menuBookmarks {\n    id\n    bookmarks {\n      id\n      name\n      url\n      iconUrl\n      __typename\n    }\n    __typename\n  }\n}\n&quot;},{&quot;operationName&quot;:&quot;toolbarBookmarks&quot;,&quot;variables&quot;:{},&quot;query&quot;:&quot;query toolbarBookmarks {\n  toolbarBookmarks {\n    id\n    bookmarks {\n      id\n      name\n      url\n      iconUrl\n      __typename\n    }\n    __typename\n  }\n}\n&quot;},{&quot;operationName&quot;:&quot;showHelpOverlay&quot;,&quot;variables&quot;:{},&quot;query&quot;:&quot;query showHelpOverlay {\n  showHelpOverlay\n}\n&quot;},{&quot;operationName&quot;:&quot;initDborder&quot;,&quot;variables&quot;:{},&quot;query&quot;:&quot;query initDborder {\n  initDbOrder\n}\n&quot;},{&quot;operationName&quot;:&quot;activeEntity&quot;,&quot;variables&quot;:{},&quot;query&quot;:&quot;query activeEntity {\n  activeEntity {\n    id\n    type\n    cusip\n    isin\n    sedol\n    entityId\n    ticker\n    tickerRegion\n    tickerExchange\n    __typename\n  }\n}\n&quot;},{&quot;operationName&quot;:&quot;SidebarSettings&quot;,&quot;variables&quot;:{},&quot;query&quot;:&quot;query SidebarSettings {\n  contactSettings {\n    icon\n    url\n    tooltip\n    __typename\n  }\n  showAlertManager\n  helpSettings\n  showProjectAccounting\n  cobrowseEnabled\n  showInternalUseOnly\n}\n&quot;},{&quot;operationName&quot;:&quot;showUAG&quot;,&quot;variables&quot;:{},&quot;query&quot;:&quot;query showUAG {\n  showUAG\n}\n&quot;}]</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">services/fds-web-frame/graphql?opname=allAvailableTabs,userTabs,UserInfo,menuBookmarks,toolbarBookmarks,showHelpOverlay,initDborder,activeEntity,SidebarSettings,showUAG</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="accept" elementType="Header">
+                  <stringProp name="Header.name">accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="Origin" elementType="Header">
+                  <stringProp name="Header.name">Origin</stringProp>
+                  <stringProp name="Header.value">https://my.apps.factset.com</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                  <stringProp name="Header.value">cors</stringProp>
+                </elementProp>
+                <elementProp name="content-type" elementType="Header">
+                  <stringProp name="Header.name">content-type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Site" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                  <stringProp name="Header.value">same-origin</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[6]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+              <doubleProp>
+                <name>RandomTimer.range</name>
+                <value>206.0</value>
+                <savedValue>0.0</savedValue>
+              </doubleProp>
+              <stringProp name="ConstantTimer.delay">103</stringProp>
+              <stringProp name="TestPlan.comments">Recorded time was 206 milliseconds</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://my.apps.factset.com/services/fds-web-frame/graphql?opname=UnacknowledgedQuoteAlerts" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;query&quot;:{&quot;kind&quot;:&quot;Document&quot;,&quot;definitions&quot;:[{&quot;kind&quot;:&quot;OperationDefinition&quot;,&quot;operation&quot;:&quot;query&quot;,&quot;name&quot;:{&quot;kind&quot;:&quot;Name&quot;,&quot;value&quot;:&quot;UnacknowledgedQuoteAlerts&quot;},&quot;variableDefinitions&quot;:[],&quot;directives&quot;:[],&quot;selectionSet&quot;:{&quot;kind&quot;:&quot;SelectionSet&quot;,&quot;selections&quot;:[{&quot;kind&quot;:&quot;Field&quot;,&quot;name&quot;:{&quot;kind&quot;:&quot;Name&quot;,&quot;value&quot;:&quot;unacknowledgedQuoteAlerts&quot;},&quot;arguments&quot;:[],&quot;directives&quot;:[],&quot;selectionSet&quot;:{&quot;kind&quot;:&quot;SelectionSet&quot;,&quot;selections&quot;:[{&quot;kind&quot;:&quot;Field&quot;,&quot;name&quot;:{&quot;kind&quot;:&quot;Name&quot;,&quot;value&quot;:&quot;alert_name&quot;},&quot;arguments&quot;:[],&quot;directives&quot;:[]},{&quot;kind&quot;:&quot;Field&quot;,&quot;name&quot;:{&quot;kind&quot;:&quot;Name&quot;,&quot;value&quot;:&quot;trigger_et_date&quot;},&quot;arguments&quot;:[],&quot;directives&quot;:[]},{&quot;kind&quot;:&quot;Field&quot;,&quot;name&quot;:{&quot;kind&quot;:&quot;Name&quot;,&quot;value&quot;:&quot;trigger_et_time&quot;},&quot;arguments&quot;:[],&quot;directives&quot;:[]},{&quot;kind&quot;:&quot;Field&quot;,&quot;name&quot;:{&quot;kind&quot;:&quot;Name&quot;,&quot;value&quot;:&quot;trigger_value&quot;},&quot;arguments&quot;:[],&quot;directives&quot;:[]},{&quot;kind&quot;:&quot;Field&quot;,&quot;name&quot;:{&quot;kind&quot;:&quot;Name&quot;,&quot;value&quot;:&quot;note&quot;},&quot;arguments&quot;:[],&quot;directives&quot;:[]},{&quot;kind&quot;:&quot;Field&quot;,&quot;name&quot;:{&quot;kind&quot;:&quot;Name&quot;,&quot;value&quot;:&quot;ticker&quot;},&quot;arguments&quot;:[],&quot;directives&quot;:[]},{&quot;kind&quot;:&quot;Field&quot;,&quot;name&quot;:{&quot;kind&quot;:&quot;Name&quot;,&quot;value&quot;:&quot;portfolio&quot;},&quot;arguments&quot;:[],&quot;directives&quot;:[]},{&quot;kind&quot;:&quot;Field&quot;,&quot;name&quot;:{&quot;kind&quot;:&quot;Name&quot;,&quot;value&quot;:&quot;profile_id&quot;},&quot;arguments&quot;:[],&quot;directives&quot;:[]},{&quot;kind&quot;:&quot;Field&quot;,&quot;name&quot;:{&quot;kind&quot;:&quot;Name&quot;,&quot;value&quot;:&quot;alert_id&quot;},&quot;arguments&quot;:[],&quot;directives&quot;:[]},{&quot;kind&quot;:&quot;Field&quot;,&quot;name&quot;:{&quot;kind&quot;:&quot;Name&quot;,&quot;value&quot;:&quot;fql_alert_description&quot;},&quot;arguments&quot;:[],&quot;directives&quot;:[]},{&quot;kind&quot;:&quot;Field&quot;,&quot;name&quot;:{&quot;kind&quot;:&quot;Name&quot;,&quot;value&quot;:&quot;id&quot;},&quot;arguments&quot;:[],&quot;directives&quot;:[]}]}}]}}],&quot;loc&quot;:{&quot;start&quot;:0,&quot;end&quot;:333}}}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">services/fds-web-frame/graphql?opname=UnacknowledgedQuoteAlerts</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Origin" elementType="Header">
+                  <stringProp name="Header.name">Origin</stringProp>
+                  <stringProp name="Header.value">https://my.apps.factset.com</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                  <stringProp name="Header.value">cors</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json;charset=UTF-8</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Site" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                  <stringProp name="Header.value">same-origin</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[7]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+              <doubleProp>
+                <name>RandomTimer.range</name>
+                <value>149.0</value>
+                <savedValue>0.0</savedValue>
+              </doubleProp>
+              <stringProp name="ConstantTimer.delay">74.5</stringProp>
+              <stringProp name="TestPlan.comments">Recorded time was 149 milliseconds</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://my.apps.factset.com/services/UserSettings/settings?section=_MARQUEE_SETTINGS" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="section" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">section</stringProp>
+                  <stringProp name="Argument.value">_MARQUEE_SETTINGS</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">services/UserSettings/settings</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                  <stringProp name="Header.value">cors</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Site" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                  <stringProp name="Header.value">same-origin</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[8]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://my.apps.factset.com/navigator/api/company-security/LHP/MMM-US?entityType=publicCompany&amp;retry=false" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="entityType" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">entityType</stringProp>
+                  <stringProp name="Argument.value">publicCompany</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="retry" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">retry</stringProp>
+                  <stringProp name="Argument.value">false</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">navigator/api/company-security/LHP/MMM-US</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                  <stringProp name="Header.value">cors</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Site" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                  <stringProp name="Header.value">same-origin</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[9]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://my.apps.factset.com/services/fds-web-frame/graphql?opname=VersionInfo,updateUrlState" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">[{&quot;operationName&quot;:&quot;VersionInfo&quot;,&quot;variables&quot;:{},&quot;query&quot;:&quot;query VersionInfo {\n  versionInfo {\n    stage\n    version\n    overrides\n    availableStages\n    urlInfo {\n      base\n      routes {\n        manage\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}\n&quot;},{&quot;operationName&quot;:&quot;updateUrlState&quot;,&quot;variables&quot;:{&quot;input&quot;:{&quot;id&quot;:&quot;company&quot;,&quot;urlState&quot;:{&quot;search&quot;:&quot;&quot;,&quot;fragment&quot;:&quot;&quot;,&quot;path&quot;:&quot;all-estimates&quot;}}},&quot;query&quot;:&quot;mutation updateUrlState($input: UpdateUrlStateInput!) {\n  updateUrlState(input: $input) {\n    id\n    name\n    url\n    children {\n      id\n      name\n      url\n      __typename\n    }\n    secondaryAppId\n    tabDefinition {\n      id\n      url\n      name\n      allowMultiple\n      children {\n        id\n        url\n        name\n        allowMultiple\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}\n&quot;}]</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">services/fds-web-frame/graphql?opname=VersionInfo,updateUrlState</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="accept" elementType="Header">
+                  <stringProp name="Header.name">accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="Origin" elementType="Header">
+                  <stringProp name="Header.name">Origin</stringProp>
+                  <stringProp name="Header.value">https://my.apps.factset.com</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                  <stringProp name="Header.value">cors</stringProp>
+                </elementProp>
+                <elementProp name="content-type" elementType="Header">
+                  <stringProp name="Header.name">content-type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Site" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                  <stringProp name="Header.value">same-origin</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[10]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+              <doubleProp>
+                <name>RandomTimer.range</name>
+                <value>1095.0</value>
+                <savedValue>0.0</savedValue>
+              </doubleProp>
+              <stringProp name="ConstantTimer.delay">547.5</stringProp>
+              <stringProp name="TestPlan.comments">Recorded time was 1095 milliseconds</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://my.apps.factset.com/services/lima2jwt/v1/jwt?_=1569915639183_0" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="_" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">_</stringProp>
+                  <stringProp name="Argument.value">1569915639183_0</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">services/lima2jwt/v1/jwt</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                  <stringProp name="Header.value">cors</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Site" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                  <stringProp name="Header.value">same-origin</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[11]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://my.apps.factset.com/services/fds-web-frame/graphql?opname=updateUrlState" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">[{&quot;operationName&quot;:&quot;updateUrlState&quot;,&quot;variables&quot;:{&quot;input&quot;:{&quot;id&quot;:&quot;company&quot;,&quot;urlState&quot;:{&quot;search&quot;:&quot;&quot;,&quot;fragment&quot;:&quot;&quot;,&quot;path&quot;:&quot;all-estimates&quot;}}},&quot;query&quot;:&quot;mutation updateUrlState($input: UpdateUrlStateInput!) {\n  updateUrlState(input: $input) {\n    id\n    name\n    url\n    children {\n      id\n      name\n      url\n      __typename\n    }\n    secondaryAppId\n    tabDefinition {\n      id\n      url\n      name\n      allowMultiple\n      children {\n        id\n        url\n        name\n        allowMultiple\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}\n&quot;}]</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">services/fds-web-frame/graphql?opname=updateUrlState</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="accept" elementType="Header">
+                  <stringProp name="Header.name">accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="Origin" elementType="Header">
+                  <stringProp name="Header.name">Origin</stringProp>
+                  <stringProp name="Header.value">https://my.apps.factset.com</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                  <stringProp name="Header.value">cors</stringProp>
+                </elementProp>
+                <elementProp name="content-type" elementType="Header">
+                  <stringProp name="Header.name">content-type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Site" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                  <stringProp name="Header.value">same-origin</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[12]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+              <doubleProp>
+                <name>RandomTimer.range</name>
+                <value>403.0</value>
+                <savedValue>0.0</savedValue>
+              </doubleProp>
+              <stringProp name="ConstantTimer.delay">201.5</stringProp>
+              <stringProp name="TestPlan.comments">Recorded time was 403 milliseconds</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://my.apps.factset.com/services/UserSettings/settings?section=company_security_global" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="section" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">section</stringProp>
+                  <stringProp name="Argument.value">company_security_global</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">services/UserSettings/settings</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                  <stringProp name="Header.value">cors</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Site" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                  <stringProp name="Header.value">same-origin</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[13]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://my.apps.factset.com/services/UserSettings/settings?section=company_security_estimates" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="section" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">section</stringProp>
+                  <stringProp name="Argument.value">company_security_estimates</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">services/UserSettings/settings</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                  <stringProp name="Header.value">cors</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Site" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                  <stringProp name="Header.value">same-origin</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[14]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://my.apps.factset.com/services/UserSettings/settings?section=company_security_all_estimates" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="section" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">section</stringProp>
+                  <stringProp name="Argument.value">company_security_all_estimates</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">services/UserSettings/settings</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                  <stringProp name="Header.value">cors</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Site" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                  <stringProp name="Header.value">same-origin</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[15]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://my.apps.factset.com/services/CLP/" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;@fields&quot;:{&quot;level&quot;:&quot;error&quot;,&quot;message&quot;:&quot;Script error.&quot;,&quot;lineNumber&quot;:0,&quot;type&quot;:&quot;windowOnError&quot;,&quot;clientTime&quot;:&quot;2019-10-01T07:40:39.010Z&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;,&quot;url&quot;:&quot;https://my.apps.factset.com/navigator/company-security/all-estimates/7203-JP&quot;,&quot;platformTags&quot;:[],&quot;productPlatform&quot;:&quot;unknown&quot;,&quot;container&quot;:&quot;unknown&quot;,&quot;chainId&quot;:&quot;5c8db5cf-da05-498a-8c85-984e29cc0c7b&quot;,&quot;applicationName&quot;:&quot;unknown&quot;,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:&quot;77.0.3865.90&quot;,&quot;OSName&quot;:&quot;Windows&quot;,&quot;OSVersion&quot;:&quot;10.0&quot;,&quot;__clp_index&quot;:&quot;fwi&quot;}}
+{&quot;@fields&quot;:{&quot;level&quot;:&quot;error&quot;,&quot;message&quot;:&quot;Script error.&quot;,&quot;lineNumber&quot;:0,&quot;type&quot;:&quot;windowOnError&quot;,&quot;clientTime&quot;:&quot;2019-10-01T07:40:39.010Z&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;,&quot;url&quot;:&quot;https://my.apps.factset.com/navigator/company-security/all-estimates/7203-JP&quot;,&quot;platformTags&quot;:[],&quot;productPlatform&quot;:&quot;unknown&quot;,&quot;container&quot;:&quot;unknown&quot;,&quot;chainId&quot;:&quot;5c8db5cf-da05-498a-8c85-984e29cc0c7b&quot;,&quot;applicationName&quot;:&quot;unknown&quot;,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:&quot;77.0.3865.90&quot;,&quot;OSName&quot;:&quot;Windows&quot;,&quot;OSVersion&quot;:&quot;10.0&quot;,&quot;__clp_index&quot;:&quot;gs&quot;}}
+{&quot;@fields&quot;:{&quot;level&quot;:&quot;error&quot;,&quot;message&quot;:&quot;Uncaught Error: [HMR] Hot Module Replacement is disabled.&quot;,&quot;lineNumber&quot;:91,&quot;type&quot;:&quot;windowOnError&quot;,&quot;column&quot;:267833,&quot;exception&quot;:{&quot;stack&quot;:&quot;Error: [HMR] Hot Module Replacement is disabled.\n    at Object.&lt;anonymous&gt; (https://my.apps.factset.com/navigator/dynamic/vendor.34d3fa1cfcfe693ae769.bundle.js:91:267839)\n    at Object.&lt;anonymous&gt; (https://my.apps.factset.com/navigator/dynamic/vendor.34d3fa1cfcfe693ae769.bundle.js:91:267896)\n    at a (https://my.apps.factset.com/navigator/dynamic/main.d44923c2c4f9988d3664.bundle.js:1:519)\n    at Object.&lt;anonymous&gt; (https://my.apps.factset.com/navigator/dynamic/vendor.34d3fa1cfcfe693ae769.bundle.js:91:256941)\n    at Object.&lt;anonymous&gt; (https://my.apps.factset.com/navigator/dynamic/vendor.34d3fa1cfcfe693ae769.bundle.js:91:257122)\n    at a (https://my.apps.factset.com/navigator/dynamic/main.d44923c2c4f9988d3664.bundle.js:1:519)\n    at Object.&lt;anonymous&gt; (https://my.apps.factset.com/navigator/dynamic/vendor.34d3fa1cfcfe693ae769.bundle.js:91:254162)\n    at a (https://my.apps.factset.com/navigator/dynamic/main.d44923c2c4f9988d3664.bundle.js:1:519)\n    at Object.157 (https://my.apps.factset.com/navigator/dynamic/main.d44923c2c4f9988d3664.bundle.js:1:85708)\n    at a (https://my.apps.factset.com/navigator/dynamic/main.d44923c2c4f9988d3664.bundle.js:1:519)&quot;,&quot;name&quot;:&quot;Error&quot;,&quot;message&quot;:&quot;[HMR] Hot Module Replacement is disabled.&quot;},&quot;clientTime&quot;:&quot;2019-10-01T07:40:37.372Z&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;,&quot;url&quot;:&quot;https://my.apps.factset.com/navigator/company-security/all-estimates/7203-JP&quot;,&quot;platformTags&quot;:[],&quot;productPlatform&quot;:&quot;unknown&quot;,&quot;container&quot;:&quot;unknown&quot;,&quot;chainId&quot;:&quot;5c8db5cf-da05-498a-8c85-984e29cc0c7b&quot;,&quot;applicationName&quot;:&quot;unknown&quot;,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:&quot;77.0.3865.90&quot;,&quot;OSName&quot;:&quot;Windows&quot;,&quot;OSVersion&quot;:&quot;10.0&quot;,&quot;__clp_index&quot;:&quot;fwi&quot;,&quot;numberOfOccurrences&quot;:1}}
+{&quot;@fields&quot;:{&quot;level&quot;:&quot;error&quot;,&quot;message&quot;:&quot;Uncaught Error: [HMR] Hot Module Replacement is disabled.&quot;,&quot;lineNumber&quot;:91,&quot;type&quot;:&quot;windowOnError&quot;,&quot;column&quot;:267833,&quot;exception&quot;:{&quot;stack&quot;:&quot;Error: [HMR] Hot Module Replacement is disabled.\n    at Object.&lt;anonymous&gt; (https://my.apps.factset.com/navigator/dynamic/vendor.34d3fa1cfcfe693ae769.bundle.js:91:267839)\n    at Object.&lt;anonymous&gt; (https://my.apps.factset.com/navigator/dynamic/vendor.34d3fa1cfcfe693ae769.bundle.js:91:267896)\n    at a (https://my.apps.factset.com/navigator/dynamic/main.d44923c2c4f9988d3664.bundle.js:1:519)\n    at Object.&lt;anonymous&gt; (https://my.apps.factset.com/navigator/dynamic/vendor.34d3fa1cfcfe693ae769.bundle.js:91:256941)\n    at Object.&lt;anonymous&gt; (https://my.apps.factset.com/navigator/dynamic/vendor.34d3fa1cfcfe693ae769.bundle.js:91:257122)\n    at a (https://my.apps.factset.com/navigator/dynamic/main.d44923c2c4f9988d3664.bundle.js:1:519)\n    at Object.&lt;anonymous&gt; (https://my.apps.factset.com/navigator/dynamic/vendor.34d3fa1cfcfe693ae769.bundle.js:91:254162)\n    at a (https://my.apps.factset.com/navigator/dynamic/main.d44923c2c4f9988d3664.bundle.js:1:519)\n    at Object.157 (https://my.apps.factset.com/navigator/dynamic/main.d44923c2c4f9988d3664.bundle.js:1:85708)\n    at a (https://my.apps.factset.com/navigator/dynamic/main.d44923c2c4f9988d3664.bundle.js:1:519)&quot;,&quot;name&quot;:&quot;Error&quot;,&quot;message&quot;:&quot;[HMR] Hot Module Replacement is disabled.&quot;},&quot;clientTime&quot;:&quot;2019-10-01T07:40:37.372Z&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;,&quot;url&quot;:&quot;https://my.apps.factset.com/navigator/company-security/all-estimates/7203-JP&quot;,&quot;platformTags&quot;:[],&quot;productPlatform&quot;:&quot;unknown&quot;,&quot;container&quot;:&quot;unknown&quot;,&quot;chainId&quot;:&quot;5c8db5cf-da05-498a-8c85-984e29cc0c7b&quot;,&quot;applicationName&quot;:&quot;unknown&quot;,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:&quot;77.0.3865.90&quot;,&quot;OSName&quot;:&quot;Windows&quot;,&quot;OSVersion&quot;:&quot;10.0&quot;,&quot;__clp_index&quot;:&quot;gs&quot;,&quot;numberOfOccurrences&quot;:1}}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">services/CLP/</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Origin" elementType="Header">
+                  <stringProp name="Header.name">Origin</stringProp>
+                  <stringProp name="Header.value">https://my.apps.factset.com</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                  <stringProp name="Header.value">cors</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">text/plain</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Site" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                  <stringProp name="Header.value">same-origin</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[16]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+              <doubleProp>
+                <name>RandomTimer.range</name>
+                <value>4530.0</value>
+                <savedValue>0.0</savedValue>
+              </doubleProp>
+              <stringProp name="ConstantTimer.delay">2265</stringProp>
+              <stringProp name="TestPlan.comments">Recorded time was 4530 milliseconds</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://my.apps.factset.com/services/CLP/" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="site" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">site</stringProp>
+                  <stringProp name="Argument.value">production&quot;,&quot;entryType&quot;:&quot;resource&quot;,&quot;startTime&quot;:9766.54000004055,&quot;duration&quot;:959.3699999968521,&quot;initiatorType&quot;:&quot;script&quot;,&quot;nextHopProtocol&quot;:&quot;http/1.1&quot;,&quot;workerStart&quot;:0,&quot;redirectStart&quot;:0,&quot;redirectEnd&quot;:0,&quot;fetchStart&quot;:9766.54000004055,&quot;domainLookupStart&quot;:0,&quot;domainLookupEnd&quot;:0,&quot;connectStart&quot;:0,&quot;connectEnd&quot;:0,&quot;secureConnectionStart&quot;:0,&quot;requestStart&quot;:0,&quot;responseStart&quot;:0,&quot;responseEnd&quot;:10725.910000037402,&quot;transferSize&quot;:0,&quot;encodedBodySize&quot;:0,&quot;decodedBodySize&quot;:0,&quot;serverTiming&quot;:[],&quot;noRequestStart&quot;:true,&quot;clientTime&quot;:&quot;2019-10-01T07:40:42.997Z&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;,&quot;url&quot;:&quot;https://my.apps.factset.com/navigator/company-security/all-estimates/MMM-US&quot;,&quot;platformTags&quot;:[],&quot;productPlatform&quot;:&quot;unknown&quot;,&quot;container&quot;:&quot;company-security_navigator&quot;,&quot;chainId&quot;:&quot;8dd5b0bf-a730-4bcf-bffe-a0d0dcfec6e0&quot;,&quot;applicationName&quot;:&quot;Company-Security Navigator&quot;,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:&quot;77.0.3865.90&quot;,&quot;OSName&quot;:&quot;Windows&quot;,&quot;OSVersion&quot;:&quot;10.0&quot;,&quot;__clp_index&quot;:&quot;web_perf_detail&quot;}}
+{&quot;@fields&quot;:{&quot;level&quot;:&quot;log&quot;,&quot;logType&quot;:&quot;resource&quot;,&quot;stalled&quot;:6.355000019539148,&quot;waiting&quot;:197.9249999858439,&quot;downloading&quot;:145.79500001855195,&quot;name&quot;:&quot;https://my.apps.factset.com/services/UserSettings/settings?section=company_security_global&quot;,&quot;entryType&quot;:&quot;resource&quot;,&quot;startTime&quot;:11985.080000013113,&quot;duration&quot;:350.075000023935,&quot;initiatorType&quot;:&quot;xmlhttprequest&quot;,&quot;nextHopProtocol&quot;:&quot;http/1.1&quot;,&quot;workerStart&quot;:0,&quot;redirectStart&quot;:0,&quot;redirectEnd&quot;:0,&quot;fetchStart&quot;:11985.080000013113,&quot;domainLookupStart&quot;:11985.080000013113,&quot;domainLookupEnd&quot;:11985.080000013113,&quot;connectStart&quot;:11985.080000013113,&quot;connectEnd&quot;:11985.080000013113,&quot;secureConnectionStart&quot;:11985.080000013113,&quot;requestStart&quot;:11991.435000032652,&quot;responseStart&quot;:12189.360000018496,&quot;responseEnd&quot;:12335.155000037048,&quot;transferSize&quot;:216,&quot;encodedBodySize&quot;:16,&quot;decodedBodySize&quot;:16,&quot;serverTiming&quot;:[],&quot;clientTime&quot;:&quot;2019-10-01T07:40:42.998Z&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;,&quot;url&quot;:&quot;https://my.apps.factset.com/navigator/company-security/all-estimates/MMM-US&quot;,&quot;platformTags&quot;:[],&quot;productPlatform&quot;:&quot;unknown&quot;,&quot;container&quot;:&quot;company-security_navigator&quot;,&quot;chainId&quot;:&quot;8dd5b0bf-a730-4bcf-bffe-a0d0dcfec6e0&quot;,&quot;applicationName&quot;:&quot;Company-Security Navigator&quot;,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:&quot;77.0.3865.90&quot;,&quot;OSName&quot;:&quot;Windows&quot;,&quot;OSVersion&quot;:&quot;10.0&quot;,&quot;__clp_index&quot;:&quot;web_perf_detail&quot;}}
+{&quot;@fields&quot;:{&quot;level&quot;:&quot;log&quot;,&quot;logType&quot;:&quot;resource&quot;,&quot;stalled&quot;:6.730000022798777,&quot;waiting&quot;:197.9200000059791,&quot;downloading&quot;:145.0450000120327,&quot;name&quot;:&quot;https://my.apps.factset.com/services/UserSettings/settings?section=company_security_estimates&quot;,&quot;entryType&quot;:&quot;resource&quot;,&quot;startTime&quot;:11985.864999995101,&quot;duration&quot;:349.69500004081056,&quot;initiatorType&quot;:&quot;xmlhttprequest&quot;,&quot;nextHopProtocol&quot;:&quot;http/1.1&quot;,&quot;workerStart&quot;:0,&quot;redirectStart&quot;:0,&quot;redirectEnd&quot;:0,&quot;fetchStart&quot;:11985.864999995101,&quot;domainLookupStart&quot;:11985.864999995101,&quot;domainLookupEnd&quot;:11985.864999995101,&quot;connectStart&quot;:11985.864999995101,&quot;connectEnd&quot;:11985.864999995101,&quot;secureConnectionStart&quot;:11985.864999995101,&quot;requestStart&quot;:11992.5950000179,&quot;responseStart&quot;:12190.51500002388,&quot;responseEnd&quot;:12335.560000035912,&quot;transferSize&quot;:417,&quot;encodedBodySize&quot;:192,&quot;decodedBodySize&quot;:219,&quot;serverTiming&quot;:[],&quot;clientTime&quot;:&quot;2019-10-01T07:40:42.998Z&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;,&quot;url&quot;:&quot;https://my.apps.factset.com/navigator/company-security/all-estimates/MMM-US&quot;,&quot;platformTags&quot;:[],&quot;productPlatform&quot;:&quot;unknown&quot;,&quot;container&quot;:&quot;company-security_navigator&quot;,&quot;chainId&quot;:&quot;8dd5b0bf-a730-4bcf-bffe-a0d0dcfec6e0&quot;,&quot;applicationName&quot;:&quot;Company-Security Navigator&quot;,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:&quot;77.0.3865.90&quot;,&quot;OSName&quot;:&quot;Windows&quot;,&quot;OSVersion&quot;:&quot;10.0&quot;,&quot;__clp_index&quot;:&quot;web_perf_detail&quot;}}
+{&quot;@fields&quot;:{&quot;level&quot;:&quot;log&quot;,&quot;logType&quot;:&quot;resource&quot;,&quot;stalled&quot;:6.820000009611249,&quot;waiting&quot;:197.21000001300126,&quot;downloading&quot;:145.16499999444932,&quot;name&quot;:&quot;https://my.apps.factset.com/services/UserSettings/settings?section=company_security_all_estimates&quot;,&quot;entryType&quot;:&quot;resource&quot;,&quot;startTime&quot;:11986.674999992829,&quot;duration&quot;:349.19500001706183,&quot;initiatorType&quot;:&quot;xmlhttprequest&quot;,&quot;nextHopProtocol&quot;:&quot;http/1.1&quot;,&quot;workerStart&quot;:0,&quot;redirectStart&quot;:0,&quot;redirectEnd&quot;:0,&quot;fetchStart&quot;:11986.674999992829,&quot;domainLookupStart&quot;:11986.674999992829,&quot;domainLookupEnd&quot;:11986.674999992829,&quot;connectStart&quot;:11986.674999992829,&quot;connectEnd&quot;:11986.674999992829,&quot;secureConnectionStart&quot;:11986.674999992829,&quot;requestStart&quot;:11993.49500000244,&quot;responseStart&quot;:12190.705000015441,&quot;responseEnd&quot;:12335.87000000989,&quot;transferSize&quot;:224,&quot;encodedBodySize&quot;:24,&quot;decodedBodySize&quot;:24,&quot;serverTiming&quot;:[],&quot;clientTime&quot;:&quot;2019-10-01T07:40:42.998Z&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;,&quot;url&quot;:&quot;https://my.apps.factset.com/navigator/company-security/all-estimates/MMM-US&quot;,&quot;platformTags&quot;:[],&quot;productPlatform&quot;:&quot;unknown&quot;,&quot;container&quot;:&quot;company-security_navigator&quot;,&quot;chainId&quot;:&quot;8dd5b0bf-a730-4bcf-bffe-a0d0dcfec6e0&quot;,&quot;applicationName&quot;:&quot;Company-Security Navigator&quot;,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:&quot;77.0.3865.90&quot;,&quot;OSName&quot;:&quot;Windows&quot;,&quot;OSVersion&quot;:&quot;10.0&quot;,&quot;__clp_index&quot;:&quot;web_perf_detail&quot;}}
+{&quot;@fields&quot;:{&quot;level&quot;:&quot;error&quot;,&quot;message&quot;:&quot;Uncaught Error: [HMR] Hot Module Replacement is disabled.&quot;,&quot;lineNumber&quot;:91,&quot;type&quot;:&quot;windowOnError&quot;,&quot;column&quot;:267833,&quot;exception&quot;:{&quot;stack&quot;:&quot;Error: [HMR] Hot Module Replacement is disabled.\n    at Object.&lt;anonymous&gt; (https://my.apps.factset.com/navigator/dynamic/vendor.34d3fa1cfcfe693ae769.bundle.js:91:267839)\n    at Object.&lt;anonymous&gt; (https://my.apps.factset.com/navigator/dynamic/vendor.34d3fa1cfcfe693ae769.bundle.js:91:267896)\n    at a (https://my.apps.factset.com/navigator/dynamic/main.d44923c2c4f9988d3664.bundle.js:1:519)\n    at Object.&lt;anonymous&gt; (https://my.apps.factset.com/navigator/dynamic/vendor.34d3fa1cfcfe693ae769.bundle.js:91:256941)\n    at Object.&lt;anonymous&gt; (https://my.apps.factset.com/navigator/dynamic/vendor.34d3fa1cfcfe693ae769.bundle.js:91:257122)\n    at a (https://my.apps.factset.com/navigator/dynamic/main.d44923c2c4f9988d3664.bundle.js:1:519)\n    at Object.&lt;anonymous&gt; (https://my.apps.factset.com/navigator/dynamic/vendor.34d3fa1cfcfe693ae769.bundle.js:91:254162)\n    at a (https://my.apps.factset.com/navigator/dynamic/main.d44923c2c4f9988d3664.bundle.js:1:519)\n    at Object.157 (https://my.apps.factset.com/navigator/dynamic/main.d44923c2c4f9988d3664.bundle.js:1:85708)\n    at a (https://my.apps.factset.com/navigator/dynamic/main.d44923c2c4f9988d3664.bundle.js:1:519)&quot;,&quot;name&quot;:&quot;Error&quot;,&quot;message&quot;:&quot;[HMR] Hot Module Replacement is disabled.&quot;},&quot;clientTime&quot;:&quot;2019-10-01T07:40:37.374Z&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;,&quot;url&quot;:&quot;https://my.apps.factset.com/navigator/company-security/all-estimates/7203-JP&quot;,&quot;platformTags&quot;:[],&quot;productPlatform&quot;:&quot;unknown&quot;,&quot;container&quot;:&quot;unknown&quot;,&quot;chainId&quot;:&quot;8dd5b0bf-a730-4bcf-bffe-a0d0dcfec6e0&quot;,&quot;applicationName&quot;:&quot;unknown&quot;,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:&quot;77.0.3865.90&quot;,&quot;OSName&quot;:&quot;Windows&quot;,&quot;OSVersion&quot;:&quot;10.0&quot;,&quot;__clp_index&quot;:&quot;speed&quot;,&quot;numberOfOccurrences&quot;:1}}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="instance" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">instance</stringProp>
+                  <stringProp name="Argument.value">company-security</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="initialId" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">initialId</stringProp>
+                  <stringProp name="Argument.value">7203-JP&quot;,&quot;entryType&quot;:&quot;resource&quot;,&quot;startTime&quot;:8212.954999995418,&quot;duration&quot;:1457.9200000152923,&quot;initiatorType&quot;:&quot;iframe&quot;,&quot;nextHopProtocol&quot;:&quot;http/1.1&quot;,&quot;workerStart&quot;:0,&quot;redirectStart&quot;:0,&quot;redirectEnd&quot;:0,&quot;fetchStart&quot;:8212.954999995418,&quot;domainLookupStart&quot;:0,&quot;domainLookupEnd&quot;:0,&quot;connectStart&quot;:0,&quot;connectEnd&quot;:0,&quot;secureConnectionStart&quot;:0,&quot;requestStart&quot;:0,&quot;responseStart&quot;:0,&quot;responseEnd&quot;:9670.87500001071,&quot;transferSize&quot;:0,&quot;encodedBodySize&quot;:0,&quot;decodedBodySize&quot;:0,&quot;serverTiming&quot;:[],&quot;noRequestStart&quot;:true,&quot;clientTime&quot;:&quot;2019-10-01T07:40:42.997Z&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;,&quot;url&quot;:&quot;https://my.apps.factset.com/navigator/company-security/all-estimates/MMM-US&quot;,&quot;platformTags&quot;:[],&quot;productPlatform&quot;:&quot;unknown&quot;,&quot;container&quot;:&quot;company-security_navigator&quot;,&quot;chainId&quot;:&quot;8dd5b0bf-a730-4bcf-bffe-a0d0dcfec6e0&quot;,&quot;applicationName&quot;:&quot;Company-Security Navigator&quot;,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:&quot;77.0.3865.90&quot;,&quot;OSName&quot;:&quot;Windows&quot;,&quot;OSVersion&quot;:&quot;10.0&quot;,&quot;__clp_index&quot;:&quot;web_perf_detail&quot;}}
+{&quot;@fields&quot;:{&quot;level&quot;:&quot;log&quot;,&quot;logType&quot;:&quot;resource&quot;,&quot;stalled&quot;:186.67500000447035,&quot;waiting&quot;:315.58499997481704,&quot;downloading&quot;:2.4850000045262277,&quot;name&quot;:&quot;https://my.apps.factset.com/navigator/api/company-security/LHP/MMM-US?entityType=publicCompany</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="navigator" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">navigator</stringProp>
+                  <stringProp name="Argument.value">1</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="{&quot;@fields&quot;:{&quot;level&quot;:&quot;info&quot;,&quot;errorMessage&quot;:&quot;Uncaught Error: [HMR] Hot Module Replacement is disabled.&quot;,&quot;fileName&quot;:&quot;https://my.apps.factset.com/navigator/dynamic/vendor.34d3fa1cfcfe693ae769.bundle.js&quot;,&quot;lineNumber&quot;:91,&quot;timeStamp&quot;:7032.230000011623,&quot;message&quot;:&quot;jsError&quot;,&quot;stack&quot;:&quot;Error: [HMR] Hot Module Replacement is disabled.\n    at Object.&lt;anonymous&gt; (https://my.apps.factset.com/navigator/dynamic/vendor.34d3fa1cfcfe693ae769.bundle.js:91:267839)\n    at Object.&lt;anonymous&gt; (https://my.apps.factset.com/navigator/dynamic/vendor.34d3fa1cfcfe693ae769.bundle.js:91:267896)\n    at a (https://my.apps.factset.com/navigator/dynamic/main.d44923c2c4f9988d3664.bundle.js:1:519)\n    at Object.&lt;anonymous&gt; (https://my.apps.factset.com/navigator/dynamic/vendor.34d3fa1cfcfe693ae769.bundle.js:91:256941)\n    at Object.&lt;anonymous&gt; (https://my.apps.factset.com/navigator/dynamic/vendor.34d3fa1cfcfe693ae769.bundle.js:91:257122)\n    at a (https://my.apps.factset.com/navigator/dynamic/main.d44923c2c4f9988d3664.bundle.js:1:519)\n    at Object.&lt;anonymous&gt; (https://my.apps.factset.com/navigator/dynamic/vendor.34d3fa1cfcfe693ae769.bundle.js:91:254162)\n    at a (https://my.apps.factset.com/navigator/dynamic/main.d44923c2c4f9988d3664.bundle.js:1:519)\n    at Object.157 (https://my.apps.factset.com/navigator/dynamic/main.d44923c2c4f9988d3664.bundle.js:1:85708)\n    at a (https://my.apps.factset.com/navigator/dynamic/main.d44923c2c4f9988d3664.bundle.js:1:519)&quot;,&quot;clientTime&quot;:&quot;2019-10-01T07:40:37.374Z&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;,&quot;url&quot;:&quot;https://my.apps.factset.com/navigator/company-security/all-estimates/7203-JP&quot;,&quot;platformTags&quot;:[],&quot;productPlatform&quot;:&quot;unknown&quot;,&quot;container&quot;:&quot;unknown&quot;,&quot;chainId&quot;:&quot;8dd5b0bf-a730-4bcf-bffe-a0d0dcfec6e0&quot;,&quot;applicationName&quot;:&quot;unknown&quot;,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:&quot;77.0.3865.90&quot;,&quot;OSName&quot;:&quot;Windows&quot;,&quot;OSVersion&quot;:&quot;10.0&quot;,&quot;__clp_index&quot;:&quot;navigator&quot;}}&#xa;{&quot;@fields&quot;:{&quot;level&quot;:&quot;log&quot;,&quot;instanceName&quot;:&quot;navigator&quot;,&quot;logType&quot;:&quot;ready&quot;,&quot;duration&quot;:7063.835000037216,&quot;clientTime&quot;:&quot;2019-10-01T07:40:37.402Z&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;,&quot;url&quot;:&quot;https://my.apps.factset.com/navigator/company-security/all-estimates/7203-JP&quot;,&quot;platformTags&quot;:[],&quot;productPlatform&quot;:&quot;unknown&quot;,&quot;container&quot;:&quot;unknown&quot;,&quot;chainId&quot;:&quot;8dd5b0bf-a730-4bcf-bffe-a0d0dcfec6e0&quot;,&quot;applicationName&quot;:&quot;Navigator&quot;,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:&quot;77.0.3865.90&quot;,&quot;OSName&quot;:&quot;Windows&quot;,&quot;OSVersion&quot;:&quot;10.0&quot;,&quot;__clp_index&quot;:&quot;speed&quot;}}&#xa;{&quot;@fields&quot;:{&quot;level&quot;:&quot;log&quot;,&quot;instanceName&quot;:&quot;navigator&quot;,&quot;logType&quot;:&quot;primaryFeature&quot;,&quot;type&quot;:&quot;performance&quot;,&quot;name&quot;:&quot;primaryFeature&quot;,&quot;entryType&quot;:&quot;measure&quot;,&quot;startTime&quot;:7151.050000044052,&quot;duration&quot;:34.01499998290092,&quot;instance&quot;:&quot;&quot;,&quot;ticker&quot;:&quot;7203-JP&quot;,&quot;clientTime&quot;:&quot;2019-10-01T07:40:37.524Z&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;,&quot;url&quot;:&quot;https://my.apps.factset.com/navigator/company-security/all-estimates/7203-JP&quot;,&quot;platformTags&quot;:[],&quot;productPlatform&quot;:&quot;unknown&quot;,&quot;container&quot;:&quot;company-security_navigator&quot;,&quot;chainId&quot;:&quot;8dd5b0bf-a730-4bcf-bffe-a0d0dcfec6e0&quot;,&quot;applicationName&quot;:&quot;Company-Security Navigator&quot;,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:&quot;77.0.3865.90&quot;,&quot;OSName&quot;:&quot;Windows&quot;,&quot;OSVersion&quot;:&quot;10.0&quot;,&quot;__clp_index&quot;:&quot;speed&quot;}}&#xa;{&quot;@fields&quot;:{&quot;level&quot;:&quot;log&quot;,&quot;instanceName&quot;:&quot;navigator&quot;,&quot;logType&quot;:&quot;primaryFeature&quot;,&quot;type&quot;:&quot;performance&quot;,&quot;name&quot;:&quot;primaryFeature&quot;,&quot;entryType&quot;:&quot;measure&quot;,&quot;startTime&quot;:7151.050000044052,&quot;duration&quot;:1053.669999993872,&quot;instance&quot;:&quot;company-security&quot;,&quot;ticker&quot;:&quot;7203-JP&quot;,&quot;clientTime&quot;:&quot;2019-10-01T07:40:38.543Z&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;,&quot;url&quot;:&quot;https://my.apps.factset.com/navigator/company-security/all-estimates/7203-JP&quot;,&quot;platformTags&quot;:[],&quot;productPlatform&quot;:&quot;unknown&quot;,&quot;container&quot;:&quot;company-security_navigator&quot;,&quot;chainId&quot;:&quot;8dd5b0bf-a730-4bcf-bffe-a0d0dcfec6e0&quot;,&quot;applicationName&quot;:&quot;Company-Security Navigator&quot;,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:&quot;77.0.3865.90&quot;,&quot;OSName&quot;:&quot;Windows&quot;,&quot;OSVersion&quot;:&quot;10.0&quot;,&quot;__clp_index&quot;:&quot;speed&quot;}}&#xa;{&quot;@fields&quot;:{&quot;level&quot;:&quot;error&quot;,&quot;message&quot;:&quot;Script error.&quot;,&quot;lineNumber&quot;:0,&quot;type&quot;:&quot;windowOnError&quot;,&quot;clientTime&quot;:&quot;2019-10-01T07:40:39.010Z&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;,&quot;url&quot;:&quot;https://my.apps.factset.com/navigator/company-security/all-estimates/7203-JP&quot;,&quot;platformTags&quot;:[],&quot;productPlatform&quot;:&quot;unknown&quot;,&quot;container&quot;:&quot;company-security_navigator&quot;,&quot;chainId&quot;:&quot;8dd5b0bf-a730-4bcf-bffe-a0d0dcfec6e0&quot;,&quot;applicationName&quot;:&quot;Company-Security Navigator&quot;,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:&quot;77.0.3865.90&quot;,&quot;OSName&quot;:&quot;Windows&quot;,&quot;OSVersion&quot;:&quot;10.0&quot;,&quot;__clp_index&quot;:&quot;speed&quot;}}&#xa;{&quot;@fields&quot;:{&quot;level&quot;:&quot;info&quot;,&quot;errorMessage&quot;:&quot;Script error.&quot;,&quot;fileName&quot;:&quot;&quot;,&quot;lineNumber&quot;:0,&quot;timeStamp&quot;:8671.640000015032,&quot;message&quot;:&quot;jsError&quot;,&quot;clientTime&quot;:&quot;2019-10-01T07:40:39.011Z&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;,&quot;url&quot;:&quot;https://my.apps.factset.com/navigator/company-security/all-estimates/7203-JP&quot;,&quot;platformTags&quot;:[],&quot;productPlatform&quot;:&quot;unknown&quot;,&quot;container&quot;:&quot;company-security_navigator&quot;,&quot;chainId&quot;:&quot;8dd5b0bf-a730-4bcf-bffe-a0d0dcfec6e0&quot;,&quot;applicationName&quot;:&quot;Company-Security Navigator&quot;,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:&quot;77.0.3865.90&quot;,&quot;OSName&quot;:&quot;Windows&quot;,&quot;OSVersion&quot;:&quot;10.0&quot;,&quot;__clp_index&quot;:&quot;navigator&quot;}}&#xa;{&quot;@fields&quot;:{&quot;level&quot;:&quot;log&quot;,&quot;instanceName&quot;:&quot;navigator&quot;,&quot;logType&quot;:&quot;primaryFeature&quot;,&quot;type&quot;:&quot;performance&quot;,&quot;name&quot;:&quot;primaryFeature&quot;,&quot;entryType&quot;:&quot;measure&quot;,&quot;startTime&quot;:7151.050000044052,&quot;duration&quot;:1988.329999963753,&quot;instance&quot;:&quot;company-security&quot;,&quot;ticker&quot;:&quot;MMM-US&quot;,&quot;clientTime&quot;:&quot;2019-10-01T07:40:39.478Z&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;,&quot;url&quot;:&quot;https://my.apps.factset.com/navigator/company-security/all-estimates/7203-JP&quot;,&quot;platformTags&quot;:[],&quot;productPlatform&quot;:&quot;unknown&quot;,&quot;container&quot;:&quot;company-security_navigator&quot;,&quot;chainId&quot;:&quot;8dd5b0bf-a730-4bcf-bffe-a0d0dcfec6e0&quot;,&quot;applicationName&quot;:&quot;Company-Security Navigator&quot;,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:&quot;77.0.3865.90&quot;,&quot;OSName&quot;:&quot;Windows&quot;,&quot;OSVersion&quot;:&quot;10.0&quot;,&quot;__clp_index&quot;:&quot;speed&quot;}}&#xa;{&quot;@fields&quot;:{&quot;level&quot;:&quot;log&quot;,&quot;instanceName&quot;:&quot;navigator&quot;,&quot;logType&quot;:&quot;measure&quot;,&quot;type&quot;:&quot;performance&quot;,&quot;name&quot;:&quot;IframeLoad&quot;,&quot;entryType&quot;:&quot;measure&quot;,&quot;startTime&quot;:8214.06000002753,&quot;duration&quot;:4410.0800000014715,&quot;instance&quot;:&quot;company-security&quot;,&quot;report&quot;:{&quot;url&quot;:&quot;https://estimate-reports.apps.factset.com/all-estimates/index.html?system" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">{&quot;@fields&quot;:{&quot;level&quot;:&quot;info&quot;,&quot;errorMessage&quot;:&quot;Uncaught Error: [HMR] Hot Module Replacement is disabled.&quot;,&quot;fileName&quot;:&quot;https://my.apps.factset.com/navigator/dynamic/vendor.34d3fa1cfcfe693ae769.bundle.js&quot;,&quot;lineNumber&quot;:91,&quot;timeStamp&quot;:7032.230000011623,&quot;message&quot;:&quot;jsError&quot;,&quot;stack&quot;:&quot;Error: [HMR] Hot Module Replacement is disabled.\n    at Object.&lt;anonymous&gt; (https://my.apps.factset.com/navigator/dynamic/vendor.34d3fa1cfcfe693ae769.bundle.js:91:267839)\n    at Object.&lt;anonymous&gt; (https://my.apps.factset.com/navigator/dynamic/vendor.34d3fa1cfcfe693ae769.bundle.js:91:267896)\n    at a (https://my.apps.factset.com/navigator/dynamic/main.d44923c2c4f9988d3664.bundle.js:1:519)\n    at Object.&lt;anonymous&gt; (https://my.apps.factset.com/navigator/dynamic/vendor.34d3fa1cfcfe693ae769.bundle.js:91:256941)\n    at Object.&lt;anonymous&gt; (https://my.apps.factset.com/navigator/dynamic/vendor.34d3fa1cfcfe693ae769.bundle.js:91:257122)\n    at a (https://my.apps.factset.com/navigator/dynamic/main.d44923c2c4f9988d3664.bundle.js:1:519)\n    at Object.&lt;anonymous&gt; (https://my.apps.factset.com/navigator/dynamic/vendor.34d3fa1cfcfe693ae769.bundle.js:91:254162)\n    at a (https://my.apps.factset.com/navigator/dynamic/main.d44923c2c4f9988d3664.bundle.js:1:519)\n    at Object.157 (https://my.apps.factset.com/navigator/dynamic/main.d44923c2c4f9988d3664.bundle.js:1:85708)\n    at a (https://my.apps.factset.com/navigator/dynamic/main.d44923c2c4f9988d3664.bundle.js:1:519)&quot;,&quot;clientTime&quot;:&quot;2019-10-01T07:40:37.374Z&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;,&quot;url&quot;:&quot;https://my.apps.factset.com/navigator/company-security/all-estimates/7203-JP&quot;,&quot;platformTags&quot;:[],&quot;productPlatform&quot;:&quot;unknown&quot;,&quot;container&quot;:&quot;unknown&quot;,&quot;chainId&quot;:&quot;8dd5b0bf-a730-4bcf-bffe-a0d0dcfec6e0&quot;,&quot;applicationName&quot;:&quot;unknown&quot;,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:&quot;77.0.3865.90&quot;,&quot;OSName&quot;:&quot;Windows&quot;,&quot;OSVersion&quot;:&quot;10.0&quot;,&quot;__clp_index&quot;:&quot;navigator&quot;}}
+{&quot;@fields&quot;:{&quot;level&quot;:&quot;log&quot;,&quot;instanceName&quot;:&quot;navigator&quot;,&quot;logType&quot;:&quot;ready&quot;,&quot;duration&quot;:7063.835000037216,&quot;clientTime&quot;:&quot;2019-10-01T07:40:37.402Z&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;,&quot;url&quot;:&quot;https://my.apps.factset.com/navigator/company-security/all-estimates/7203-JP&quot;,&quot;platformTags&quot;:[],&quot;productPlatform&quot;:&quot;unknown&quot;,&quot;container&quot;:&quot;unknown&quot;,&quot;chainId&quot;:&quot;8dd5b0bf-a730-4bcf-bffe-a0d0dcfec6e0&quot;,&quot;applicationName&quot;:&quot;Navigator&quot;,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:&quot;77.0.3865.90&quot;,&quot;OSName&quot;:&quot;Windows&quot;,&quot;OSVersion&quot;:&quot;10.0&quot;,&quot;__clp_index&quot;:&quot;speed&quot;}}
+{&quot;@fields&quot;:{&quot;level&quot;:&quot;log&quot;,&quot;instanceName&quot;:&quot;navigator&quot;,&quot;logType&quot;:&quot;primaryFeature&quot;,&quot;type&quot;:&quot;performance&quot;,&quot;name&quot;:&quot;primaryFeature&quot;,&quot;entryType&quot;:&quot;measure&quot;,&quot;startTime&quot;:7151.050000044052,&quot;duration&quot;:34.01499998290092,&quot;instance&quot;:&quot;&quot;,&quot;ticker&quot;:&quot;7203-JP&quot;,&quot;clientTime&quot;:&quot;2019-10-01T07:40:37.524Z&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;,&quot;url&quot;:&quot;https://my.apps.factset.com/navigator/company-security/all-estimates/7203-JP&quot;,&quot;platformTags&quot;:[],&quot;productPlatform&quot;:&quot;unknown&quot;,&quot;container&quot;:&quot;company-security_navigator&quot;,&quot;chainId&quot;:&quot;8dd5b0bf-a730-4bcf-bffe-a0d0dcfec6e0&quot;,&quot;applicationName&quot;:&quot;Company-Security Navigator&quot;,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:&quot;77.0.3865.90&quot;,&quot;OSName&quot;:&quot;Windows&quot;,&quot;OSVersion&quot;:&quot;10.0&quot;,&quot;__clp_index&quot;:&quot;speed&quot;}}
+{&quot;@fields&quot;:{&quot;level&quot;:&quot;log&quot;,&quot;instanceName&quot;:&quot;navigator&quot;,&quot;logType&quot;:&quot;primaryFeature&quot;,&quot;type&quot;:&quot;performance&quot;,&quot;name&quot;:&quot;primaryFeature&quot;,&quot;entryType&quot;:&quot;measure&quot;,&quot;startTime&quot;:7151.050000044052,&quot;duration&quot;:1053.669999993872,&quot;instance&quot;:&quot;company-security&quot;,&quot;ticker&quot;:&quot;7203-JP&quot;,&quot;clientTime&quot;:&quot;2019-10-01T07:40:38.543Z&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;,&quot;url&quot;:&quot;https://my.apps.factset.com/navigator/company-security/all-estimates/7203-JP&quot;,&quot;platformTags&quot;:[],&quot;productPlatform&quot;:&quot;unknown&quot;,&quot;container&quot;:&quot;company-security_navigator&quot;,&quot;chainId&quot;:&quot;8dd5b0bf-a730-4bcf-bffe-a0d0dcfec6e0&quot;,&quot;applicationName&quot;:&quot;Company-Security Navigator&quot;,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:&quot;77.0.3865.90&quot;,&quot;OSName&quot;:&quot;Windows&quot;,&quot;OSVersion&quot;:&quot;10.0&quot;,&quot;__clp_index&quot;:&quot;speed&quot;}}
+{&quot;@fields&quot;:{&quot;level&quot;:&quot;error&quot;,&quot;message&quot;:&quot;Script error.&quot;,&quot;lineNumber&quot;:0,&quot;type&quot;:&quot;windowOnError&quot;,&quot;clientTime&quot;:&quot;2019-10-01T07:40:39.010Z&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;,&quot;url&quot;:&quot;https://my.apps.factset.com/navigator/company-security/all-estimates/7203-JP&quot;,&quot;platformTags&quot;:[],&quot;productPlatform&quot;:&quot;unknown&quot;,&quot;container&quot;:&quot;company-security_navigator&quot;,&quot;chainId&quot;:&quot;8dd5b0bf-a730-4bcf-bffe-a0d0dcfec6e0&quot;,&quot;applicationName&quot;:&quot;Company-Security Navigator&quot;,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:&quot;77.0.3865.90&quot;,&quot;OSName&quot;:&quot;Windows&quot;,&quot;OSVersion&quot;:&quot;10.0&quot;,&quot;__clp_index&quot;:&quot;speed&quot;}}
+{&quot;@fields&quot;:{&quot;level&quot;:&quot;info&quot;,&quot;errorMessage&quot;:&quot;Script error.&quot;,&quot;fileName&quot;:&quot;&quot;,&quot;lineNumber&quot;:0,&quot;timeStamp&quot;:8671.640000015032,&quot;message&quot;:&quot;jsError&quot;,&quot;clientTime&quot;:&quot;2019-10-01T07:40:39.011Z&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;,&quot;url&quot;:&quot;https://my.apps.factset.com/navigator/company-security/all-estimates/7203-JP&quot;,&quot;platformTags&quot;:[],&quot;productPlatform&quot;:&quot;unknown&quot;,&quot;container&quot;:&quot;company-security_navigator&quot;,&quot;chainId&quot;:&quot;8dd5b0bf-a730-4bcf-bffe-a0d0dcfec6e0&quot;,&quot;applicationName&quot;:&quot;Company-Security Navigator&quot;,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:&quot;77.0.3865.90&quot;,&quot;OSName&quot;:&quot;Windows&quot;,&quot;OSVersion&quot;:&quot;10.0&quot;,&quot;__clp_index&quot;:&quot;navigator&quot;}}
+{&quot;@fields&quot;:{&quot;level&quot;:&quot;log&quot;,&quot;instanceName&quot;:&quot;navigator&quot;,&quot;logType&quot;:&quot;primaryFeature&quot;,&quot;type&quot;:&quot;performance&quot;,&quot;name&quot;:&quot;primaryFeature&quot;,&quot;entryType&quot;:&quot;measure&quot;,&quot;startTime&quot;:7151.050000044052,&quot;duration&quot;:1988.329999963753,&quot;instance&quot;:&quot;company-security&quot;,&quot;ticker&quot;:&quot;MMM-US&quot;,&quot;clientTime&quot;:&quot;2019-10-01T07:40:39.478Z&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;,&quot;url&quot;:&quot;https://my.apps.factset.com/navigator/company-security/all-estimates/7203-JP&quot;,&quot;platformTags&quot;:[],&quot;productPlatform&quot;:&quot;unknown&quot;,&quot;container&quot;:&quot;company-security_navigator&quot;,&quot;chainId&quot;:&quot;8dd5b0bf-a730-4bcf-bffe-a0d0dcfec6e0&quot;,&quot;applicationName&quot;:&quot;Company-Security Navigator&quot;,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:&quot;77.0.3865.90&quot;,&quot;OSName&quot;:&quot;Windows&quot;,&quot;OSVersion&quot;:&quot;10.0&quot;,&quot;__clp_index&quot;:&quot;speed&quot;}}
+{&quot;@fields&quot;:{&quot;level&quot;:&quot;log&quot;,&quot;instanceName&quot;:&quot;navigator&quot;,&quot;logType&quot;:&quot;measure&quot;,&quot;type&quot;:&quot;performance&quot;,&quot;name&quot;:&quot;IframeLoad&quot;,&quot;entryType&quot;:&quot;measure&quot;,&quot;startTime&quot;:8214.06000002753,&quot;duration&quot;:4410.0800000014715,&quot;instance&quot;:&quot;company-security&quot;,&quot;report&quot;:{&quot;url&quot;:&quot;https://estimate-reports.apps.factset.com/all-estimates/index.html?system</stringProp>
+                  <stringProp name="Argument.value">LinuxOnly</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="fdsweb" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">fdsweb</stringProp>
+                  <stringProp name="Argument.value">1&quot;,&quot;id&quot;:&quot;HTML_All_Estimates2&quot;,&quot;oa&quot;:{&quot;module&quot;:&quot;IMC&quot;,&quot;topic&quot;:&quot;IMC_EST_ALL_ESTIMATES&quot;},&quot;fwsAppName&quot;:&quot;All Estimates&quot;,&quot;name&quot;:&quot;All Estimates&quot;,&quot;fetchFromComponentLibrary&quot;:true,&quot;urlString&quot;:&quot;all-estimates&quot;,&quot;translationId&quot;:&quot;htmlAllEstimates&quot;,&quot;dataPrefetch&quot;:true,&quot;download&quot;:true,&quot;print&quot;:false,&quot;printMultiple&quot;:false,&quot;downloadMultiple&quot;:false,&quot;downloadFinancialStatements&quot;:false,&quot;inhouseHelpLinks&quot;:{&quot;applications&quot;:{&quot;label&quot;:&quot;This report/application&quot;,&quot;value&quot;:&quot;applications&quot;,&quot;products&quot;:[{&quot;label&quot;:&quot;All Estimates&quot;,&quot;value&quot;:&quot;6990BEA148B6128B8525732200756CC0&quot;}]},&quot;data&quot;:{&quot;label&quot;:&quot;Content/data&quot;,&quot;value&quot;:&quot;data&quot;,&quot;products&quot;:[{&quot;label&quot;:&quot;FactSet Estimates&quot;,&quot;value&quot;:&quot;DE370F66A71F5B8085256F3100755F75&quot;},{&quot;label&quot;:&quot;FactSet Market Aggregates&quot;,&quot;value&quot;:&quot;CB10946A6BB20324852573DA004B8769&quot;},{&quot;label&quot;:&quot;I/B/E/S Consensus&quot;,&quot;value&quot;:&quot;229A81357EEF2367852563DC005D06DE&quot;}]},&quot;other&quot;:{&quot;label&quot;:&quot;Other&quot;,&quot;value&quot;:&quot;other&quot;,&quot;products&quot;:[{&quot;label&quot;:&quot;Navigator&quot;,&quot;value&quot;:&quot;26302&quot;}]}},&quot;query&quot;:&quot;&quot;,&quot;groupId&quot;:&quot;estimates_0&quot;,&quot;sectionId&quot;:0,&quot;secondaryTicker&quot;:&quot;&quot;,&quot;ticker&quot;:&quot;MMM-US&quot;,&quot;uniqueId&quot;:&quot;HTML_All_Estimates2__0&quot;},&quot;clientTime&quot;:&quot;2019-10-01T07:40:42.962Z&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;,&quot;url&quot;:&quot;https://my.apps.factset.com/navigator/company-security/all-estimates/MMM-US&quot;,&quot;platformTags&quot;:[],&quot;productPlatform&quot;:&quot;unknown&quot;,&quot;container&quot;:&quot;company-security_navigator&quot;,&quot;chainId&quot;:&quot;8dd5b0bf-a730-4bcf-bffe-a0d0dcfec6e0&quot;,&quot;applicationName&quot;:&quot;Company-Security Navigator&quot;,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:&quot;77.0.3865.90&quot;,&quot;OSName&quot;:&quot;Windows&quot;,&quot;OSVersion&quot;:&quot;10.0&quot;,&quot;__clp_index&quot;:&quot;navigator&quot;}}
+{&quot;@fields&quot;:{&quot;level&quot;:&quot;log&quot;,&quot;type&quot;:&quot;performanceLogger&quot;,&quot;version&quot;:&quot;__PL__VERSION__&quot;,&quot;clientTime&quot;:&quot;2019-10-01T07:40:42.994Z&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;,&quot;url&quot;:&quot;https://my.apps.factset.com/navigator/company-security/all-estimates/MMM-US&quot;,&quot;platformTags&quot;:[],&quot;productPlatform&quot;:&quot;unknown&quot;,&quot;container&quot;:&quot;company-security_navigator&quot;,&quot;chainId&quot;:&quot;8dd5b0bf-a730-4bcf-bffe-a0d0dcfec6e0&quot;,&quot;applicationName&quot;:&quot;Company-Security Navigator&quot;,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:&quot;77.0.3865.90&quot;,&quot;OSName&quot;:&quot;Windows&quot;,&quot;OSVersion&quot;:&quot;10.0&quot;,&quot;__clp_index&quot;:&quot;mdweb&quot;}}
+{&quot;@fields&quot;:{&quot;level&quot;:&quot;log&quot;,&quot;logType&quot;:&quot;navigation&quot;,&quot;resourcesStats&quot;:{&quot;script&quot;:10,&quot;link&quot;:1,&quot;fetch&quot;:4,&quot;xmlhttprequest&quot;:9,&quot;iframe&quot;:2,&quot;other&quot;:1},&quot;domContentLoaded&quot;:3166,&quot;totalLoadTime&quot;:8074,&quot;domainLookupTime&quot;:0,&quot;connectTime&quot;:366,&quot;secureConnectTime&quot;:183,&quot;navigationStart&quot;:1569915630338,&quot;unloadEventStart&quot;:0,&quot;unloadEventEnd&quot;:0,&quot;redirectStart&quot;:0,&quot;redirectEnd&quot;:0,&quot;fetchStart&quot;:1569915634498,&quot;domainLookupStart&quot;:1569915634526,&quot;domainLookupEnd&quot;:1569915634526,&quot;connectStart&quot;:1569915634526,&quot;connectEnd&quot;:1569915634892,&quot;secureConnectionStart&quot;:1569915634709,&quot;requestStart&quot;:1569915634892,&quot;responseStart&quot;:1569915635211,&quot;responseEnd&quot;:1569915635216,&quot;domLoading&quot;:1569915635224,&quot;domInteractive&quot;:1569915637690,&quot;domContentLoadedEventStart&quot;:1569915637690,&quot;domContentLoadedEventEnd&quot;:1569915638058,&quot;domComplete&quot;:1569915642963,&quot;loadEventStart&quot;:1569915642963,&quot;loadEventEnd&quot;:1569915642966,&quot;clientTime&quot;:&quot;2019-10-01T07:40:42.995Z&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;,&quot;url&quot;:&quot;https://my.apps.factset.com/navigator/company-security/all-estimates/MMM-US&quot;,&quot;platformTags&quot;:[],&quot;productPlatform&quot;:&quot;unknown&quot;,&quot;container&quot;:&quot;company-security_navigator&quot;,&quot;chainId&quot;:&quot;8dd5b0bf-a730-4bcf-bffe-a0d0dcfec6e0&quot;,&quot;applicationName&quot;:&quot;Company-Security Navigator&quot;,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:&quot;77.0.3865.90&quot;,&quot;OSName&quot;:&quot;Windows&quot;,&quot;OSVersion&quot;:&quot;10.0&quot;,&quot;__clp_index&quot;:&quot;web_perf&quot;}}
+{&quot;@fields&quot;:{&quot;level&quot;:&quot;log&quot;,&quot;logType&quot;:&quot;resource&quot;,&quot;stalled&quot;:131.6400000359863,&quot;waiting&quot;:230.20499997073784,&quot;downloading&quot;:147.36000000266358,&quot;name&quot;:&quot;https://my.apps.factset.com/services/polyfill-service/polyfill.min.js&quot;,&quot;entryType&quot;:&quot;resource&quot;,&quot;startTime&quot;:4902.070000011008,&quot;duration&quot;:509.20500000938773,&quot;initiatorType&quot;:&quot;script&quot;,&quot;nextHopProtocol&quot;:&quot;http/1.1&quot;,&quot;workerStart&quot;:0,&quot;redirectStart&quot;:0,&quot;redirectEnd&quot;:0,&quot;fetchStart&quot;:4902.070000011008,&quot;domainLookupStart&quot;:4902.070000011008,&quot;domainLookupEnd&quot;:4902.070000011008,&quot;connectStart&quot;:4902.070000011008,&quot;connectEnd&quot;:4902.070000011008,&quot;secureConnectionStart&quot;:4902.070000011008,&quot;requestStart&quot;:5033.7100000469945,&quot;responseStart&quot;:5263.915000017732,&quot;responseEnd&quot;:5411.275000020396,&quot;transferSize&quot;:1646,&quot;encodedBodySize&quot;:980,&quot;decodedBodySize&quot;:4015,&quot;serverTiming&quot;:[],&quot;clientTime&quot;:&quot;2019-10-01T07:40:42.995Z&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;,&quot;url&quot;:&quot;https://my.apps.factset.com/navigator/company-security/all-estimates/MMM-US&quot;,&quot;platformTags&quot;:[],&quot;productPlatform&quot;:&quot;unknown&quot;,&quot;container&quot;:&quot;company-security_navigator&quot;,&quot;chainId&quot;:&quot;8dd5b0bf-a730-4bcf-bffe-a0d0dcfec6e0&quot;,&quot;applicationName&quot;:&quot;Company-Security Navigator&quot;,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:&quot;77.0.3865.90&quot;,&quot;OSName&quot;:&quot;Windows&quot;,&quot;OSVersion&quot;:&quot;10.0&quot;,&quot;__clp_index&quot;:&quot;web_perf_detail&quot;}}
+{&quot;@fields&quot;:{&quot;level&quot;:&quot;log&quot;,&quot;logType&quot;:&quot;resource&quot;,&quot;stalled&quot;:509.0300000156276,&quot;waiting&quot;:280.910000030417,&quot;downloading&quot;:551.4199999743141,&quot;name&quot;:&quot;https://my.apps.factset.com/services/fds-web-frame/evergreen/web-frame.css&quot;,&quot;entryType&quot;:&quot;resource&quot;,&quot;startTime&quot;:4902.5649999966845,&quot;duration&quot;:1341.3600000203587,&quot;initiatorType&quot;:&quot;link&quot;,&quot;nextHopProtocol&quot;:&quot;http/1.1&quot;,&quot;workerStart&quot;:0,&quot;redirectStart&quot;:0,&quot;redirectEnd&quot;:0,&quot;fetchStart&quot;:4902.5649999966845,&quot;domainLookupStart&quot;:5035.455000004731,&quot;domainLookupEnd&quot;:5035.490000038408,&quot;connectStart&quot;:5035.490000038408,&quot;connectEnd&quot;:5404.770000022836,&quot;secureConnectionStart&quot;:5219.555000017863,&quot;requestStart&quot;:5411.595000012312,&quot;responseStart&quot;:5692.505000042729,&quot;responseEnd&quot;:6243.925000017043,&quot;transferSize&quot;:114258,&quot;encodedBodySize&quot;:113673,&quot;decodedBodySize&quot;:307612,&quot;serverTiming&quot;:[],&quot;clientTime&quot;:&quot;2019-10-01T07:40:42.995Z&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;,&quot;url&quot;:&quot;https://my.apps.factset.com/navigator/company-security/all-estimates/MMM-US&quot;,&quot;platformTags&quot;:[],&quot;productPlatform&quot;:&quot;unknown&quot;,&quot;container&quot;:&quot;company-security_navigator&quot;,&quot;chainId&quot;:&quot;8dd5b0bf-a730-4bcf-bffe-a0d0dcfec6e0&quot;,&quot;applicationName&quot;:&quot;Company-Security Navigator&quot;,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:&quot;77.0.3865.90&quot;,&quot;OSName&quot;:&quot;Windows&quot;,&quot;OSVersion&quot;:&quot;10.0&quot;,&quot;__clp_index&quot;:&quot;web_perf_detail&quot;}}
+{&quot;@fields&quot;:{&quot;level&quot;:&quot;log&quot;,&quot;logType&quot;:&quot;resource&quot;,&quot;stalled&quot;:510.4649999993853,&quot;waiting&quot;:355.089999968186,&quot;downloading&quot;:914.4850000157021,&quot;name&quot;:&quot;https://my.apps.factset.com/services/fds-web-frame/evergreen/web-frame.js&quot;,&quot;entryType&quot;:&quot;resource&quot;,&quot;startTime&quot;:4902.830000035465,&quot;duration&quot;:1780.0399999832734,&quot;initiatorType&quot;:&quot;script&quot;,&quot;nextHopProtocol&quot;:&quot;http/1.1&quot;,&quot;workerStart&quot;:0,&quot;redirectStart&quot;:0,&quot;redirectEnd&quot;:0,&quot;fetchStart&quot;:4902.830000035465,&quot;domainLookupStart&quot;:5036.915000004228,&quot;domainLookupEnd&quot;:5036.9250000221655,&quot;connectStart&quot;:5036.9250000221655,&quot;connectEnd&quot;:5407.800000044517,&quot;secureConnectionStart&quot;:5220.209999999497,&quot;requestStart&quot;:5413.29500003485,&quot;responseStart&quot;:5768.385000003036,&quot;responseEnd&quot;:6682.870000018738,&quot;transferSize&quot;:255734,&quot;encodedBodySize&quot;:255144,&quot;decodedBodySize&quot;:945315,&quot;serverTiming&quot;:[],&quot;clientTime&quot;:&quot;2019-10-01T07:40:42.996Z&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;,&quot;url&quot;:&quot;https://my.apps.factset.com/navigator/company-security/all-estimates/MMM-US&quot;,&quot;platformTags&quot;:[],&quot;productPlatform&quot;:&quot;unknown&quot;,&quot;container&quot;:&quot;company-security_navigator&quot;,&quot;chainId&quot;:&quot;8dd5b0bf-a730-4bcf-bffe-a0d0dcfec6e0&quot;,&quot;applicationName&quot;:&quot;Company-Security Navigator&quot;,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:&quot;77.0.3865.90&quot;,&quot;OSName&quot;:&quot;Windows&quot;,&quot;OSVersion&quot;:&quot;10.0&quot;,&quot;__clp_index&quot;:&quot;web_perf_detail&quot;}}
+{&quot;@fields&quot;:{&quot;level&quot;:&quot;log&quot;,&quot;logType&quot;:&quot;resource&quot;,&quot;stalled&quot;:510.489999956917,&quot;waiting&quot;:473.7550000427291,&quot;downloading&quot;:920.9449999616481,&quot;name&quot;:&quot;https://my.apps.factset.com/navigator/dynamic/vendor.34d3fa1cfcfe693ae769.bundle.js&quot;,&quot;entryType&quot;:&quot;resource&quot;,&quot;startTime&quot;:4903.160000045318,&quot;duration&quot;:1905.1899999612942,&quot;initiatorType&quot;:&quot;script&quot;,&quot;nextHopProtocol&quot;:&quot;http/1.1&quot;,&quot;workerStart&quot;:0,&quot;redirectStart&quot;:0,&quot;redirectEnd&quot;:0,&quot;fetchStart&quot;:4903.160000045318,&quot;domainLookupStart&quot;:5038.289999996778,&quot;domainLookupEnd&quot;:5038.315000012517,&quot;connectStart&quot;:5038.315000012517,&quot;connectEnd&quot;:5409.395000024233,&quot;secureConnectionStart&quot;:5221.750000026077,&quot;requestStart&quot;:5413.650000002235,&quot;responseStart&quot;:5887.405000044964,&quot;responseEnd&quot;:6808.350000006612,&quot;transferSize&quot;:279324,&quot;encodedBodySize&quot;:278669,&quot;decodedBodySize&quot;:747473,&quot;serverTiming&quot;:[],&quot;clientTime&quot;:&quot;2019-10-01T07:40:42.996Z&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;,&quot;url&quot;:&quot;https://my.apps.factset.com/navigator/company-security/all-estimates/MMM-US&quot;,&quot;platformTags&quot;:[],&quot;productPlatform&quot;:&quot;unknown&quot;,&quot;container&quot;:&quot;company-security_navigator&quot;,&quot;chainId&quot;:&quot;8dd5b0bf-a730-4bcf-bffe-a0d0dcfec6e0&quot;,&quot;applicationName&quot;:&quot;Company-Security Navigator&quot;,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:&quot;77.0.3865.90&quot;,&quot;OSName&quot;:&quot;Windows&quot;,&quot;OSVersion&quot;:&quot;10.0&quot;,&quot;__clp_index&quot;:&quot;web_perf_detail&quot;}}
+{&quot;@fields&quot;:{&quot;level&quot;:&quot;log&quot;,&quot;logType&quot;:&quot;resource&quot;,&quot;stalled&quot;:510.3699999745004,&quot;waiting&quot;:427.7550000115298,&quot;downloading&quot;:183.8199999765493,&quot;name&quot;:&quot;https://my.apps.factset.com/navigator/dynamic/main.d44923c2c4f9988d3664.bundle.js&quot;,&quot;entryType&quot;:&quot;resource&quot;,&quot;startTime&quot;:4903.540000028443,&quot;duration&quot;:1121.9449999625795,&quot;initiatorType&quot;:&quot;script&quot;,&quot;nextHopProtocol&quot;:&quot;http/1.1&quot;,&quot;workerStart&quot;:0,&quot;redirectStart&quot;:0,&quot;redirectEnd&quot;:0,&quot;fetchStart&quot;:4903.540000028443,&quot;domainLookupStart&quot;:5039.890000014566,&quot;domainLookupEnd&quot;:5039.9250000482425,&quot;connectStart&quot;:5039.9250000482425,&quot;connectEnd&quot;:5410.865000041667,&quot;secureConnectionStart&quot;:5222.795000008773,&quot;requestStart&quot;:5413.910000002943,&quot;responseStart&quot;:5841.665000014473,&quot;responseEnd&quot;:6025.484999991022,&quot;transferSize&quot;:31719,&quot;encodedBodySize&quot;:31097,&quot;decodedBodySize&quot;:137939,&quot;serverTiming&quot;:[],&quot;clientTime&quot;:&quot;2019-10-01T07:40:42.996Z&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;,&quot;url&quot;:&quot;https://my.apps.factset.com/navigator/company-security/all-estimates/MMM-US&quot;,&quot;platformTags&quot;:[],&quot;productPlatform&quot;:&quot;unknown&quot;,&quot;container&quot;:&quot;company-security_navigator&quot;,&quot;chainId&quot;:&quot;8dd5b0bf-a730-4bcf-bffe-a0d0dcfec6e0&quot;,&quot;applicationName&quot;:&quot;Company-Security Navigator&quot;,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:&quot;77.0.3865.90&quot;,&quot;OSName&quot;:&quot;Windows&quot;,&quot;OSVersion&quot;:&quot;10.0&quot;,&quot;__clp_index&quot;:&quot;web_perf_detail&quot;}}
+{&quot;@fields&quot;:{&quot;level&quot;:&quot;log&quot;,&quot;logType&quot;:&quot;resource&quot;,&quot;stalled&quot;:510.2900000056252,&quot;waiting&quot;:253.56000004103407,&quot;downloading&quot;:34.33499997481704,&quot;name&quot;:&quot;https://my.apps.factset.com/navigator/dynamic/vendors~activism-governance~activism-sharkwatch~aggregates~company-security~deals~deals-simulator~ec~03911720.fb95a7638effedae7c18.bundle.js&quot;,&quot;entryType&quot;:&quot;resource&quot;,&quot;startTime&quot;:4903.8650000002235,&quot;duration&quot;:798.1850000214763,&quot;initiatorType&quot;:&quot;script&quot;,&quot;nextHopProtocol&quot;:&quot;http/1.1&quot;,&quot;workerStart&quot;:0,&quot;redirectStart&quot;:0,&quot;redirectEnd&quot;:0,&quot;fetchStart&quot;:4903.8650000002235,&quot;domainLookupStart&quot;:4903.8650000002235,&quot;domainLookupEnd&quot;:4903.8650000002235,&quot;connectStart&quot;:4903.8650000002235,&quot;connectEnd&quot;:4903.8650000002235,&quot;secureConnectionStart&quot;:4903.8650000002235,&quot;requestStart&quot;:5414.155000005849,&quot;responseStart&quot;:5667.715000046883,&quot;responseEnd&quot;:5702.0500000217,&quot;transferSize&quot;:16962,&quot;encodedBodySize&quot;:16348,&quot;decodedBodySize&quot;:79187,&quot;serverTiming&quot;:[],&quot;clientTime&quot;:&quot;2019-10-01T07:40:42.996Z&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;,&quot;url&quot;:&quot;https://my.apps.factset.com/navigator/company-security/all-estimates/MMM-US&quot;,&quot;platformTags&quot;:[],&quot;productPlatform&quot;:&quot;unknown&quot;,&quot;container&quot;:&quot;company-security_navigator&quot;,&quot;chainId&quot;:&quot;8dd5b0bf-a730-4bcf-bffe-a0d0dcfec6e0&quot;,&quot;applicationName&quot;:&quot;Company-Security Navigator&quot;,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:&quot;77.0.3865.90&quot;,&quot;OSName&quot;:&quot;Windows&quot;,&quot;OSVersion&quot;:&quot;10.0&quot;,&quot;__clp_index&quot;:&quot;web_perf_detail&quot;}}
+{&quot;@fields&quot;:{&quot;level&quot;:&quot;log&quot;,&quot;logType&quot;:&quot;resource&quot;,&quot;stalled&quot;:509.93499998003244,&quot;waiting&quot;:218.24499999638647,&quot;downloading&quot;:35.62500001862645,&quot;name&quot;:&quot;https://my.apps.factset.com/navigator/dynamic/1.2b5683f58241dd21e204.bundle.js&quot;,&quot;entryType&quot;:&quot;resource&quot;,&quot;startTime&quot;:4904.465000028722,&quot;duration&quot;:763.8049999950454,&quot;initiatorType&quot;:&quot;script&quot;,&quot;nextHopProtocol&quot;:&quot;http/1.1&quot;,&quot;workerStart&quot;:0,&quot;redirectStart&quot;:0,&quot;redirectEnd&quot;:0,&quot;fetchStart&quot;:4904.465000028722,&quot;domainLookupStart&quot;:5041.090000013355,&quot;domainLookupEnd&quot;:5041.125000047032,&quot;connectStart&quot;:5041.125000047032,&quot;connectEnd&quot;:5413.100000005215,&quot;secureConnectionStart&quot;:5226.1250000447035,&quot;requestStart&quot;:5414.400000008754,&quot;responseStart&quot;:5632.645000005141,&quot;responseEnd&quot;:5668.270000023767,&quot;transferSize&quot;:9153,&quot;encodedBodySize&quot;:8540,&quot;decodedBodySize&quot;:36163,&quot;serverTiming&quot;:[],&quot;clientTime&quot;:&quot;2019-10-01T07:40:42.996Z&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;,&quot;url&quot;:&quot;https://my.apps.factset.com/navigator/company-security/all-estimates/MMM-US&quot;,&quot;platformTags&quot;:[],&quot;productPlatform&quot;:&quot;unknown&quot;,&quot;container&quot;:&quot;company-security_navigator&quot;,&quot;chainId&quot;:&quot;8dd5b0bf-a730-4bcf-bffe-a0d0dcfec6e0&quot;,&quot;applicationName&quot;:&quot;Company-Security Navigator&quot;,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:&quot;77.0.3865.90&quot;,&quot;OSName&quot;:&quot;Windows&quot;,&quot;OSVersion&quot;:&quot;10.0&quot;,&quot;__clp_index&quot;:&quot;web_perf_detail&quot;}}
+{&quot;@fields&quot;:{&quot;level&quot;:&quot;log&quot;,&quot;logType&quot;:&quot;resource&quot;,&quot;stalled&quot;:763.0999999819323,&quot;waiting&quot;:238.0750000011176,&quot;downloading&quot;:367.71500000031665,&quot;name&quot;:&quot;https://my.apps.factset.com/navigator/dynamic/vendors~activism-governance~company-security~deals~deals-simulator~economics~industry~ownership~peop~5d83c747.35022d5593c18351f0f8.bundle.js&quot;,&quot;entryType&quot;:&quot;resource&quot;,&quot;startTime&quot;:4905.520000029355,&quot;duration&quot;:1368.8899999833666,&quot;initiatorType&quot;:&quot;script&quot;,&quot;nextHopProtocol&quot;:&quot;http/1.1&quot;,&quot;workerStart&quot;:0,&quot;redirectStart&quot;:0,&quot;redirectEnd&quot;:0,&quot;fetchStart&quot;:4905.520000029355,&quot;domainLookupStart&quot;:4905.520000029355,&quot;domainLookupEnd&quot;:4905.520000029355,&quot;connectStart&quot;:4905.520000029355,&quot;connectEnd&quot;:4905.520000029355,&quot;secureConnectionStart&quot;:4905.520000029355,&quot;requestStart&quot;:5668.620000011288,&quot;responseStart&quot;:5906.695000012405,&quot;responseEnd&quot;:6274.410000012722,&quot;transferSize&quot;:66718,&quot;encodedBodySize&quot;:66073,&quot;decodedBodySize&quot;:303761,&quot;serverTiming&quot;:[],&quot;clientTime&quot;:&quot;2019-10-01T07:40:42.996Z&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;,&quot;url&quot;:&quot;https://my.apps.factset.com/navigator/company-security/all-estimates/MMM-US&quot;,&quot;platformTags&quot;:[],&quot;productPlatform&quot;:&quot;unknown&quot;,&quot;container&quot;:&quot;company-security_navigator&quot;,&quot;chainId&quot;:&quot;8dd5b0bf-a730-4bcf-bffe-a0d0dcfec6e0&quot;,&quot;applicationName&quot;:&quot;Company-Security Navigator&quot;,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:&quot;77.0.3865.90&quot;,&quot;OSName&quot;:&quot;Windows&quot;,&quot;OSVersion&quot;:&quot;10.0&quot;,&quot;__clp_index&quot;:&quot;web_perf_detail&quot;}}
+{&quot;@fields&quot;:{&quot;level&quot;:&quot;log&quot;,&quot;logType&quot;:&quot;resource&quot;,&quot;stalled&quot;:796.0099999909289,&quot;waiting&quot;:219.96999997645617,&quot;downloading&quot;:4.279999993741512,&quot;name&quot;:&quot;https://my.apps.factset.com/navigator/dynamic/company-security.61416ebe0d4b207c797a.bundle.js&quot;,&quot;entryType&quot;:&quot;resource&quot;,&quot;startTime&quot;:4906.4150000340305,&quot;duration&quot;:1020.2599999611266,&quot;initiatorType&quot;:&quot;script&quot;,&quot;nextHopProtocol&quot;:&quot;http/1.1&quot;,&quot;workerStart&quot;:0,&quot;redirectStart&quot;:0,&quot;redirectEnd&quot;:0,&quot;fetchStart&quot;:4906.4150000340305,&quot;domainLookupStart&quot;:4906.4150000340305,&quot;domainLookupEnd&quot;:4906.4150000340305,&quot;connectStart&quot;:4906.4150000340305,&quot;connectEnd&quot;:4906.4150000340305,&quot;secureConnectionStart&quot;:4906.4150000340305,&quot;requestStart&quot;:5702.425000024959,&quot;responseStart&quot;:5922.395000001416,&quot;responseEnd&quot;:5926.674999995157,&quot;transferSize&quot;:11285,&quot;encodedBodySize&quot;:10672,&quot;decodedBodySize&quot;:39892,&quot;serverTiming&quot;:[],&quot;clientTime&quot;:&quot;2019-10-01T07:40:42.996Z&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;,&quot;url&quot;:&quot;https://my.apps.factset.com/navigator/company-security/all-estimates/MMM-US&quot;,&quot;platformTags&quot;:[],&quot;productPlatform&quot;:&quot;unknown&quot;,&quot;container&quot;:&quot;company-security_navigator&quot;,&quot;chainId&quot;:&quot;8dd5b0bf-a730-4bcf-bffe-a0d0dcfec6e0&quot;,&quot;applicationName&quot;:&quot;Company-Security Navigator&quot;,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:&quot;77.0.3865.90&quot;,&quot;OSName&quot;:&quot;Windows&quot;,&quot;OSVersion&quot;:&quot;10.0&quot;,&quot;__clp_index&quot;:&quot;web_perf_detail&quot;}}
+{&quot;@fields&quot;:{&quot;level&quot;:&quot;log&quot;,&quot;logType&quot;:&quot;resource&quot;,&quot;stalled&quot;:6.220000039320439,&quot;waiting&quot;:336.47499996004626,&quot;downloading&quot;:2.039999992121011,&quot;name&quot;:&quot;https://my.apps.factset.com/services/entity/graphql?opname=SearchEntities&quot;,&quot;entryType&quot;:&quot;resource&quot;,&quot;startTime&quot;:7327.155000006314,&quot;duration&quot;:344.7349999914877,&quot;initiatorType&quot;:&quot;fetch&quot;,&quot;nextHopProtocol&quot;:&quot;http/1.1&quot;,&quot;workerStart&quot;:0,&quot;redirectStart&quot;:0,&quot;redirectEnd&quot;:0,&quot;fetchStart&quot;:7327.155000006314,&quot;domainLookupStart&quot;:7327.155000006314,&quot;domainLookupEnd&quot;:7327.155000006314,&quot;connectStart&quot;:7327.155000006314,&quot;connectEnd&quot;:7327.155000006314,&quot;secureConnectionStart&quot;:7327.155000006314,&quot;requestStart&quot;:7333.375000045635,&quot;responseStart&quot;:7669.850000005681,&quot;responseEnd&quot;:7671.889999997802,&quot;transferSize&quot;:685,&quot;encodedBodySize&quot;:214,&quot;decodedBodySize&quot;:214,&quot;serverTiming&quot;:[],&quot;clientTime&quot;:&quot;2019-10-01T07:40:42.996Z&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;,&quot;url&quot;:&quot;https://my.apps.factset.com/navigator/company-security/all-estimates/MMM-US&quot;,&quot;platformTags&quot;:[],&quot;productPlatform&quot;:&quot;unknown&quot;,&quot;container&quot;:&quot;company-security_navigator&quot;,&quot;chainId&quot;:&quot;8dd5b0bf-a730-4bcf-bffe-a0d0dcfec6e0&quot;,&quot;applicationName&quot;:&quot;Company-Security Navigator&quot;,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:&quot;77.0.3865.90&quot;,&quot;OSName&quot;:&quot;Windows&quot;,&quot;OSVersion&quot;:&quot;10.0&quot;,&quot;__clp_index&quot;:&quot;web_perf_detail&quot;}}
+{&quot;@fields&quot;:{&quot;level&quot;:&quot;log&quot;,&quot;logType&quot;:&quot;resource&quot;,&quot;stalled&quot;:5.620000010821968,&quot;waiting&quot;:319.45999996969476,&quot;downloading&quot;:3.440000000409782,&quot;name&quot;:&quot;https://my.apps.factset.com/navigator/api/company-security/LHP/7203-JP?entityType=publicCompany</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="retry" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">retry</stringProp>
+                  <stringProp name="Argument.value">false&quot;,&quot;entryType&quot;:&quot;resource&quot;,&quot;startTime&quot;:7344.470000010915,&quot;duration&quot;:328.5199999809265,&quot;initiatorType&quot;:&quot;xmlhttprequest&quot;,&quot;nextHopProtocol&quot;:&quot;http/1.1&quot;,&quot;workerStart&quot;:0,&quot;redirectStart&quot;:0,&quot;redirectEnd&quot;:0,&quot;fetchStart&quot;:7344.470000010915,&quot;domainLookupStart&quot;:7344.470000010915,&quot;domainLookupEnd&quot;:7344.470000010915,&quot;connectStart&quot;:7344.470000010915,&quot;connectEnd&quot;:7344.470000010915,&quot;secureConnectionStart&quot;:7344.470000010915,&quot;requestStart&quot;:7350.090000021737,&quot;responseStart&quot;:7669.549999991432,&quot;responseEnd&quot;:7672.989999991842,&quot;transferSize&quot;:1337,&quot;encodedBodySize&quot;:829,&quot;decodedBodySize&quot;:2464,&quot;serverTiming&quot;:[],&quot;clientTime&quot;:&quot;2019-10-01T07:40:42.996Z&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;,&quot;url&quot;:&quot;https://my.apps.factset.com/navigator/company-security/all-estimates/MMM-US&quot;,&quot;platformTags&quot;:[],&quot;productPlatform&quot;:&quot;unknown&quot;,&quot;container&quot;:&quot;company-security_navigator&quot;,&quot;chainId&quot;:&quot;8dd5b0bf-a730-4bcf-bffe-a0d0dcfec6e0&quot;,&quot;applicationName&quot;:&quot;Company-Security Navigator&quot;,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:&quot;77.0.3865.90&quot;,&quot;OSName&quot;:&quot;Windows&quot;,&quot;OSVersion&quot;:&quot;10.0&quot;,&quot;__clp_index&quot;:&quot;web_perf_detail&quot;}}
+{&quot;@fields&quot;:{&quot;level&quot;:&quot;log&quot;,&quot;logType&quot;:&quot;resource&quot;,&quot;stalled&quot;:10.249999992083758,&quot;waiting&quot;:306.0399999958463,&quot;downloading&quot;:2.5749999913387,&quot;name&quot;:&quot;https://my.apps.factset.com/navigator/api/company-security/reports&quot;,&quot;entryType&quot;:&quot;resource&quot;,&quot;startTime&quot;:7349.350000033155,&quot;duration&quot;:318.86499997926876,&quot;initiatorType&quot;:&quot;xmlhttprequest&quot;,&quot;nextHopProtocol&quot;:&quot;http/1.1&quot;,&quot;workerStart&quot;:0,&quot;redirectStart&quot;:0,&quot;redirectEnd&quot;:0,&quot;fetchStart&quot;:7349.350000033155,&quot;domainLookupStart&quot;:7349.350000033155,&quot;domainLookupEnd&quot;:7349.350000033155,&quot;connectStart&quot;:7349.350000033155,&quot;connectEnd&quot;:7349.350000033155,&quot;secureConnectionStart&quot;:7349.350000033155,&quot;requestStart&quot;:7359.600000025239,&quot;responseStart&quot;:7665.640000021085,&quot;responseEnd&quot;:7668.215000012424,&quot;transferSize&quot;:10989,&quot;encodedBodySize&quot;:10480,&quot;decodedBodySize&quot;:106532,&quot;serverTiming&quot;:[],&quot;clientTime&quot;:&quot;2019-10-01T07:40:42.996Z&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;,&quot;url&quot;:&quot;https://my.apps.factset.com/navigator/company-security/all-estimates/MMM-US&quot;,&quot;platformTags&quot;:[],&quot;productPlatform&quot;:&quot;unknown&quot;,&quot;container&quot;:&quot;company-security_navigator&quot;,&quot;chainId&quot;:&quot;8dd5b0bf-a730-4bcf-bffe-a0d0dcfec6e0&quot;,&quot;applicationName&quot;:&quot;Company-Security Navigator&quot;,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:&quot;77.0.3865.90&quot;,&quot;OSName&quot;:&quot;Windows&quot;,&quot;OSVersion&quot;:&quot;10.0&quot;,&quot;__clp_index&quot;:&quot;web_perf_detail&quot;}}
+{&quot;@fields&quot;:{&quot;level&quot;:&quot;log&quot;,&quot;logType&quot;:&quot;resource&quot;,&quot;stalled&quot;:9.279999998398125,&quot;waiting&quot;:197.37000000895932,&quot;downloading&quot;:1.7499999958090484,&quot;name&quot;:&quot;https://my.apps.factset.com/services/UserSettings/settings?section=navigator&quot;,&quot;entryType&quot;:&quot;resource&quot;,&quot;startTime&quot;:7351.309999998193,&quot;duration&quot;:208.4000000031665,&quot;initiatorType&quot;:&quot;xmlhttprequest&quot;,&quot;nextHopProtocol&quot;:&quot;http/1.1&quot;,&quot;workerStart&quot;:0,&quot;redirectStart&quot;:0,&quot;redirectEnd&quot;:0,&quot;fetchStart&quot;:7351.309999998193,&quot;domainLookupStart&quot;:7351.309999998193,&quot;domainLookupEnd&quot;:7351.309999998193,&quot;connectStart&quot;:7351.309999998193,&quot;connectEnd&quot;:7351.309999998193,&quot;secureConnectionStart&quot;:7351.309999998193,&quot;requestStart&quot;:7360.589999996591,&quot;responseStart&quot;:7557.960000005551,&quot;responseEnd&quot;:7559.71000000136,&quot;transferSize&quot;:175,&quot;encodedBodySize&quot;:0,&quot;decodedBodySize&quot;:0,&quot;serverTiming&quot;:[],&quot;clientTime&quot;:&quot;2019-10-01T07:40:42.996Z&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;,&quot;url&quot;:&quot;https://my.apps.factset.com/navigator/company-security/all-estimates/MMM-US&quot;,&quot;platformTags&quot;:[],&quot;productPlatform&quot;:&quot;unknown&quot;,&quot;container&quot;:&quot;company-security_navigator&quot;,&quot;chainId&quot;:&quot;8dd5b0bf-a730-4bcf-bffe-a0d0dcfec6e0&quot;,&quot;applicationName&quot;:&quot;Company-Security Navigator&quot;,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:&quot;77.0.3865.90&quot;,&quot;OSName&quot;:&quot;Windows&quot;,&quot;OSVersion&quot;:&quot;10.0&quot;,&quot;__clp_index&quot;:&quot;web_perf_detail&quot;}}
+{&quot;@fields&quot;:{&quot;level&quot;:&quot;log&quot;,&quot;logType&quot;:&quot;resource&quot;,&quot;stalled&quot;:5.810000002384186,&quot;waiting&quot;:254.43000002996996,&quot;downloading&quot;:4.50999999884516,&quot;name&quot;:&quot;https://my.apps.factset.com/services/fds-web-frame/cobrowse/cobrowse.js&quot;,&quot;entryType&quot;:&quot;resource&quot;,&quot;startTime&quot;:7393.429999996442,&quot;duration&quot;:264.7500000311993,&quot;initiatorType&quot;:&quot;script&quot;,&quot;nextHopProtocol&quot;:&quot;http/1.1&quot;,&quot;workerStart&quot;:0,&quot;redirectStart&quot;:0,&quot;redirectEnd&quot;:0,&quot;fetchStart&quot;:7393.429999996442,&quot;domainLookupStart&quot;:7393.429999996442,&quot;domainLookupEnd&quot;:7393.429999996442,&quot;connectStart&quot;:7393.429999996442,&quot;connectEnd&quot;:7393.429999996442,&quot;secureConnectionStart&quot;:7393.429999996442,&quot;requestStart&quot;:7399.2399999988265,&quot;responseStart&quot;:7653.6700000287965,&quot;responseEnd&quot;:7658.180000027642,&quot;transferSize&quot;:958,&quot;encodedBodySize&quot;:533,&quot;decodedBodySize&quot;:533,&quot;serverTiming&quot;:[],&quot;clientTime&quot;:&quot;2019-10-01T07:40:42.997Z&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;,&quot;url&quot;:&quot;https://my.apps.factset.com/navigator/company-security/all-estimates/MMM-US&quot;,&quot;platformTags&quot;:[],&quot;productPlatform&quot;:&quot;unknown&quot;,&quot;container&quot;:&quot;company-security_navigator&quot;,&quot;chainId&quot;:&quot;8dd5b0bf-a730-4bcf-bffe-a0d0dcfec6e0&quot;,&quot;applicationName&quot;:&quot;Company-Security Navigator&quot;,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:&quot;77.0.3865.90&quot;,&quot;OSName&quot;:&quot;Windows&quot;,&quot;OSVersion&quot;:&quot;10.0&quot;,&quot;__clp_index&quot;:&quot;web_perf_detail&quot;}}
+{&quot;@fields&quot;:{&quot;level&quot;:&quot;log&quot;,&quot;logType&quot;:&quot;resource&quot;,&quot;stalled&quot;:5.30999997863546,&quot;waiting&quot;:299.715000030119,&quot;downloading&quot;:2.9299999587237835,&quot;name&quot;:&quot;https://my.apps.factset.com/services/fds-web-frame/graphql?opname=allAvailableTabs,userTabs,UserInfo,menuBookmarks,toolbarBookmarks,showHelpOverlay,initDborder,activeEntity,SidebarSettings,showUAG&quot;,&quot;entryType&quot;:&quot;resource&quot;,&quot;startTime&quot;:7560.945000033826,&quot;duration&quot;:307.9549999674782,&quot;initiatorType&quot;:&quot;fetch&quot;,&quot;nextHopProtocol&quot;:&quot;http/1.1&quot;,&quot;workerStart&quot;:0,&quot;redirectStart&quot;:0,&quot;redirectEnd&quot;:0,&quot;fetchStart&quot;:7560.945000033826,&quot;domainLookupStart&quot;:7560.945000033826,&quot;domainLookupEnd&quot;:7560.945000033826,&quot;connectStart&quot;:7560.945000033826,&quot;connectEnd&quot;:7560.945000033826,&quot;secureConnectionStart&quot;:7560.945000033826,&quot;requestStart&quot;:7566.255000012461,&quot;responseStart&quot;:7865.97000004258,&quot;responseEnd&quot;:7868.900000001304,&quot;transferSize&quot;:6003,&quot;encodedBodySize&quot;:5524,&quot;decodedBodySize&quot;:30774,&quot;serverTiming&quot;:[],&quot;clientTime&quot;:&quot;2019-10-01T07:40:42.997Z&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;,&quot;url&quot;:&quot;https://my.apps.factset.com/navigator/company-security/all-estimates/MMM-US&quot;,&quot;platformTags&quot;:[],&quot;productPlatform&quot;:&quot;unknown&quot;,&quot;container&quot;:&quot;company-security_navigator&quot;,&quot;chainId&quot;:&quot;8dd5b0bf-a730-4bcf-bffe-a0d0dcfec6e0&quot;,&quot;applicationName&quot;:&quot;Company-Security Navigator&quot;,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:&quot;77.0.3865.90&quot;,&quot;OSName&quot;:&quot;Windows&quot;,&quot;OSVersion&quot;:&quot;10.0&quot;,&quot;__clp_index&quot;:&quot;web_perf_detail&quot;}}
+{&quot;@fields&quot;:{&quot;level&quot;:&quot;log&quot;,&quot;logType&quot;:&quot;resource&quot;,&quot;stalled&quot;:0,&quot;waiting&quot;:0,&quot;downloading&quot;:8502.120000019204,&quot;name&quot;:&quot;https://xd-connect.apps.factset.com/&quot;,&quot;entryType&quot;:&quot;resource&quot;,&quot;startTime&quot;:7635.795000009239,&quot;duration&quot;:866.3250000099652,&quot;initiatorType&quot;:&quot;iframe&quot;,&quot;nextHopProtocol&quot;:&quot;http/1.1&quot;,&quot;workerStart&quot;:0,&quot;redirectStart&quot;:0,&quot;redirectEnd&quot;:0,&quot;fetchStart&quot;:7635.795000009239,&quot;domainLookupStart&quot;:0,&quot;domainLookupEnd&quot;:0,&quot;connectStart&quot;:0,&quot;connectEnd&quot;:0,&quot;secureConnectionStart&quot;:0,&quot;requestStart&quot;:0,&quot;responseStart&quot;:0,&quot;responseEnd&quot;:8502.120000019204,&quot;transferSize&quot;:0,&quot;encodedBodySize&quot;:0,&quot;decodedBodySize&quot;:0,&quot;serverTiming&quot;:[],&quot;noRequestStart&quot;:true,&quot;clientTime&quot;:&quot;2019-10-01T07:40:42.997Z&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;,&quot;url&quot;:&quot;https://my.apps.factset.com/navigator/company-security/all-estimates/MMM-US&quot;,&quot;platformTags&quot;:[],&quot;productPlatform&quot;:&quot;unknown&quot;,&quot;container&quot;:&quot;company-security_navigator&quot;,&quot;chainId&quot;:&quot;8dd5b0bf-a730-4bcf-bffe-a0d0dcfec6e0&quot;,&quot;applicationName&quot;:&quot;Company-Security Navigator&quot;,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:&quot;77.0.3865.90&quot;,&quot;OSName&quot;:&quot;Windows&quot;,&quot;OSVersion&quot;:&quot;10.0&quot;,&quot;__clp_index&quot;:&quot;web_perf_detail&quot;}}
+{&quot;@fields&quot;:{&quot;level&quot;:&quot;log&quot;,&quot;logType&quot;:&quot;resource&quot;,&quot;stalled&quot;:8.08499997947365,&quot;waiting&quot;:244.2600000067614,&quot;downloading&quot;:1.8350000027567148,&quot;name&quot;:&quot;https://my.apps.factset.com/services/fds-web-frame/graphql?opname=UnacknowledgedQuoteAlerts&quot;,&quot;entryType&quot;:&quot;resource&quot;,&quot;startTime&quot;:7707.265000033658,&quot;duration&quot;:254.17999998899177,&quot;initiatorType&quot;:&quot;xmlhttprequest&quot;,&quot;nextHopProtocol&quot;:&quot;http/1.1&quot;,&quot;workerStart&quot;:0,&quot;redirectStart&quot;:0,&quot;redirectEnd&quot;:0,&quot;fetchStart&quot;:7707.265000033658,&quot;domainLookupStart&quot;:7707.265000033658,&quot;domainLookupEnd&quot;:7707.265000033658,&quot;connectStart&quot;:7707.265000033658,&quot;connectEnd&quot;:7707.265000033658,&quot;secureConnectionStart&quot;:7707.265000033658,&quot;requestStart&quot;:7715.350000013132,&quot;responseStart&quot;:7959.610000019893,&quot;responseEnd&quot;:7961.44500002265,&quot;transferSize&quot;:477,&quot;encodedBodySize&quot;:43,&quot;decodedBodySize&quot;:43,&quot;serverTiming&quot;:[],&quot;clientTime&quot;:&quot;2019-10-01T07:40:42.997Z&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;,&quot;url&quot;:&quot;https://my.apps.factset.com/navigator/company-security/all-estimates/MMM-US&quot;,&quot;platformTags&quot;:[],&quot;productPlatform&quot;:&quot;unknown&quot;,&quot;container&quot;:&quot;company-security_navigator&quot;,&quot;chainId&quot;:&quot;8dd5b0bf-a730-4bcf-bffe-a0d0dcfec6e0&quot;,&quot;applicationName&quot;:&quot;Company-Security Navigator&quot;,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:&quot;77.0.3865.90&quot;,&quot;OSName&quot;:&quot;Windows&quot;,&quot;OSVersion&quot;:&quot;10.0&quot;,&quot;__clp_index&quot;:&quot;web_perf_detail&quot;}}
+{&quot;@fields&quot;:{&quot;level&quot;:&quot;log&quot;,&quot;logType&quot;:&quot;resource&quot;,&quot;stalled&quot;:15.439999988302588,&quot;waiting&quot;:199.22999996924773,&quot;downloading&quot;:2.470000006724149,&quot;name&quot;:&quot;https://my.apps.factset.com/services/UserSettings/settings?section=_MARQUEE_SETTINGS&quot;,&quot;entryType&quot;:&quot;resource&quot;,&quot;startTime&quot;:7714.115000038873,&quot;duration&quot;:217.13999996427447,&quot;initiatorType&quot;:&quot;xmlhttprequest&quot;,&quot;nextHopProtocol&quot;:&quot;http/1.1&quot;,&quot;workerStart&quot;:0,&quot;redirectStart&quot;:0,&quot;redirectEnd&quot;:0,&quot;fetchStart&quot;:7714.115000038873,&quot;domainLookupStart&quot;:7714.115000038873,&quot;domainLookupEnd&quot;:7714.115000038873,&quot;connectStart&quot;:7714.115000038873,&quot;connectEnd&quot;:7714.115000038873,&quot;secureConnectionStart&quot;:7714.115000038873,&quot;requestStart&quot;:7729.555000027176,&quot;responseStart&quot;:7928.784999996424,&quot;responseEnd&quot;:7931.255000003148,&quot;transferSize&quot;:1101,&quot;encodedBodySize&quot;:876,&quot;decodedBodySize&quot;:1726,&quot;serverTiming&quot;:[],&quot;clientTime&quot;:&quot;2019-10-01T07:40:42.997Z&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;,&quot;url&quot;:&quot;https://my.apps.factset.com/navigator/company-security/all-estimates/MMM-US&quot;,&quot;platformTags&quot;:[],&quot;productPlatform&quot;:&quot;unknown&quot;,&quot;container&quot;:&quot;company-security_navigator&quot;,&quot;chainId&quot;:&quot;8dd5b0bf-a730-4bcf-bffe-a0d0dcfec6e0&quot;,&quot;applicationName&quot;:&quot;Company-Security Navigator&quot;,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:&quot;77.0.3865.90&quot;,&quot;OSName&quot;:&quot;Windows&quot;,&quot;OSVersion&quot;:&quot;10.0&quot;,&quot;__clp_index&quot;:&quot;web_perf_detail&quot;}}
+{&quot;@fields&quot;:{&quot;level&quot;:&quot;log&quot;,&quot;logType&quot;:&quot;resource&quot;,&quot;stalled&quot;:6.074999982956797,&quot;waiting&quot;:287.16499998699874,&quot;downloading&quot;:390.3600000194274,&quot;name&quot;:&quot;https://my.apps.factset.com/services/RTSocket/static/5/ClientThread.min.js&quot;,&quot;entryType&quot;:&quot;resource&quot;,&quot;startTime&quot;:8079.31500003906,&quot;duration&quot;:683.5999999893829,&quot;initiatorType&quot;:&quot;other&quot;,&quot;nextHopProtocol&quot;:&quot;http/1.1&quot;,&quot;workerStart&quot;:0,&quot;redirectStart&quot;:0,&quot;redirectEnd&quot;:0,&quot;fetchStart&quot;:8079.31500003906,&quot;domainLookupStart&quot;:8079.31500003906,&quot;domainLookupEnd&quot;:8079.31500003906,&quot;connectStart&quot;:8079.31500003906,&quot;connectEnd&quot;:8079.31500003906,&quot;secureConnectionStart&quot;:8079.31500003906,&quot;requestStart&quot;:8085.3900000220165,&quot;responseStart&quot;:8372.555000009015,&quot;responseEnd&quot;:8762.915000028443,&quot;transferSize&quot;:97251,&quot;encodedBodySize&quot;:96791,&quot;decodedBodySize&quot;:302318,&quot;serverTiming&quot;:[],&quot;clientTime&quot;:&quot;2019-10-01T07:40:42.997Z&quot;,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&quot;,&quot;url&quot;:&quot;https://my.apps.factset.com/navigator/company-security/all-estimates/MMM-US&quot;,&quot;platformTags&quot;:[],&quot;productPlatform&quot;:&quot;unknown&quot;,&quot;container&quot;:&quot;company-security_navigator&quot;,&quot;chainId&quot;:&quot;8dd5b0bf-a730-4bcf-bffe-a0d0dcfec6e0&quot;,&quot;applicationName&quot;:&quot;Company-Security Navigator&quot;,&quot;browserName&quot;:&quot;Chrome&quot;,&quot;browserVersion&quot;:&quot;77.0.3865.90&quot;,&quot;OSName&quot;:&quot;Windows&quot;,&quot;OSVersion&quot;:&quot;10.0&quot;,&quot;__clp_index&quot;:&quot;web_perf_detail&quot;}}
+{&quot;@fields&quot;:{&quot;level&quot;:&quot;log&quot;,&quot;logType&quot;:&quot;resource&quot;,&quot;stalled&quot;:0,&quot;waiting&quot;:0,&quot;downloading&quot;:9670.87500001071,&quot;name&quot;:&quot;https://estimate-reports.apps.factset.com/all-estimates/index.html?system=LinuxOnly</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">services/CLP/</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Origin" elementType="Header">
+                  <stringProp name="Header.name">Origin</stringProp>
+                  <stringProp name="Header.value">https://my.apps.factset.com</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                  <stringProp name="Header.value">cors</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">text/plain</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Site" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                  <stringProp name="Header.value">same-origin</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[17]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+              <doubleProp>
+                <name>RandomTimer.range</name>
+                <value>3951.0</value>
+                <savedValue>0.0</savedValue>
+              </doubleProp>
+              <stringProp name="ConstantTimer.delay">1975.5</stringProp>
+              <stringProp name="TestPlan.comments">Recorded time was 3951 milliseconds</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://my.apps.factset.com/services/fds-web-frame/graphql?opname=IdleTimeout" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">[{&quot;operationName&quot;:&quot;IdleTimeout&quot;,&quot;variables&quot;:{},&quot;query&quot;:&quot;query IdleTimeout {\n  idleTimeout\n}\n&quot;}]</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_2}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">services/fds-web-frame/graphql?opname=IdleTimeout</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="accept" elementType="Header">
+                  <stringProp name="Header.name">accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="Origin" elementType="Header">
+                  <stringProp name="Header.name">Origin</stringProp>
+                  <stringProp name="Header.value">https://my.apps.factset.com</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                  <stringProp name="Header.value">cors</stringProp>
+                </elementProp>
+                <elementProp name="content-type" elementType="Header">
+                  <stringProp name="Header.name">content-type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="Sec-Fetch-Site" elementType="Header">
+                  <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                  <stringProp name="Header.value">same-origin</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[18]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+              <doubleProp>
+                <name>RandomTimer.range</name>
+                <value>9893.0</value>
+                <savedValue>0.0</savedValue>
+              </doubleProp>
+              <stringProp name="ConstantTimer.delay">4946.5</stringProp>
+              <stringProp name="TestPlan.comments">Recorded time was 9893 milliseconds</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
