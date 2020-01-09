@@ -1,0 +1,1 @@
+Videos have moved [here](/kb/Videos)

@@ -1,0 +1,10 @@
+{
+  "name": "Apache JMeter",
+  "description": "Apache JMeter Instance for factset.io",
+  "repository": "https://github.factset.com/abarker/jmeter",
+  "logo": "https://raw.github.factset.com/abarker/jmeter/master/logo.png",
+  "keywords": ["test", "load", "performance", "stress"],
+  "env": {
+    "BUILDPACK_URL": "https://github.factset.com/abarker/jmeter-buildpack.git"
+  }
+}

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<project name="Project_Name" default="full-suite"  basedir="./">
+ <taskdef
+    name="jmeter"
+    classname="org.programmerplanet.ant.taskdefs.jmeter.JMeterTask"/>
+
+ 
+    <!-- GLOBAL VARIABLES -->
+    <property name="Git_Repo_Name" value="temp"/>
+	<property name="JMeter_Setup" value="temp"/>
+    <!-- END -->
+ 
+    <!-- AVAILABLE COMMANDS -->
+    <target name="full-suite" depends="delete_results_files_if_exists, jmeter_src" />
+    <!-- END -->
+
+	<target name="delete_results_files_if_exists" >
+		<delete file="${basedir}/../${Git_Repo_Name}/JMeterResults.jtl"/>
+		<delete file="${basedir}/../${Git_Repo_Name}/JMeterResults.html"/>
+	</target>
+
+ 
+
+	<!-- jmeter_src -->
+	 <target name="jmeter_src">
+		<jmeter
+				jmeterhome="${basedir}/../${JMeter_Setup}"
+				resultlog="${basedir}/../${Git_Repo_Name}/JMeterResults.jtl"  failureProperty="test.failed_2_2_B">
+				<testplans dir="${basedir}/../${Git_Repo_Name}/Specs" includes="**/*.jmx"/>
+				<jmeterarg value="-Jjmeter.save.saveservice.output_format=xml"/>
+				<jmeterarg value="--loglevel"/>
+			<jmeterarg value="jmeter.util=DEBUG"/>
+		</jmeter>
+		<xslt
+		in="${basedir}/../${Git_Repo_Name}/JMeterResults.jtl"
+		out="${basedir}/../${Git_Repo_Name}/JMeterResults.html"
+		style="${basedir}/../${JMeter_Setup}/extras/Advanced-jmeter-results.xsl"/>
+    </target>
+
+ 
+</project>

@@ -1,0 +1,55 @@
+sudo: false
+language: java
+
+# skip default "install" command
+install: true
+
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
+
+env:
+  global:
+    - SKIP_TAR="-x distTar -x distTarSha512 -x signDistTar -x distTarSource -x distTarSourceSha512 -x signDistTarSource"
+    - ORG_GRADLE_PROJECT_checksumFailOn=build_finish
+    - ORG_GRADLE_PROJECT_checksumPrint=true
+
+matrix:
+  include:
+    - name: Tests with OpenJDK 8 + code coverage
+      jdk: openjdk8
+      script:
+        - xvfb-run ./gradlew build jacocoReport $SKIP_TAR
+      after_success:
+        - bash <(curl -s https://codecov.io/bash)
+    - name: Tests with OpenJDK 11
+      jdk: openjdk11
+      addons:
+        apt:
+          packages:
+            - language-pack-fr
+      env:
+        - TZ=Pacific/Chatham # flips between +12:45 and +13:45
+        - LANG=fr_FR.UTF-8
+        - LC_ALL=fr_FR.UTF-8
+      script:
+        # This job verifies headless mode to ensure Apache JMeter is workable in headless as well
+        # Spotless and Checksyle are skipped here to save some time. They are verified anyway in Java 8 and Java 13 builds, so skipping them for Java 11 does not harm
+        - ./gradlew build -Djava.awt.headless=true -Duser.language=fr -Duser.country=FR -PskipCheckstyle -PskipSpotless $SKIP_TAR
+    # Java 12 is not here because it has been superceeded by Java 13
+    # Tests with Java 12 do not surface much new, so Java 11 (LTS) and Java 13 (non-LTS) are enough for "post Java 9" testing
+    - name: Tests with OpenJDK 13
+      jdk: openjdk13
+      script:
+        # ./gradlew wrapper task kills license header from gradle-wrapper.properties, so we use grep/echo to update the file
+        - grep -v Sha256 gradle/wrapper/gradle-wrapper.properties | grep -v Url > gradle/wrapper/gradle-wrapper.properties2
+        - echo 'distributionUrl=https\://services.gradle.org/distributions-snapshots/gradle-6.0-20191001230020+0000-bin.zip' >> gradle/wrapper/gradle-wrapper.properties2
+        - mv gradle/wrapper/gradle-wrapper.properties2 gradle/wrapper/gradle-wrapper.properties
+        # Spotless and Checkstyle are executed here as well to test if the plugins are compatible with Gradle 6.0 / Java 13
+        - xvfb-run ./gradlew build -PchecksumFailOn=never -PchecksumPrint=false $SKIP_TAR
+        # Show difference between the new dependencies and old ones. It is expected that new Gradle version might bring new dependencies
+        - diff -u checksum.xml build/checksum/checksum.xml || true

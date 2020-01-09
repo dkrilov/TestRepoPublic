@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.1.1 r1855137">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="BZT Generated Test Plan" enabled="true">
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <stringProp name="TestPlan.comments"></stringProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="BrowsingFilterAuthor" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">0</stringProp>
+        <stringProp name="ThreadGroup.start_time"></stringProp>
+        <stringProp name="ThreadGroup.end_time"></stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration">0</stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="Environment" elementType="Argument">
+              <stringProp name="Argument.name">Environment</stringProp>
+              <stringProp name="Argument.value">${__P(Stage,QA)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="Base" elementType="Argument">
+              <stringProp name="Argument.name">Base</stringProp>
+              <stringProp name="Argument.value">${__BeanShell(import org.apache.jmeter.services.FileServer; FileServer.getFileServer().getBaseDir().split(&quot;(?i)spec&quot;)[0]+&quot;Config/&quot;;)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="Token" elementType="Argument">
+              <stringProp name="Argument.name">Token</stringProp>
+              <stringProp name="Argument.value">${__P(Token)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="filename">${Base}${Environment}.csv</stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">URL</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="Cache" enabled="true">
+          <boolProp name="clearEachIteration">true</boolProp>
+          <boolProp name="useExpires">true</boolProp>
+        </CacheManager>
+        <hashTree/>
+        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="Cookies" enabled="true">
+          <collectionProp name="CookieManager.cookies"/>
+          <boolProp name="CookieManager.clearEachIteration">true</boolProp>
+        </CookieManager>
+        <hashTree/>
+        <DNSCacheManager guiclass="DNSCachePanel" testclass="DNSCacheManager" testname="DNS Cache Manager" enabled="true">
+          <collectionProp name="DNSCacheManager.servers"/>
+          <boolProp name="DNSCacheManager.clearEachIteration">false</boolProp>
+          <boolProp name="DNSCacheManager.isCustomResolver">false</boolProp>
+        </DNSCacheManager>
+        <hashTree/>
+        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="Defaults" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="user_defined" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <boolProp name="HTTPSampler.image_parser">true</boolProp>
+          <boolProp name="HTTPSampler.concurrentDwn">true</boolProp>
+          <stringProp name="HTTPSampler.concurrentPool">4</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </ConfigTestElement>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Loginuser - Request 1" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">paweb16b04.pc.factset.com</stringProp>
+          <stringProp name="HTTPSampler.port">5000</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/PartnersAnywhereApi/api/loginuser</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout">0</stringProp>
+          <stringProp name="HTTPSampler.response_timeout">0</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <AuthManager guiclass="AuthPanel" testclass="AuthManager" testname="HTTP Authorization Manager" enabled="true">
+            <collectionProp name="AuthManager.auth_list">
+              <elementProp name="" elementType="Authorization">
+                <stringProp name="Authorization.url">https://paweb16b04.pc.factset.com:5000/</stringProp>
+                <stringProp name="Authorization.username">Jason Adams</stringProp>
+                <stringProp name="Authorization.password">undefined</stringProp>
+                <stringProp name="Authorization.domain"></stringProp>
+                <stringProp name="Authorization.realm"></stringProp>
+              </elementProp>
+            </collectionProp>
+          </AuthManager>
+          <hashTree/>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="Headers" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">ASP.NET_SessionId</stringProp>
+                <stringProp name="Header.value"></stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Cookie</stringProp>
+                <stringProp name="Header.value"></stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">dataEnvironmentId</stringProp>
+                <stringProp name="Header.value">2</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Valid HTTP Status Codes" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">8</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.gui.JSONPathAssertionGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion" testname="Match content of Status" enabled="true">
+            <stringProp name="JSON_PATH">$[&apos;Status&apos;][&apos;Error&apos;]</stringProp>
+            <stringProp name="EXPECTED_VALUE">false</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">true</boolProp>
+            <stringProp name="INPUT_FORMAT">JSON</stringProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion>
+          <hashTree/>
+          <DurationAssertion guiclass="DurationAssertionGui" testclass="DurationAssertion" testname="Timeout Check" enabled="true">
+            <stringProp name="DurationAssertion.duration">0</stringProp>
+          </DurationAssertion>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Partners-CSRF-Token" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">true</stringProp>
+            <stringProp name="RegexExtractor.refname">Partners-CSRF-Token</stringProp>
+            <stringProp name="RegexExtractor.regex">Partners-CSRF-Token:(.*)</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">False</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Cookie" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">true</stringProp>
+            <stringProp name="RegexExtractor.refname">Cookie</stringProp>
+            <stringProp name="RegexExtractor.regex">ASP.NET_SessionId=(.+?);</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">False</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor" enabled="true">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">String req_data=vars.get(&quot;Cookie&quot;);
+log.info(&quot;Token is=&quot;+req_data);</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Test Action" enabled="true">
+          <intProp name="ActionProcessor.action">1</intProp>
+          <intProp name="ActionProcessor.target">0</intProp>
+          <stringProp name="ActionProcessor.duration">0</stringProp>
+        </TestAction>
+        <hashTree>
+          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223PostProcessor" enabled="true">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">//imports
+import groovy.json.JsonSlurper
+import java.io.*
+import jxl.*
+import com.eviware.soapui.impl.wsdl.teststeps.*
+
+//Getting cookie value to pass Asp.net Session ID 
+
+def CookieNew = context.expand( &apos;${Loginuser - Request 1#RawResponse}&apos; )
+log.info CookieNew
+
+def CookieLength = CookieNew.substring(0, CookieNew.lastIndexOf(&quot;ASP.NET_SessionId=&quot;))
+log.info CookieLength.length()
+Cookie = CookieNew.drop(CookieLength.length())
+Cookie = Cookie.substring(0,Cookie.indexOf(&apos;;&apos;))
+log.info Cookie 
+
+def CookieLength1 = CookieNew.substring(0, CookieNew.lastIndexOf(&quot;Partners-Auth-Token=&quot;))
+log.info CookieLength1.length()
+Cookie1 = CookieNew.drop(CookieLength1.length())
+Cookie1 = Cookie1.substring(0,Cookie1.indexOf(&apos;;&apos;))
+log.info Cookie1 
+
+finalCookie = Cookie + &quot;; &quot; +  Cookie1 + &quot;; dataEnvironmentId=2&quot;
+log.info finalCookie
+
+def harResponse = context.expand( &apos;${Loginuser - Request 1#HarResponse#$[\&apos;headers\&apos;][6][\&apos;value\&apos;]}&apos; )
+log.info harResponse
+
+
+testRunner.testCase.testSuite.project.setPropertyValue( &quot;Cookie&quot;, finalCookie) 
+testRunner.testCase.testSuite.project.setPropertyValue( &quot;Partners-CSRF-Token&quot;, harResponse)</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+          </JSR223PostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Home" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">paweb16b04.pc.factset.com</stringProp>
+          <stringProp name="HTTPSampler.port">5000</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/PartnersAnywhereApi/api/recentDocuments/get</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout">0</stringProp>
+          <stringProp name="HTTPSampler.response_timeout">0</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="Headers" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Cookie</stringProp>
+                <stringProp name="Header.value">${Cookie}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Partners-CSRF-Token</stringProp>
+                <stringProp name="Header.value">${Partners-CSRF-Token}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Valid HTTP Status Codes" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">8</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <DurationAssertion guiclass="DurationAssertionGui" testclass="DurationAssertion" testname="Timeout Check" enabled="true">
+            <stringProp name="DurationAssertion.duration">0</stringProp>
+          </DurationAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="OpenMyEquityResearch" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">paweb16b04.pc.factset.com</stringProp>
+          <stringProp name="HTTPSampler.port">5000</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/PartnersAnywhereApi/api/BrowseDocuments/GetDefinitions?strKeyword=WEB_TAB1</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout">0</stringProp>
+          <stringProp name="HTTPSampler.response_timeout">0</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="Headers" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Cookie</stringProp>
+                <stringProp name="Header.value">${Cookie}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Partners-CSRF-Token</stringProp>
+                <stringProp name="Header.value">${Partners-CSRF-Token}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Valid HTTP Status Codes" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">8</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <DurationAssertion guiclass="DurationAssertionGui" testclass="DurationAssertion" testname="Timeout Check" enabled="true">
+            <stringProp name="DurationAssertion.duration">0</stringProp>
+          </DurationAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GetDocuments" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;Filters&quot;:[{&quot;Constraint&quot;:0,&quot;Mnemo&quot;:&quot;DTIMEARCHIVAGE&quot;,&quot;Title&quot;:&quot;Minimum Submission Date&quot;,&quot;Type&quot;:2,&quot;Values&quot;:{&quot;Type&quot;:2,&quot;Variants&quot;:[{&quot;Value&quot;:&quot;1548201600000&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;1548201600000&quot;}]},&quot;MandatoryString&quot;:&quot;FALSE&quot;,&quot;Visible&quot;:true,&quot;FldValues&quot;:{&quot;Type&quot;:2,&quot;Variants&quot;:[{&quot;Value&quot;:&quot;1548261569000&quot;}]},&quot;IsMandatory&quot;:false,&quot;zIndex&quot;:96},{&quot;Constraint&quot;:1,&quot;Mnemo&quot;:&quot;DTIMEARCHIVAGE&quot;,&quot;Title&quot;:&quot;Maximum Submission Date&quot;,&quot;Type&quot;:2,&quot;Values&quot;:{&quot;Type&quot;:2,&quot;Variants&quot;:[{&quot;Value&quot;:&quot;1555974000000&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;1555974000000&quot;}]},&quot;MandatoryString&quot;:&quot;FALSE&quot;,&quot;Visible&quot;:true,&quot;FldValues&quot;:{&quot;Type&quot;:2,&quot;Variants&quot;:[{&quot;Value&quot;:&quot;1556037569000&quot;}]},&quot;IsMandatory&quot;:false,&quot;zIndex&quot;:95},{&quot;Constraint&quot;:2,&quot;Mnemo&quot;:&quot;DOCTYPE&quot;,&quot;Title&quot;:&quot;Type&quot;,&quot;Type&quot;:6,&quot;Values&quot;:{&quot;Type&quot;:6,&quot;Variants&quot;:[{&quot;Value&quot;:&quot;20&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;20&quot;},{&quot;Value&quot;:&quot;510&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;510&quot;},{&quot;Value&quot;:&quot;509&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;509&quot;},{&quot;Value&quot;:&quot;60&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;60&quot;},{&quot;Value&quot;:&quot;75&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;75&quot;},{&quot;Value&quot;:&quot;70&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;70&quot;},{&quot;Value&quot;:&quot;505&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;505&quot;},{&quot;Value&quot;:&quot;80&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;80&quot;},{&quot;Value&quot;:&quot;180&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;180&quot;},{&quot;Value&quot;:&quot;190&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;190&quot;},{&quot;Value&quot;:&quot;179&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;179&quot;},{&quot;Value&quot;:&quot;512&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;512&quot;},{&quot;Value&quot;:&quot;514&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;514&quot;},{&quot;Value&quot;:&quot;517&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;517&quot;},{&quot;Value&quot;:&quot;515&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;515&quot;},{&quot;Value&quot;:&quot;511&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;511&quot;},{&quot;Value&quot;:&quot;248&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;248&quot;},{&quot;Value&quot;:&quot;251&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;251&quot;},{&quot;Value&quot;:&quot;249&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;249&quot;},{&quot;Value&quot;:&quot;250&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;250&quot;},{&quot;Value&quot;:&quot;16&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;16&quot;},{&quot;Value&quot;:&quot;17&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;17&quot;},{&quot;Value&quot;:&quot;18&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;18&quot;},{&quot;Value&quot;:&quot;508&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;508&quot;},{&quot;Value&quot;:&quot;531&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;531&quot;},{&quot;Value&quot;:&quot;15&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;15&quot;},{&quot;Value&quot;:&quot;19&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;19&quot;}]},&quot;MandatoryString&quot;:&quot;TRUE&quot;,&quot;Visible&quot;:true,&quot;FldValues&quot;:{&quot;Type&quot;:6,&quot;Variants&quot;:[{&quot;Value&quot;:&quot;20&quot;},{&quot;Value&quot;:&quot;510&quot;},{&quot;Value&quot;:&quot;509&quot;},{&quot;Value&quot;:&quot;60&quot;},{&quot;Value&quot;:&quot;75&quot;},{&quot;Value&quot;:&quot;70&quot;},{&quot;Value&quot;:&quot;505&quot;},{&quot;Value&quot;:&quot;80&quot;},{&quot;Value&quot;:&quot;180&quot;},{&quot;Value&quot;:&quot;190&quot;},{&quot;Value&quot;:&quot;179&quot;},{&quot;Value&quot;:&quot;512&quot;},{&quot;Value&quot;:&quot;514&quot;},{&quot;Value&quot;:&quot;517&quot;},{&quot;Value&quot;:&quot;515&quot;},{&quot;Value&quot;:&quot;511&quot;},{&quot;Value&quot;:&quot;248&quot;},{&quot;Value&quot;:&quot;251&quot;},{&quot;Value&quot;:&quot;249&quot;},{&quot;Value&quot;:&quot;250&quot;},{&quot;Value&quot;:&quot;16&quot;},{&quot;Value&quot;:&quot;17&quot;},{&quot;Value&quot;:&quot;18&quot;},{&quot;Value&quot;:&quot;508&quot;},{&quot;Value&quot;:&quot;531&quot;},{&quot;Value&quot;:&quot;15&quot;},{&quot;Value&quot;:&quot;19&quot;}]},&quot;IsMandatory&quot;:true,&quot;zIndex&quot;:90},{&quot;Constraint&quot;:2,&quot;Mnemo&quot;:&quot;DOCSTATUS&quot;,&quot;Title&quot;:&quot;Status&quot;,&quot;Type&quot;:6,&quot;Values&quot;:{&quot;Type&quot;:6,&quot;Variants&quot;:[{&quot;Value&quot;:&quot;1&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;1&quot;},{&quot;Value&quot;:&quot;2&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;2&quot;},{&quot;Value&quot;:&quot;3&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;3&quot;},{&quot;Value&quot;:&quot;6&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;6&quot;},{&quot;Value&quot;:&quot;7&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;7&quot;},{&quot;Value&quot;:&quot;12&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;12&quot;},{&quot;Value&quot;:&quot;13&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;13&quot;},{&quot;Value&quot;:&quot;14&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;14&quot;},{&quot;Value&quot;:&quot;9&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;9&quot;},{&quot;Value&quot;:&quot;10&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;10&quot;},{&quot;Value&quot;:&quot;11&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;11&quot;},{&quot;Value&quot;:&quot;15&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;15&quot;}]},&quot;MandatoryString&quot;:&quot;TRUE&quot;,&quot;Visible&quot;:true,&quot;FldValues&quot;:{&quot;Type&quot;:6,&quot;Variants&quot;:[{&quot;Value&quot;:&quot;1&quot;},{&quot;Value&quot;:&quot;2&quot;},{&quot;Value&quot;:&quot;3&quot;},{&quot;Value&quot;:&quot;6&quot;},{&quot;Value&quot;:&quot;7&quot;},{&quot;Value&quot;:&quot;12&quot;},{&quot;Value&quot;:&quot;13&quot;},{&quot;Value&quot;:&quot;14&quot;},{&quot;Value&quot;:&quot;9&quot;},{&quot;Value&quot;:&quot;10&quot;},{&quot;Value&quot;:&quot;11&quot;},{&quot;Value&quot;:&quot;15&quot;}]},&quot;IsMandatory&quot;:true,&quot;zIndex&quot;:89}],&quot;FldModel&quot;:&quot;WEB_TAB1&quot;,&quot;Pagination&quot;:{&quot;NumberPerPage&quot;:50,&quot;PageNumber&quot;:1,&quot;TotalPages&quot;:1,&quot;DisplayOptions&quot;:&quot;20,50,100&quot;,&quot;TotalDocuments&quot;:1,&quot;UsePagination&quot;:true},&quot;Sorting&quot;:{&quot;ColumnDirection&quot;:&quot;DESC&quot;,&quot;ColumnMnemo&quot;:&quot;DtimeArchivage&quot;}}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">paweb16b04.pc.factset.com</stringProp>
+          <stringProp name="HTTPSampler.port">5000</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/PartnersAnywhereApi/api/BrowseDocuments/GetDocuments</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout">0</stringProp>
+          <stringProp name="HTTPSampler.response_timeout">0</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="Headers" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Cookie</stringProp>
+                <stringProp name="Header.value">${Cookie}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Partners-CSRF-Token</stringProp>
+                <stringProp name="Header.value">${Partners-CSRF-Token}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Valid HTTP Status Codes" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">8</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <DurationAssertion guiclass="DurationAssertionGui" testclass="DurationAssertion" testname="Timeout Check" enabled="true">
+            <stringProp name="DurationAssertion.duration">0</stringProp>
+          </DurationAssertion>
+          <hashTree/>
+        </hashTree>
+        <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration" enabled="true">
+          <boolProp name="autocommit">true</boolProp>
+          <stringProp name="checkQuery">select 1</stringProp>
+          <stringProp name="connectionAge">5000</stringProp>
+          <stringProp name="dataSource">Tellus</stringProp>
+          <stringProp name="dbUrl">jdbc:sqlserver://pasqldevb02;databaseName=Partners_Ref</stringProp>
+          <stringProp name="driver">com.microsoft.sqlserver.jdbc.SQLServerDriver</stringProp>
+          <stringProp name="initQuery"></stringProp>
+          <boolProp name="keepAlive">true</boolProp>
+          <stringProp name="password">7nWGJmrDL</stringProp>
+          <stringProp name="poolMax">0</stringProp>
+          <stringProp name="timeout">10000</stringProp>
+          <stringProp name="transactionIsolation">DEFAULT</stringProp>
+          <stringProp name="trimInterval">60000</stringProp>
+          <stringProp name="username">svc-sqlpartners</stringProp>
+        </JDBCDataSource>
+        <hashTree/>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request" enabled="true">
+          <stringProp name="dataSource">Tellus</stringProp>
+          <stringProp name="query">SELECT parametervalue as parametervalue2,  &apos;[{&quot;Children&quot;:null,&quot;Value&quot;:&quot;&apos; + replace(ParameterValue ,&apos;,&apos;,&apos;&quot;,&quot;Type&quot;:6},{&quot;Children&quot;:null,&quot;Value&quot;:&quot;&apos;) + &apos;&quot;,&quot;Type&quot;:6}]&apos; as querystring, parametervalue3 = STUFF(
+
+             (SELECT &apos;,&apos; + name
+
+              FROM ((select t.id as testid,parametervalue,c.id as compid,c.first_name + &apos; &apos; + c.last_name as name from attr_user c
+
+                    inner join (
+
+                    SELECT id,parametervalue, RTRIM(value) as compid
+
+                    FROM web_parameters
+
+                     CROSS APPLY STRING_SPLIT(parametervalue, &apos;,&apos;) where MapTestCase = &apos;TC_BRAuthor&apos;)t on t.compid=c.id)) t1
+
+              WHERE t1.testid = t2.testid
+
+              FOR XML PATH (&apos;&apos;))
+
+             , 1, 1, &apos;&apos;) from ((select t.id as testid,parametervalue,c.id as compid,c.first_name + &apos; &apos; + c.last_name as name from attr_user c
+
+                    inner join (
+
+                    SELECT id, parametervalue,RTRIM(value) as compid
+
+                    FROM web_parameters
+
+                     CROSS APPLY STRING_SPLIT(parametervalue, &apos;,&apos;)where MapTestCase = &apos;TC_BRAuthor&apos;)t on t.compid=c.id)) t2
+
+group by testid,parametervalue;</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="variableNames">parametervalue2,querystring,parametervalue3</stringProp>
+        </JDBCSampler>
+        <hashTree/>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
+          <boolProp name="displayJMeterProperties">false</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
+        <hashTree/>
+        <ForeachController guiclass="ForeachControlPanel" testclass="ForeachController" testname="ForEach Controller" enabled="true">
+          <stringProp name="ForeachController.inputVal">querystring</stringProp>
+          <stringProp name="ForeachController.returnVal">iterator</stringProp>
+          <boolProp name="ForeachController.useSeparator">true</boolProp>
+        </ForeachController>
+        <hashTree>
+          <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="Counter" enabled="true">
+            <stringProp name="CounterConfig.start">1</stringProp>
+            <stringProp name="CounterConfig.end">10</stringProp>
+            <stringProp name="CounterConfig.incr">1</stringProp>
+            <stringProp name="CounterConfig.name">Counter</stringProp>
+            <stringProp name="CounterConfig.format"></stringProp>
+            <boolProp name="CounterConfig.per_user">false</boolProp>
+          </CounterConfig>
+          <hashTree/>
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="GetMinMaxDate" enabled="true">
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="script">use (groovy.time.TimeCategory) {
+
+ def datemax = new Date()
+def datemin=datemax-3.months
+long MinSubmissionDate=datemin.getTime()
+//log.info MinSubmissionDate
+long MaxSubmissionDate=datemax.getTime()
+//print(Date.parseToStringDate(MaxSubmissionDate))
+log.info(MinSubmissionDate + &quot; - It is int&quot;);
+
+vars.put(&quot;#TestCase#MinSubmissionDate&quot;,String.valueOf(MinSubmissionDate))
+vars.put(&quot;#TestCase#MaxSubmissionDate&quot;,String.valueOf(MaxSubmissionDate))
+
+}
+</stringProp>
+            <stringProp name="scriptLanguage">groovy</stringProp>
+          </JSR223Sampler>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="FilterAuthor" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;Filters&quot;:[{&quot;Constraint&quot;:0,&quot;Mnemo&quot;:&quot;DTIMEARCHIVAGE&quot;,&quot;Title&quot;:&quot;Minimum Submission Date&quot;,&quot;Type&quot;:2,&quot;Values&quot;:{&quot;Type&quot;:2,&quot;Variants&quot;:[{&quot;Value&quot;:&quot;${#TestCase#MinSubmissionDate}&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;1552953600000&quot;}]},&quot;MandatoryString&quot;:&quot;FALSE&quot;,&quot;Visible&quot;:true,&quot;FldValues&quot;:{&quot;Type&quot;:2,&quot;Variants&quot;:[{&quot;Value&quot;:&quot;1553005084000&quot;}]},&quot;IsMandatory&quot;:false,&quot;zIndex&quot;:96,&quot;preselectedValues&quot;:&quot;1552953600000&quot;},{&quot;Constraint&quot;:1,&quot;Mnemo&quot;:&quot;DTIMEARCHIVAGE&quot;,&quot;Title&quot;:&quot;Maximum Submission Date&quot;,&quot;Type&quot;:2,&quot;Values&quot;:{&quot;Type&quot;:2,&quot;Variants&quot;:[{&quot;Value&quot;:&quot;${#TestCase#MaxSubmissionDate}&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;1560898800000&quot;}]},&quot;MandatoryString&quot;:&quot;FALSE&quot;,&quot;Visible&quot;:true,&quot;FldValues&quot;:{&quot;Type&quot;:2,&quot;Variants&quot;:[{&quot;Value&quot;:&quot;1560953884000&quot;}]},&quot;IsMandatory&quot;:false,&quot;zIndex&quot;:95,&quot;preselectedValues&quot;:&quot;1560898800000&quot;},{&quot;Constraint&quot;:2,&quot;Mnemo&quot;:&quot;USER&quot;,&quot;Title&quot;:&quot;Authors&quot;,&quot;Type&quot;:6,&quot;Values&quot;:{&quot;Type&quot;:6,&quot;Variants&quot;:${iterator}},&quot;MandatoryString&quot;:&quot;FALSE&quot;,&quot;Visible&quot;:true,&quot;FldValues&quot;:{&quot;Type&quot;:6,&quot;Variants&quot;:[]},&quot;IsMandatory&quot;:false,&quot;zIndex&quot;:92},{&quot;Constraint&quot;:2,&quot;Mnemo&quot;:&quot;DOCTYPE&quot;,&quot;Title&quot;:&quot;Type&quot;,&quot;Type&quot;:6,&quot;Values&quot;:{&quot;Type&quot;:6,&quot;Variants&quot;:[{&quot;Value&quot;:&quot;20&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;20&quot;},{&quot;Value&quot;:&quot;510&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;510&quot;},{&quot;Value&quot;:&quot;509&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;509&quot;},{&quot;Value&quot;:&quot;60&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;60&quot;},{&quot;Value&quot;:&quot;75&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;75&quot;},{&quot;Value&quot;:&quot;70&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;70&quot;},{&quot;Value&quot;:&quot;505&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;505&quot;},{&quot;Value&quot;:&quot;80&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;80&quot;},{&quot;Value&quot;:&quot;180&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;180&quot;},{&quot;Value&quot;:&quot;190&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;190&quot;},{&quot;Value&quot;:&quot;179&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;179&quot;},{&quot;Value&quot;:&quot;512&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;512&quot;},{&quot;Value&quot;:&quot;514&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;514&quot;},{&quot;Value&quot;:&quot;517&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;517&quot;},{&quot;Value&quot;:&quot;515&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;515&quot;},{&quot;Value&quot;:&quot;511&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;511&quot;},{&quot;Value&quot;:&quot;248&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;248&quot;},{&quot;Value&quot;:&quot;251&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;251&quot;},{&quot;Value&quot;:&quot;249&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;249&quot;},{&quot;Value&quot;:&quot;250&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;250&quot;},{&quot;Value&quot;:&quot;16&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;16&quot;},{&quot;Value&quot;:&quot;17&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;17&quot;},{&quot;Value&quot;:&quot;18&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;18&quot;},{&quot;Value&quot;:&quot;508&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;508&quot;},{&quot;Value&quot;:&quot;531&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;531&quot;},{&quot;Value&quot;:&quot;15&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;15&quot;},{&quot;Value&quot;:&quot;19&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;19&quot;}]},&quot;MandatoryString&quot;:&quot;TRUE&quot;,&quot;Visible&quot;:true,&quot;FldValues&quot;:{&quot;Type&quot;:6,&quot;Variants&quot;:[{&quot;Value&quot;:&quot;20&quot;},{&quot;Value&quot;:&quot;510&quot;},{&quot;Value&quot;:&quot;509&quot;},{&quot;Value&quot;:&quot;60&quot;},{&quot;Value&quot;:&quot;75&quot;},{&quot;Value&quot;:&quot;70&quot;},{&quot;Value&quot;:&quot;505&quot;},{&quot;Value&quot;:&quot;80&quot;},{&quot;Value&quot;:&quot;180&quot;},{&quot;Value&quot;:&quot;190&quot;},{&quot;Value&quot;:&quot;179&quot;},{&quot;Value&quot;:&quot;512&quot;},{&quot;Value&quot;:&quot;514&quot;},{&quot;Value&quot;:&quot;517&quot;},{&quot;Value&quot;:&quot;515&quot;},{&quot;Value&quot;:&quot;511&quot;},{&quot;Value&quot;:&quot;248&quot;},{&quot;Value&quot;:&quot;251&quot;},{&quot;Value&quot;:&quot;249&quot;},{&quot;Value&quot;:&quot;250&quot;},{&quot;Value&quot;:&quot;16&quot;},{&quot;Value&quot;:&quot;17&quot;},{&quot;Value&quot;:&quot;18&quot;},{&quot;Value&quot;:&quot;508&quot;},{&quot;Value&quot;:&quot;531&quot;},{&quot;Value&quot;:&quot;15&quot;},{&quot;Value&quot;:&quot;19&quot;}]},&quot;IsMandatory&quot;:true,&quot;zIndex&quot;:90,&quot;preselectedValues&quot;:[{&quot;DN&quot;:null,&quot;FdsCode&quot;:null,&quot;Id&quot;:&quot;20&quot;,&quot;IsActive&quot;:true,&quot;LocalPriceDate&quot;:null,&quot;NameTag&quot;:null,&quot;RepColValues&quot;:null,&quot;ReportingCurrency&quot;:null,&quot;StockCurrency&quot;:null,&quot;Template&quot;:null,&quot;Text&quot;:&quot;Company Note&quot;,&quot;ParentId&quot;:&quot;0&quot;,&quot;formattedText&quot;:&quot;Company Note&quot;,&quot;name&quot;:&quot;Company Note&quot;,&quot;hasChildren&quot;:false},{&quot;DN&quot;:null,&quot;FdsCode&quot;:null,&quot;Id&quot;:&quot;510&quot;,&quot;IsActive&quot;:true,&quot;LocalPriceDate&quot;:null,&quot;NameTag&quot;:null,&quot;RepColValues&quot;:null,&quot;ReportingCurrency&quot;:null,&quot;StockCurrency&quot;:null,&quot;Template&quot;:null,&quot;Text&quot;:&quot;Company Note (Translated Version)&quot;,&quot;ParentId&quot;:&quot;0&quot;,&quot;formattedText&quot;:&quot;Company Note (Translated Version)&quot;,&quot;name&quot;:&quot;Company Note (Translated Version)&quot;,&quot;hasChildren&quot;:false},{&quot;DN&quot;:null,&quot;FdsCode&quot;:null,&quot;Id&quot;:&quot;509&quot;,&quot;IsActive&quot;:true,&quot;LocalPriceDate&quot;:null,&quot;NameTag&quot;:null,&quot;RepColValues&quot;:null,&quot;ReportingCurrency&quot;:null,&quot;StockCurrency&quot;:null,&quot;Template&quot;:null,&quot;Text&quot;:&quot;Company Note (Retail Version)&quot;,&quot;ParentId&quot;:&quot;0&quot;,&quot;formattedText&quot;:&quot;Company Note (Retail Version)&quot;,&quot;name&quot;:&quot;Company Note (Retail Version)&quot;,&quot;hasChildren&quot;:false},{&quot;DN&quot;:null,&quot;FdsCode&quot;:null,&quot;Id&quot;:&quot;60&quot;,&quot;IsActive&quot;:true,&quot;LocalPriceDate&quot;:null,&quot;NameTag&quot;:null,&quot;RepColValues&quot;:null,&quot;ReportingCurrency&quot;:null,&quot;StockCurrency&quot;:null,&quot;Template&quot;:null,&quot;Text&quot;:&quot;Sector Note&quot;,&quot;ParentId&quot;:&quot;0&quot;,&quot;formattedText&quot;:&quot;Sector Note&quot;,&quot;name&quot;:&quot;Sector Note&quot;,&quot;hasChildren&quot;:false},{&quot;DN&quot;:null,&quot;FdsCode&quot;:null,&quot;Id&quot;:&quot;75&quot;,&quot;IsActive&quot;:true,&quot;LocalPriceDate&quot;:null,&quot;NameTag&quot;:null,&quot;RepColValues&quot;:null,&quot;ReportingCurrency&quot;:null,&quot;StockCurrency&quot;:null,&quot;Template&quot;:null,&quot;Text&quot;:&quot;Sector Flash&quot;,&quot;ParentId&quot;:&quot;0&quot;,&quot;formattedText&quot;:&quot;Sector Flash&quot;,&quot;name&quot;:&quot;Sector Flash&quot;,&quot;hasChildren&quot;:false},{&quot;DN&quot;:null,&quot;FdsCode&quot;:null,&quot;Id&quot;:&quot;70&quot;,&quot;IsActive&quot;:true,&quot;LocalPriceDate&quot;:null,&quot;NameTag&quot;:null,&quot;RepColValues&quot;:null,&quot;ReportingCurrency&quot;:null,&quot;StockCurrency&quot;:null,&quot;Template&quot;:null,&quot;Text&quot;:&quot;Sector Note front page&quot;,&quot;ParentId&quot;:&quot;0&quot;,&quot;formattedText&quot;:&quot;Sector Note front page&quot;,&quot;name&quot;:&quot;Sector Note front page&quot;,&quot;hasChildren&quot;:false},{&quot;DN&quot;:null,&quot;FdsCode&quot;:null,&quot;Id&quot;:&quot;505&quot;,&quot;IsActive&quot;:true,&quot;LocalPriceDate&quot;:null,&quot;NameTag&quot;:null,&quot;RepColValues&quot;:null,&quot;ReportingCurrency&quot;:null,&quot;StockCurrency&quot;:null,&quot;Template&quot;:null,&quot;Text&quot;:&quot;Sector Company Profile&quot;,&quot;ParentId&quot;:&quot;0&quot;,&quot;formattedText&quot;:&quot;Sector Company Profile&quot;,&quot;name&quot;:&quot;Sector Company Profile&quot;,&quot;hasChildren&quot;:false},{&quot;DN&quot;:null,&quot;FdsCode&quot;:null,&quot;Id&quot;:&quot;80&quot;,&quot;IsActive&quot;:true,&quot;LocalPriceDate&quot;:null,&quot;NameTag&quot;:null,&quot;RepColValues&quot;:null,&quot;ReportingCurrency&quot;:null,&quot;StockCurrency&quot;:null,&quot;Template&quot;:null,&quot;Text&quot;:&quot;Daily Note&quot;,&quot;ParentId&quot;:&quot;0&quot;,&quot;formattedText&quot;:&quot;Daily Note&quot;,&quot;name&quot;:&quot;Daily Note&quot;,&quot;hasChildren&quot;:false},{&quot;DN&quot;:null,&quot;FdsCode&quot;:null,&quot;Id&quot;:&quot;180&quot;,&quot;IsActive&quot;:true,&quot;LocalPriceDate&quot;:null,&quot;NameTag&quot;:null,&quot;RepColValues&quot;:null,&quot;ReportingCurrency&quot;:null,&quot;StockCurrency&quot;:null,&quot;Template&quot;:null,&quot;Text&quot;:&quot;Daily Company Comment&quot;,&quot;ParentId&quot;:&quot;0&quot;,&quot;formattedText&quot;:&quot;Daily Company Comment&quot;,&quot;name&quot;:&quot;Daily Company Comment&quot;,&quot;hasChildren&quot;:false},{&quot;DN&quot;:null,&quot;FdsCode&quot;:null,&quot;Id&quot;:&quot;190&quot;,&quot;IsActive&quot;:true,&quot;LocalPriceDate&quot;:null,&quot;NameTag&quot;:null,&quot;RepColValues&quot;:null,&quot;ReportingCurrency&quot;:null,&quot;StockCurrency&quot;:null,&quot;Template&quot;:null,&quot;Text&quot;:&quot;Daily Sector Comment&quot;,&quot;ParentId&quot;:&quot;0&quot;,&quot;formattedText&quot;:&quot;Daily Sector Comment&quot;,&quot;name&quot;:&quot;Daily Sector Comment&quot;,&quot;hasChildren&quot;:false},{&quot;DN&quot;:null,&quot;FdsCode&quot;:null,&quot;Id&quot;:&quot;179&quot;,&quot;IsActive&quot;:true,&quot;LocalPriceDate&quot;:null,&quot;NameTag&quot;:null,&quot;RepColValues&quot;:null,&quot;ReportingCurrency&quot;:null,&quot;StockCurrency&quot;:null,&quot;Template&quot;:null,&quot;Text&quot;:&quot;Daily front page&quot;,&quot;ParentId&quot;:&quot;0&quot;,&quot;formattedText&quot;:&quot;Daily front page&quot;,&quot;name&quot;:&quot;Daily front page&quot;,&quot;hasChildren&quot;:false},{&quot;DN&quot;:null,&quot;FdsCode&quot;:null,&quot;Id&quot;:&quot;512&quot;,&quot;IsActive&quot;:true,&quot;LocalPriceDate&quot;:null,&quot;NameTag&quot;:null,&quot;RepColValues&quot;:null,&quot;ReportingCurrency&quot;:null,&quot;StockCurrency&quot;:null,&quot;Template&quot;:null,&quot;Text&quot;:&quot;Quant Report&quot;,&quot;ParentId&quot;:&quot;0&quot;,&quot;formattedText&quot;:&quot;Quant Report&quot;,&quot;name&quot;:&quot;Quant Report&quot;,&quot;hasChildren&quot;:false},{&quot;DN&quot;:null,&quot;FdsCode&quot;:null,&quot;Id&quot;:&quot;514&quot;,&quot;IsActive&quot;:true,&quot;LocalPriceDate&quot;:null,&quot;NameTag&quot;:null,&quot;RepColValues&quot;:null,&quot;ReportingCurrency&quot;:null,&quot;StockCurrency&quot;:null,&quot;Template&quot;:null,&quot;Text&quot;:&quot;Quant Report Front Page&quot;,&quot;ParentId&quot;:&quot;0&quot;,&quot;formattedText&quot;:&quot;Quant Report Front Page&quot;,&quot;name&quot;:&quot;Quant Report Front Page&quot;,&quot;hasChildren&quot;:false},{&quot;DN&quot;:null,&quot;FdsCode&quot;:null,&quot;Id&quot;:&quot;517&quot;,&quot;IsActive&quot;:true,&quot;LocalPriceDate&quot;:null,&quot;NameTag&quot;:null,&quot;RepColValues&quot;:null,&quot;ReportingCurrency&quot;:null,&quot;StockCurrency&quot;:null,&quot;Template&quot;:null,&quot;Text&quot;:&quot;Quant Report Back Page&quot;,&quot;ParentId&quot;:&quot;0&quot;,&quot;formattedText&quot;:&quot;Quant Report Back Page&quot;,&quot;name&quot;:&quot;Quant Report Back Page&quot;,&quot;hasChildren&quot;:false},{&quot;DN&quot;:null,&quot;FdsCode&quot;:null,&quot;Id&quot;:&quot;515&quot;,&quot;IsActive&quot;:true,&quot;LocalPriceDate&quot;:null,&quot;NameTag&quot;:null,&quot;RepColValues&quot;:null,&quot;ReportingCurrency&quot;:null,&quot;StockCurrency&quot;:null,&quot;Template&quot;:null,&quot;Text&quot;:&quot;Quant Report Japanese Part&quot;,&quot;ParentId&quot;:&quot;0&quot;,&quot;formattedText&quot;:&quot;Quant Report Japanese Part&quot;,&quot;name&quot;:&quot;Quant Report Japanese Part&quot;,&quot;hasChildren&quot;:false},{&quot;DN&quot;:null,&quot;FdsCode&quot;:null,&quot;Id&quot;:&quot;511&quot;,&quot;IsActive&quot;:true,&quot;LocalPriceDate&quot;:null,&quot;NameTag&quot;:null,&quot;RepColValues&quot;:null,&quot;ReportingCurrency&quot;:null,&quot;StockCurrency&quot;:null,&quot;Template&quot;:null,&quot;Text&quot;:&quot;Quant Report English Part&quot;,&quot;ParentId&quot;:&quot;0&quot;,&quot;formattedText&quot;:&quot;Quant Report English Part&quot;,&quot;name&quot;:&quot;Quant Report English Part&quot;,&quot;hasChildren&quot;:false},{&quot;DN&quot;:null,&quot;FdsCode&quot;:null,&quot;Id&quot;:&quot;248&quot;,&quot;IsActive&quot;:true,&quot;LocalPriceDate&quot;:null,&quot;NameTag&quot;:null,&quot;RepColValues&quot;:null,&quot;ReportingCurrency&quot;:null,&quot;StockCurrency&quot;:null,&quot;Template&quot;:null,&quot;Text&quot;:&quot;PPT Company presentation&quot;,&quot;ParentId&quot;:&quot;0&quot;,&quot;formattedText&quot;:&quot;PPT Company presentation&quot;,&quot;name&quot;:&quot;PPT Company presentation&quot;,&quot;hasChildren&quot;:false},{&quot;DN&quot;:null,&quot;FdsCode&quot;:null,&quot;Id&quot;:&quot;251&quot;,&quot;IsActive&quot;:true,&quot;LocalPriceDate&quot;:null,&quot;NameTag&quot;:null,&quot;RepColValues&quot;:null,&quot;ReportingCurrency&quot;:null,&quot;StockCurrency&quot;:null,&quot;Template&quot;:null,&quot;Text&quot;:&quot;PPT Book&quot;,&quot;ParentId&quot;:&quot;0&quot;,&quot;formattedText&quot;:&quot;PPT Book&quot;,&quot;name&quot;:&quot;PPT Book&quot;,&quot;hasChildren&quot;:false},{&quot;DN&quot;:null,&quot;FdsCode&quot;:null,&quot;Id&quot;:&quot;249&quot;,&quot;IsActive&quot;:true,&quot;LocalPriceDate&quot;:null,&quot;NameTag&quot;:null,&quot;RepColValues&quot;:null,&quot;ReportingCurrency&quot;:null,&quot;StockCurrency&quot;:null,&quot;Template&quot;:null,&quot;Text&quot;:&quot;PPT Company slide&quot;,&quot;ParentId&quot;:&quot;0&quot;,&quot;formattedText&quot;:&quot;PPT Company slide&quot;,&quot;name&quot;:&quot;PPT Company slide&quot;,&quot;hasChildren&quot;:false},{&quot;DN&quot;:null,&quot;FdsCode&quot;:null,&quot;Id&quot;:&quot;250&quot;,&quot;IsActive&quot;:true,&quot;LocalPriceDate&quot;:null,&quot;NameTag&quot;:null,&quot;RepColValues&quot;:null,&quot;ReportingCurrency&quot;:null,&quot;StockCurrency&quot;:null,&quot;Template&quot;:null,&quot;Text&quot;:&quot;PPT Book front page&quot;,&quot;ParentId&quot;:&quot;0&quot;,&quot;formattedText&quot;:&quot;PPT Book front page&quot;,&quot;name&quot;:&quot;PPT Book front page&quot;,&quot;hasChildren&quot;:false},{&quot;DN&quot;:null,&quot;FdsCode&quot;:null,&quot;Id&quot;:&quot;16&quot;,&quot;IsActive&quot;:true,&quot;LocalPriceDate&quot;:null,&quot;NameTag&quot;:null,&quot;RepColValues&quot;:null,&quot;ReportingCurrency&quot;:null,&quot;StockCurrency&quot;:null,&quot;Template&quot;:null,&quot;Text&quot;:&quot;Excel (external)&quot;,&quot;ParentId&quot;:&quot;0&quot;,&quot;formattedText&quot;:&quot;Excel (external)&quot;,&quot;name&quot;:&quot;Excel (external)&quot;,&quot;hasChildren&quot;:false},{&quot;DN&quot;:null,&quot;FdsCode&quot;:null,&quot;Id&quot;:&quot;17&quot;,&quot;IsActive&quot;:true,&quot;LocalPriceDate&quot;:null,&quot;NameTag&quot;:null,&quot;RepColValues&quot;:null,&quot;ReportingCurrency&quot;:null,&quot;StockCurrency&quot;:null,&quot;Template&quot;:null,&quot;Text&quot;:&quot;Word (external)&quot;,&quot;ParentId&quot;:&quot;0&quot;,&quot;formattedText&quot;:&quot;Word (external)&quot;,&quot;name&quot;:&quot;Word (external)&quot;,&quot;hasChildren&quot;:false},{&quot;DN&quot;:null,&quot;FdsCode&quot;:null,&quot;Id&quot;:&quot;18&quot;,&quot;IsActive&quot;:true,&quot;LocalPriceDate&quot;:null,&quot;NameTag&quot;:null,&quot;RepColValues&quot;:null,&quot;ReportingCurrency&quot;:null,&quot;StockCurrency&quot;:null,&quot;Template&quot;:null,&quot;Text&quot;:&quot;Email (external)&quot;,&quot;ParentId&quot;:&quot;0&quot;,&quot;formattedText&quot;:&quot;Email (external)&quot;,&quot;name&quot;:&quot;Email (external)&quot;,&quot;hasChildren&quot;:false},{&quot;DN&quot;:null,&quot;FdsCode&quot;:null,&quot;Id&quot;:&quot;508&quot;,&quot;IsActive&quot;:true,&quot;LocalPriceDate&quot;:null,&quot;NameTag&quot;:null,&quot;RepColValues&quot;:null,&quot;ReportingCurrency&quot;:null,&quot;StockCurrency&quot;:null,&quot;Template&quot;:null,&quot;Text&quot;:&quot;Video (external)&quot;,&quot;ParentId&quot;:&quot;0&quot;,&quot;formattedText&quot;:&quot;Video (external)&quot;,&quot;name&quot;:&quot;Video (external)&quot;,&quot;hasChildren&quot;:false},{&quot;DN&quot;:null,&quot;FdsCode&quot;:null,&quot;Id&quot;:&quot;531&quot;,&quot;IsActive&quot;:true,&quot;LocalPriceDate&quot;:null,&quot;NameTag&quot;:null,&quot;RepColValues&quot;:null,&quot;ReportingCurrency&quot;:null,&quot;StockCurrency&quot;:null,&quot;Template&quot;:null,&quot;Text&quot;:&quot;Audio File&quot;,&quot;ParentId&quot;:&quot;0&quot;,&quot;formattedText&quot;:&quot;Audio File&quot;,&quot;name&quot;:&quot;Audio File&quot;,&quot;hasChildren&quot;:false},{&quot;DN&quot;:null,&quot;FdsCode&quot;:null,&quot;Id&quot;:&quot;15&quot;,&quot;IsActive&quot;:true,&quot;LocalPriceDate&quot;:null,&quot;NameTag&quot;:null,&quot;RepColValues&quot;:null,&quot;ReportingCurrency&quot;:null,&quot;StockCurrency&quot;:null,&quot;Template&quot;:null,&quot;Text&quot;:&quot;PDF (external)&quot;,&quot;ParentId&quot;:&quot;0&quot;,&quot;formattedText&quot;:&quot;PDF (external)&quot;,&quot;name&quot;:&quot;PDF (external)&quot;,&quot;hasChildren&quot;:false},{&quot;DN&quot;:null,&quot;FdsCode&quot;:null,&quot;Id&quot;:&quot;19&quot;,&quot;IsActive&quot;:true,&quot;LocalPriceDate&quot;:null,&quot;NameTag&quot;:null,&quot;RepColValues&quot;:null,&quot;ReportingCurrency&quot;:null,&quot;StockCurrency&quot;:null,&quot;Template&quot;:null,&quot;Text&quot;:&quot;PPT (external)&quot;,&quot;ParentId&quot;:&quot;0&quot;,&quot;formattedText&quot;:&quot;PPT (external)&quot;,&quot;name&quot;:&quot;PPT (external)&quot;,&quot;hasChildren&quot;:false}]},{&quot;Constraint&quot;:2,&quot;Mnemo&quot;:&quot;DOCSTATUS&quot;,&quot;Title&quot;:&quot;Status&quot;,&quot;Type&quot;:6,&quot;Values&quot;:{&quot;Type&quot;:6,&quot;Variants&quot;:[{&quot;Value&quot;:&quot;1&quot;,&quot;Children&quot;:null,&quot;FldValue&quot;:&quot;1&quot;}]},&quot;MandatoryString&quot;:&quot;TRUE&quot;,&quot;Visible&quot;:true,&quot;FldValues&quot;:{&quot;Type&quot;:6,&quot;Variants&quot;:[{&quot;Value&quot;:&quot;1&quot;},{&quot;Value&quot;:&quot;2&quot;},{&quot;Value&quot;:&quot;3&quot;},{&quot;Value&quot;:&quot;6&quot;},{&quot;Value&quot;:&quot;7&quot;},{&quot;Value&quot;:&quot;12&quot;},{&quot;Value&quot;:&quot;13&quot;},{&quot;Value&quot;:&quot;14&quot;},{&quot;Value&quot;:&quot;9&quot;},{&quot;Value&quot;:&quot;10&quot;},{&quot;Value&quot;:&quot;11&quot;},{&quot;Value&quot;:&quot;15&quot;}]},&quot;IsMandatory&quot;:true,&quot;zIndex&quot;:89,&quot;preselectedValues&quot;:[{&quot;DN&quot;:null,&quot;FdsCode&quot;:null,&quot;Id&quot;:&quot;1&quot;,&quot;IsActive&quot;:true,&quot;LocalPriceDate&quot;:null,&quot;NameTag&quot;:null,&quot;RepColValues&quot;:null,&quot;ReportingCurrency&quot;:null,&quot;StockCurrency&quot;:null,&quot;Template&quot;:null,&quot;Text&quot;:&quot;Draft&quot;,&quot;ParentId&quot;:&quot;0&quot;,&quot;formattedText&quot;:&quot;Draft&quot;,&quot;name&quot;:&quot;Draft&quot;,&quot;hasChildren&quot;:false},{&quot;DN&quot;:null,&quot;FdsCode&quot;:null,&quot;Id&quot;:&quot;2&quot;,&quot;IsActive&quot;:true,&quot;LocalPriceDate&quot;:null,&quot;NameTag&quot;:null,&quot;RepColValues&quot;:null,&quot;ReportingCurrency&quot;:null,&quot;StockCurrency&quot;:null,&quot;Template&quot;:null,&quot;Text&quot;:&quot;Editing&quot;,&quot;ParentId&quot;:&quot;0&quot;,&quot;formattedText&quot;:&quot;Editing&quot;,&quot;name&quot;:&quot;Editing&quot;,&quot;hasChildren&quot;:false},{&quot;DN&quot;:null,&quot;FdsCode&quot;:null,&quot;Id&quot;:&quot;3&quot;,&quot;IsActive&quot;:true,&quot;LocalPriceDate&quot;:null,&quot;NameTag&quot;:null,&quot;RepColValues&quot;:null,&quot;ReportingCurrency&quot;:null,&quot;StockCurrency&quot;:null,&quot;Template&quot;:null,&quot;Text&quot;:&quot;Review&quot;,&quot;ParentId&quot;:&quot;0&quot;,&quot;formattedText&quot;:&quot;Review&quot;,&quot;name&quot;:&quot;Review&quot;,&quot;hasChildren&quot;:false},{&quot;DN&quot;:null,&quot;FdsCode&quot;:null,&quot;Id&quot;:&quot;6&quot;,&quot;IsActive&quot;:true,&quot;LocalPriceDate&quot;:null,&quot;NameTag&quot;:null,&quot;RepColValues&quot;:null,&quot;ReportingCurrency&quot;:null,&quot;StockCurrency&quot;:null,&quot;Template&quot;:null,&quot;Text&quot;:&quot;Ready for Compilation&quot;,&quot;ParentId&quot;:&quot;0&quot;,&quot;formattedText&quot;:&quot;Ready for Compilation&quot;,&quot;name&quot;:&quot;Ready for Compilation&quot;,&quot;hasChildren&quot;:false},{&quot;DN&quot;:null,&quot;FdsCode&quot;:null,&quot;Id&quot;:&quot;7&quot;,&quot;IsActive&quot;:true,&quot;LocalPriceDate&quot;:null,&quot;NameTag&quot;:null,&quot;RepColValues&quot;:null,&quot;ReportingCurrency&quot;:null,&quot;StockCurrency&quot;:null,&quot;Template&quot;:null,&quot;Text&quot;:&quot;Published&quot;,&quot;ParentId&quot;:&quot;0&quot;,&quot;formattedText&quot;:&quot;Published&quot;,&quot;name&quot;:&quot;Published&quot;,&quot;hasChildren&quot;:false},{&quot;DN&quot;:null,&quot;FdsCode&quot;:null,&quot;Id&quot;:&quot;12&quot;,&quot;IsActive&quot;:true,&quot;LocalPriceDate&quot;:null,&quot;NameTag&quot;:null,&quot;RepColValues&quot;:null,&quot;ReportingCurrency&quot;:null,&quot;StockCurrency&quot;:null,&quot;Template&quot;:null,&quot;Text&quot;:&quot;SA&quot;,&quot;ParentId&quot;:&quot;0&quot;,&quot;formattedText&quot;:&quot;SA&quot;,&quot;name&quot;:&quot;SA&quot;,&quot;hasChildren&quot;:false},{&quot;DN&quot;:null,&quot;FdsCode&quot;:null,&quot;Id&quot;:&quot;13&quot;,&quot;IsActive&quot;:true,&quot;LocalPriceDate&quot;:null,&quot;NameTag&quot;:null,&quot;RepColValues&quot;:null,&quot;ReportingCurrency&quot;:null,&quot;StockCurrency&quot;:null,&quot;Template&quot;:null,&quot;Text&quot;:&quot;Compliance&quot;,&quot;ParentId&quot;:&quot;0&quot;,&quot;formattedText&quot;:&quot;Compliance&quot;,&quot;name&quot;:&quot;Compliance&quot;,&quot;hasChildren&quot;:false},{&quot;DN&quot;:null,&quot;FdsCode&quot;:null,&quot;Id&quot;:&quot;14&quot;,&quot;IsActive&quot;:true,&quot;LocalPriceDate&quot;:null,&quot;NameTag&quot;:null,&quot;RepColValues&quot;:null,&quot;ReportingCurrency&quot;:null,&quot;StockCurrency&quot;:null,&quot;Template&quot;:null,&quot;Text&quot;:&quot;Pre-published&quot;,&quot;ParentId&quot;:&quot;0&quot;,&quot;formattedText&quot;:&quot;Pre-published&quot;,&quot;name&quot;:&quot;Pre-published&quot;,&quot;hasChildren&quot;:false},{&quot;DN&quot;:null,&quot;FdsCode&quot;:null,&quot;Id&quot;:&quot;9&quot;,&quot;IsActive&quot;:true,&quot;LocalPriceDate&quot;:null,&quot;NameTag&quot;:null,&quot;RepColValues&quot;:null,&quot;ReportingCurrency&quot;:null,&quot;StockCurrency&quot;:null,&quot;Template&quot;:null,&quot;Text&quot;:&quot;Draft (external doc)&quot;,&quot;ParentId&quot;:&quot;0&quot;,&quot;formattedText&quot;:&quot;Draft (external doc)&quot;,&quot;name&quot;:&quot;Draft (external doc)&quot;,&quot;hasChildren&quot;:false},{&quot;DN&quot;:null,&quot;FdsCode&quot;:null,&quot;Id&quot;:&quot;10&quot;,&quot;IsActive&quot;:true,&quot;LocalPriceDate&quot;:null,&quot;NameTag&quot;:null,&quot;RepColValues&quot;:null,&quot;ReportingCurrency&quot;:null,&quot;StockCurrency&quot;:null,&quot;Template&quot;:null,&quot;Text&quot;:&quot;Editing (external doc)&quot;,&quot;ParentId&quot;:&quot;0&quot;,&quot;formattedText&quot;:&quot;Editing (external doc)&quot;,&quot;name&quot;:&quot;Editing (external doc)&quot;,&quot;hasChildren&quot;:false},{&quot;DN&quot;:null,&quot;FdsCode&quot;:null,&quot;Id&quot;:&quot;11&quot;,&quot;IsActive&quot;:true,&quot;LocalPriceDate&quot;:null,&quot;NameTag&quot;:null,&quot;RepColValues&quot;:null,&quot;ReportingCurrency&quot;:null,&quot;StockCurrency&quot;:null,&quot;Template&quot;:null,&quot;Text&quot;:&quot;Published (external doc)&quot;,&quot;ParentId&quot;:&quot;0&quot;,&quot;formattedText&quot;:&quot;Published (external doc)&quot;,&quot;name&quot;:&quot;Published (external doc)&quot;,&quot;hasChildren&quot;:false},{&quot;DN&quot;:null,&quot;FdsCode&quot;:null,&quot;Id&quot;:&quot;15&quot;,&quot;IsActive&quot;:true,&quot;LocalPriceDate&quot;:null,&quot;NameTag&quot;:null,&quot;RepColValues&quot;:null,&quot;ReportingCurrency&quot;:null,&quot;StockCurrency&quot;:null,&quot;Template&quot;:null,&quot;Text&quot;:&quot;Translation Queue&quot;,&quot;ParentId&quot;:&quot;0&quot;,&quot;formattedText&quot;:&quot;Translation Queue&quot;,&quot;name&quot;:&quot;Translation Queue&quot;,&quot;hasChildren&quot;:false}]}],&quot;FldModel&quot;:&quot;WEB_TAB1&quot;,&quot;Pagination&quot;:{&quot;NumberPerPage&quot;:20000,&quot;PageNumber&quot;:1,&quot;TotalPages&quot;:3,&quot;DisplayOptions&quot;:&quot;20,50,100&quot;,&quot;TotalDocuments&quot;:135,&quot;UsePagination&quot;:true},&quot;Sorting&quot;:{&quot;ColumnDirection&quot;:&quot;DESC&quot;,&quot;ColumnMnemo&quot;:&quot;DtimeArchivage&quot;}}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">paweb16b04.pc.factset.com</stringProp>
+            <stringProp name="HTTPSampler.port">5000</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/PartnersAnywhereApi/api/BrowseDocuments/GetDocuments</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout">0</stringProp>
+            <stringProp name="HTTPSampler.response_timeout">0</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="Headers" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Cookie</stringProp>
+                  <stringProp name="Header.value">${Cookie}</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Partners-CSRF-Token</stringProp>
+                  <stringProp name="Header.value">${Partners-CSRF-Token}</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Valid HTTP Status Codes" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="49586">200</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">8</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <DurationAssertion guiclass="DurationAssertionGui" testclass="DurationAssertion" testname="Timeout Check" enabled="true">
+              <stringProp name="DurationAssertion.duration">0</stringProp>
+            </DurationAssertion>
+            <hashTree/>
+          </hashTree>
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="AssertionAuthor" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">log.info &quot;Starting Author Filter test&quot;
+log.info vars.get(&quot;parametervalue3_&quot;+vars.get(&quot;Counter&quot;) )
+Filters=vars.get(&quot;parametervalue3_&quot;+vars.get(&quot;Counter&quot;) )     //getting the parameter value from the loop
+Filterlist = Filters.split(&apos;,&apos;)                                                 //splitting the parameter value based on comma
+log.info(&quot;No. of Equities &quot; +   Filterlist.size())               //displaying the no.of values in parameter value in sql
+
+import groovy.json.JsonSlurper
+def response =  prev.getResponseDataAsString();
+JsonSlurper slurper = new JsonSlurper()
+parsedJson = slurper.parseText(response)            //parsing the json
+doccount=parsedJson.Data.Documents.size()          //getting the no. of the documents
+//log.info doccount
+
+ for(int i=0;i&lt;=doccount-1;i++)                                                                                                                                                          //Iterating through no. of documents
+ {
+
+def Author=parsedJson.Data.Documents[i].Properties.USER.Variants[0].Value                                  //Accessing the authors for the document
+def AuthorList=Author.split(&apos;, &apos;)//splitting on comma and space 
+ def ID=parsedJson.Data.Documents[i].Properties.ID.Variants[0].Value
+def isok = false
+	for(int j=0;j&lt;=Filterlist.size()-1;j++)                                                                                                                                       //Iterating through all the values in parameter value which is provided in the request
+	 { 
+	 	for(int k=0;k&lt;=AuthorList.size()-1;k++)                                                                                                                //Iterating through all the author values  which is provided in the response
+		 {
+		 	
+			 if (AuthorList[k] ==Filterlist[j])
+			 {
+			 	isok = true
+			 	break
+		 	}
+		 }
+		 if  (isok == true)
+		 {
+		 	break
+		 }
+
+	 }	 
+// 	if (title !=&quot;Adidas AG&quot; &amp;&amp; title !=&apos;Carrefour SA&apos; &amp;&amp; title!=&apos;Apple Inc.&apos;) 	{
+	if (isok == false) 
+	{
+		log.info &quot;Author Not Found:&quot;+ Author + &quot; --  Expected Value: &quot;+Filters+  &quot; Document ID:&quot;+ID
+           testRunner.fail(&quot;Authors not found&quot;)
+	 	break;
+ 	}
+
+ }</stringProp>
+          </JSR223Sampler>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

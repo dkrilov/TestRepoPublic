@@ -1,0 +1,6 @@
+---
+execution:
+- scenario: dummy
+  concurrency: 2000
+  throughput: 210000
+  ramp-up: 15m

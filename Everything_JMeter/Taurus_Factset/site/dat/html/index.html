@@ -1,0 +1,66 @@
+<div id="homepage">
+
+    <div class="row centered">
+        <h1>You run tests more than once</h1>
+        <p>
+            It makes sense to automate anything you repeat 10+ times.<br/>
+            Taurus improves experience of JMeter, Selenium and others.
+        </p>
+        <iframe width="800" height="400" src="https://www.youtube.com/embed/hRFxCf9w7oo" frameborder="0"
+                allowfullscreen></iframe>
+    </div>
+    <hr/>
+    <h2>Step 1: Install It</h2>
+
+    <pre>pip install bzt</pre>
+
+    <small class="pull-right"><a href="/docs/Installation/">More about installing it...</a></small>
+
+
+    <h2>Step 2: Create a Config</h2>
+
+    <div class="row">
+        <div class="col-md-3">
+            <ul id="sample_chooser">
+                <li><a>quick_test.yml</a></li>
+                <li><a>existing_jmeter_script.yml</a></li>
+                <li><a>complex_yaml_script.yml</a></li>
+            </ul>
+
+        </div>
+        <div class="col-md-9" id="code_sample">
+        </div>
+    </div>
+
+    <small class="pull-right"><a href="/docs/ConfigSyntax/">More about config syntax...</a></small>
+
+
+    <h2>Step 3: Run The Test</h2>
+    <pre id="runit"></pre>
+    <small class="pull-right"><a href="/docs/ExecutionSettings/">More about running it...</a></small>
+
+
+    <h2>Step 4: Go Deeper</h2>
+
+    Read from the docs how to get <a href="/docs/Reporting/#BlazeMeter-com-Reporting-Service">interactive reports</a>,
+    create <a href="/docs/JMeter/#Building-Test-Plan-from-Config">complex scenarios</a>,
+    set <a href="/docs/Reporting/#Pass-Fail-Criteria">failure criteria</a>.
+    We also have a <a href="/kb/">knowledge base</a> with articles and videos for easy learning.
+    Feel free to ask questions on our <a href="/support/">support forums</a>.
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#sample_chooser").find("li").click(function () {
+            var fname = $(this).text();
+            $.get("/sample-scripts/" + fname).done(function (data) {
+                $("#code_sample").html(data);
+                $("#runit").text("bzt " + fname);
+            });
+        });
+
+        $("#sample_chooser").find("li")[0].click();
+    });
+
+</script>
