@@ -1350,7 +1350,7 @@ string COMA_FFI_FORMULA(string keyword,string rbase_add="NET_ADMIT",string rbase
             form_5yh=100*(FINS_INCUR_LOSS(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_INCUR_LOSS(rbase,speriod,eperiod,frq,rel_item,curn,units)-FINS_5YR_DLLAE_PY(rbase,"[SDATE]","[EDATE]",frq,rel_item,curn,units,"[YR]"))//FINS_EP(rbase,speriod,eperiod,frq,rel_item,curn,units);    
             data_units="RATIO";
         case "CALC_INCUR_LL_EP": 
-            form=(FINS_INCUR_LOSS(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_INCUR_LOSS(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_EP(rbase,speriod,eperiod,frq,rel_item,curn,units);
+            form=100*(FINS_INCUR_LOSS(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_INCUR_LOSS(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_EP(rbase,speriod,eperiod,frq,rel_item,curn,units);
             data_units="RATIO";
         case "CALC_OUE_WUD_EP": 
             form=100*(FINS_OTH_UW_EXP(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_WI_UW_DEDUCT(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_EP(rbase,speriod,eperiod,frq,rel_item,curn,units);
