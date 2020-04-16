@@ -1,0 +1,64 @@
+{
+  "testCases": [
+    {
+        "testName": "Investments Summary",
+        "reportName": "insurance-reports",
+        "path": "/api/component/ksInvestmentsSummary/",
+        "params": {
+         "id": "000HMQ-E"
+         }
+     },
+     {
+        "testName": "Investments",
+        "reportName": "insurance-reports",
+        "path": "/api/component/ksInvestments/",
+        "params": {
+         "id": "000HMQ-E"
+         }
+     },
+     {
+        "testName": "Reserve Analysis",
+        "reportName": "insurance-reports",
+        "path": "/api/component/ksReserveAnalysis/",
+        "params": {
+         "id": "000HMQ-E"
+         }
+     },
+     {
+        "testName": "Operations By LOB",
+        "reportName": "insurance-reports",
+        "path": "/api/component/ksOperationsByLob/",
+        "params": {
+         "id": "000HMQ-E"
+         }
+     },
+     {
+        "testName": "Operations By State",
+        "reportName": "insurance-reports",
+        "path": "/api/component/ksOperationsByState/",
+        "params": {
+         "id": "000HMQ-E"
+         }
+    },
+    {
+        "testName": "Reinsurance",
+        "reportName": "insurance-reports",
+        "path": "/api/component/ksReinsurance/",
+        "params": {
+         "id": "000HMQ-E"
+         }
+    },
+    {
+        "testName": "Underwriting Investments",
+        "reportName": "insurance-reports",
+        "path": "/api/component/ksUnderwritingInvestments/",
+        "params": {
+         "id": "000HMQ-E"
+         }
+    }
+  ],
+  "defaultConfig": {
+    "reportName": "insurance-reports",
+    "path": "/api/component/ksReserveAnalysis/"
+  }
+}
