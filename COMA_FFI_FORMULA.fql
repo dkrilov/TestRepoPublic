@@ -992,9 +992,9 @@ string COMA_FFI_FORMULA(string keyword,string rbase_add="NET_ADMIT",string rbase
             form_5yh=FINS_5YR_PCT_DLALAE_EFF_PY(rbase,"[SDATE]","[EDATE]",frq,rel_item,"[YR]");
             data_units="PCT";
         case "DLALAE_CL_PY": 
-            form_5yh=FINS_5YR_DLALAE_CL_PY(rbase,"[SDATE]","[EDATE]",frq,rel_item,curn,units,"[YR]");
+            form_5yh=100*(FINS_5YR_DLALAE_CL_PY(rbase,"[SDATE]","[EDATE]",frq,rel_item,curn,units,"[YR]"));
         case "PCT_DLALAE_CL_PY": 
-            form_5yh=FINS_5YR_PCT_DLALAE_CL_PY(rbase,"[SDATE]","[EDATE]",frq,rel_item,"[YR]");
+            form_5yh=100*(FINS_5YR_PCT_DLALAE_CL_PY(rbase,"[SDATE]","[EDATE]",frq,rel_item,"[YR]"));
             data_units="PCT";
         case "DLALAE_EFF_2PY": 
             form_5yh=FINS_5YR_DLALAE_EFF_2PY(rbase,"[SDATE]","[EDATE]",frq,rel_item,curn,units,"[YR]");
@@ -1002,9 +1002,9 @@ string COMA_FFI_FORMULA(string keyword,string rbase_add="NET_ADMIT",string rbase
             form_5yh=FINS_5YR_PCT_DLALAE_EFF_2PY(rbase,"[SDATE]","[EDATE]",frq,rel_item,"[YR]");
             data_units="PCT";
         case "DLALAE_CL_2PY": 
-            form_5yh=FINS_5YR_DLALAE_CL_2PY(rbase,"[SDATE]","[EDATE]",frq,rel_item,curn,units,"[YR]");
+            form_5yh=100*(FINS_5YR_DLALAE_CL_2PY(rbase,"[SDATE]","[EDATE]",frq,rel_item,curn,units,"[YR]"));
         case "PCT_DLALAE_CL_2PY": 
-            form_5yh=FINS_5YR_PCT_DLALAE_CL_2PY(rbase,"[SDATE]","[EDATE]",frq,rel_item,curn,units,"[YR]");
+            form_5yh=100*(FINS_5YR_PCT_DLALAE_CL_2PY(rbase,"[SDATE]","[EDATE]",frq,rel_item,curn,units,"[YR]"));
             data_units="PCT";
         case "IPSA_BONDS": 
             form_5yh=FINS_5YR_IPSA_BONDS(rbase,"[SDATE]","[EDATE]",frq,rel_item,curn,units,"[YR]");
@@ -1066,67 +1066,67 @@ string COMA_FFI_FORMULA(string keyword,string rbase_add="NET_ADMIT",string rbase
 \\Profitability (%)
 \\
         case "CALC_NII_AVG_ASSETS": 
-            form=FINS_NII(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOTAL")/((FINS_ASSETS(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)+FINS_ASSETS(rbase,speriod-1,eperiod-1,frq,rel_item,curn,units,rbase_add))/2);
+            form=100*(FINS_NII(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOTAL")/((FINS_ASSETS(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)+FINS_ASSETS(rbase,speriod-1,eperiod-1,frq,rel_item,curn,units,rbase_add))/2));
             data_units="PCT";            
         case "CALC_NI_AVG_ASSETS": 
-            form=FINS_NET_INC(rbase,speriod,eperiod,frq,rel_item,curn,units)//((FINS_ASSETS(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)+FINS_ASSETS(rbase,speriod-1,eperiod-1,frq,rel_item,curn,units,rbase_add))/2);
+            form=100*(FINS_NET_INC(rbase,speriod,eperiod,frq,rel_item,curn,units)//((FINS_ASSETS(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)+FINS_ASSETS(rbase,speriod-1,eperiod-1,frq,rel_item,curn,units,rbase_add))/2));
             data_units="PCT"; 
         case "CALC_NI_SS": 
-            form=FINS_NET_INC(rbase,speriod,eperiod,frq,rel_item,curn,units)//((FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_SURP(rbase,speriod-1,eperiod-1,frq,rel_item,curn,units))/2);
+            form=100*(FINS_NET_INC(rbase,speriod,eperiod,frq,rel_item,curn,units)//((FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_SURP(rbase,speriod-1,eperiod-1,frq,rel_item,curn,units))/2));
             data_units="PCT"; 
         case "CALC_NI_CC_SURP": 
-            form=FINS_NET_INC(rbase,speriod,eperiod,frq,rel_item,curn,units)//((FINS_CAP_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_CAP_SURP(rbase,speriod-1,eperiod-1,frq,rel_item,curn,units))/2);
+            form=100*(FINS_NET_INC(rbase,speriod,eperiod,frq,rel_item,curn,units)//((FINS_CAP_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_CAP_SURP(rbase,speriod-1,eperiod-1,frq,rel_item,curn,units))/2));
             data_units="PCT"; 
         case "CALC_NII_NI_RX": 
-            form=FINS_NII(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)//(FINS_NET_INC(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_RCGL_XCGT(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add));
+            form=100*(FINS_NII(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)//(FINS_NET_INC(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_RCGL_XCGT(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)));
             data_units="RATIO";
         case "CALC_NII_NI": 
-            form=FINS_NII(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)//FINS_NET_INC(rbase,speriod,eperiod,frq,rel_item,curn,units); 
+            form=100*(FINS_NII(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)//FINS_NET_INC(rbase,speriod,eperiod,frq,rel_item,curn,units)); 
             data_units="RATIO";
         case "CALC_NI_RX_AVG_ASSETS": 
-            form=(FINS_NET_INC(rbase,speriod,eperiod,frq,rel_item,curn,units)-FINS_RCGL_XCGT(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOTAL"))//((FINS_ASSETS(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)+FINS_ASSETS(rbase,speriod-1,eperiod-1,frq,rel_item,curn,units,rbase_add))/2);
+            form=100*((FINS_NET_INC(rbase,speriod,eperiod,frq,rel_item,curn,units)-FINS_RCGL_XCGT(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOTAL"))//((FINS_ASSETS(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)+FINS_ASSETS(rbase,speriod-1,eperiod-1,frq,rel_item,curn,units,rbase_add))/2));
             data_units="PCT";
         case "CALC_NI_RX_SS": 
-            form=(FINS_NET_INC(rbase,speriod,eperiod,frq,rel_item,curn,units)-FINS_RCGL_XCGT(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add))//((FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_SURP(rbase,speriod-1,eperiod-1,frq,rel_item,curn,units))/2);
+            form=100*((FINS_NET_INC(rbase,speriod,eperiod,frq,rel_item,curn,units)-FINS_RCGL_XCGT(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add))//((FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_SURP(rbase,speriod-1,eperiod-1,frq,rel_item,curn,units))/2));
             data_units="PCT";
 \\
 \\Asset and Reserve Quality (%)       
 \\
          case "CALC_D_QM_CURR_N3456_CIA": 
-            form=(FINS_D_QM_CURR_N3(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR")+FINS_D_QM_CURR_N4(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR")+FINS_D_QM_CURR_N5(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR")+FINS_D_QM_CURR_N6(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR"))//FINS_TOT_CASH_IA(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add);
+            form=100*((FINS_D_QM_CURR_N3(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR")+FINS_D_QM_CURR_N4(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR")+FINS_D_QM_CURR_N5(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR")+FINS_D_QM_CURR_N6(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR"))//FINS_TOT_CASH_IA(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add));
             data_units="RATIO";
          case "CALC_D_QM_CURR_N3456_SURP": 
-            form=(FINS_D_QM_CURR_N3(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR")+FINS_D_QM_CURR_N4(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR")+FINS_D_QM_CURR_N5(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR")+FINS_D_QM_CURR_N6(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR"))//FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units);
+            form=100*((FINS_D_QM_CURR_N3(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR")+FINS_D_QM_CURR_N4(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR")+FINS_D_QM_CURR_N5(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR")+FINS_D_QM_CURR_N6(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR"))//FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
          case "CALC_D_QM_CURR_N3456_CAP_SURP": 
-            form=(FINS_D_QM_CURR_N3(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR")+FINS_D_QM_CURR_N4(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR")+FINS_D_QM_CURR_N5(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR")+FINS_D_QM_CURR_N6(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR"))//FINS_CAP_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units);
+            form=100*((FINS_D_QM_CURR_N3(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR")+FINS_D_QM_CURR_N4(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR")+FINS_D_QM_CURR_N5(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR")+FINS_D_QM_CURR_N6(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR"))//FINS_CAP_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
          case "CALC_RE_PROP_INC_CIA_CASH_ST": 
-           form=FINS_RE_PROP_INC(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)//(FINS_TOT_CASH_IA(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)-FINS_CASH_ST(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add));
+           form=100*(FINS_RE_PROP_INC(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)//(FINS_TOT_CASH_IA(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)-FINS_CASH_ST(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)));
             data_units="RATIO";
          case "CALC_RE_PROP_INC_SURP":
-           form=FINS_RE_PROP_INC(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)//FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units);
+           form=100*(FINS_RE_PROP_INC(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)//FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
          case "CALC_RE_PROP_INC_CAP_SURP": 
-           form=FINS_RE_PROP_INC(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)//FINS_CAP_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units);
+           form=100*(FINS_RE_PROP_INC(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)//FINS_CAP_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
          case "CALC_RE_PROP_SALE_CIA_CASH_ST": 
-           form=FINS_RE_PROP_SALE(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)//(FINS_TOT_CASH_IA(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)-FINS_CASH_ST(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add));
+           form=100*(FINS_RE_PROP_SALE(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)//(FINS_TOT_CASH_IA(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)-FINS_CASH_ST(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)));
             data_units="RATIO";
          case "CALC_RE_PROP_SALE_SURP": 
-           form=FINS_RE_PROP_SALE(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)//FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units);
+           form=100*(FINS_RE_PROP_SALE(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)//FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
          case "CALC_RE_PROP_SALE_CAP_SURP": 
-           form=FINS_RE_PROP_SALE(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)//FINS_CAP_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units);
+           form=100*(FINS_RE_PROP_SALE(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)//FINS_CAP_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
          case "CALC_RE_PROP_SALE_D_QM_CURR_N3456_CIA": 
-            form=(FINS_RE_PROP_SALE(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)+FINS_D_QM_CURR_N3(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR")+FINS_D_QM_CURR_N4(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR")+FINS_D_QM_CURR_N5(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR")+FINS_D_QM_CURR_N6(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR"))//FINS_TOT_CASH_IA(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add);
+            form=100*((FINS_RE_PROP_SALE(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)+FINS_D_QM_CURR_N3(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR")+FINS_D_QM_CURR_N4(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR")+FINS_D_QM_CURR_N5(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR")+FINS_D_QM_CURR_N6(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR"))//FINS_TOT_CASH_IA(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add));
             data_units="RATIO";
          case "CALC_RE_PROP_SALE_D_QM_CURR_N3456_SURP": 
-            form=(FINS_RE_PROP_SALE(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)+FINS_D_QM_CURR_N3(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR")+FINS_D_QM_CURR_N4(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR")+FINS_D_QM_CURR_N5(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR")+FINS_D_QM_CURR_N6(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR"))//FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units);
+            form=100*((FINS_RE_PROP_SALE(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)+FINS_D_QM_CURR_N3(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR")+FINS_D_QM_CURR_N4(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR")+FINS_D_QM_CURR_N5(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR")+FINS_D_QM_CURR_N6(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR"))//FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
          case "CALC_RE_PROP_SALE_D_QM_CURR_N3456_CAP_SURP": 
-            form=(FINS_RE_PROP_SALE(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)+FINS_D_QM_CURR_N3(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR")+FINS_D_QM_CURR_N4(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR")+FINS_D_QM_CURR_N5(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR")+FINS_D_QM_CURR_N6(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR"))//FINS_CAP_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units);
+            form=100*((FINS_RE_PROP_SALE(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)+FINS_D_QM_CURR_N3(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR")+FINS_D_QM_CURR_N4(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR")+FINS_D_QM_CURR_N5(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR")+FINS_D_QM_CURR_N6(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOT_CURR_YR"))//FINS_CAP_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
 \\
 \\Capital Ratios (X)
@@ -1135,37 +1135,37 @@ string COMA_FFI_FORMULA(string keyword,string rbase_add="NET_ADMIT",string rbase
             data_units="RATIO";
 \\
         case "CALC_TOT_BNFT_EXP_PAL_AH": 
-            form=FINS_TOT_BNFIT_EXP(rbase,speriod,eperiod,frq,rel_item,curn,units)/FINS_PREM_AC_LIFE_AH(rbase,speriod,eperiod,frq,rel_item,curn,units);
+            form=100*(FINS_TOT_BNFIT_EXP(rbase,speriod,eperiod,frq,rel_item,curn,units)/FINS_PREM_AC_LIFE_AH(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
         case "CALC_SB_WDRAWLIFE_PAL_AH": 
-            form=FINS_SB_WDRAW_LIFE(rbase,speriod,eperiod,frq,rel_item,curn,units)/FINS_PREM_AC_LIFE_AH(rbase,speriod,eperiod,frq,rel_item,curn,units);   
+            form=100*(FINS_SB_WDRAW_LIFE(rbase,speriod,eperiod,frq,rel_item,curn,units)/FINS_PREM_AC_LIFE_AH(rbase,speriod,eperiod,frq,rel_item,curn,units));   
             data_units="RATIO";
         case "CALC_SUBTOT_DEDUCT_PAL_AH": 
-            form=FINS_SUBTOT_DEDUCT(rbase,speriod,eperiod,frq,rel_item,curn,units)/FINS_PREM_AC_LIFE_AH(rbase,speriod,eperiod,frq,rel_item,curn,units); 
+            form=100*(FINS_SUBTOT_DEDUCT(rbase,speriod,eperiod,frq,rel_item,curn,units)/FINS_PREM_AC_LIFE_AH(rbase,speriod,eperiod,frq,rel_item,curn,units)); 
             data_units="RATIO";
         case "CALC_NGAB_SUBTOT_INC": 
-            form=FINS_NET_GFO_APHD_BFIT(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_SUBTOT_INC(rbase,speriod,eperiod,frq,rel_item,curn,units);
+            form=100*(FINS_NET_GFO_APHD_BFIT(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_SUBTOT_INC(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="PCT"; 
         case "CALC_FFIT_NGAB": 
-            form=FINS_FFIT(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_NET_GFO_APHD_BFIT(rbase,speriod,eperiod,frq,rel_item,curn,units);
+            form=100*(FINS_FFIT(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_NET_GFO_APHD_BFIT(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="PCT"; 
         case "CALC_NGAFB_SUBTOT_INC": 
-            form=FINS_NET_GFO_APHD_FIT_BRCGL(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_SUBTOT_INC(rbase,speriod,eperiod,frq,rel_item,curn,units);
+            form=100*(FINS_NET_GFO_APHD_FIT_BRCGL(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_SUBTOT_INC(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="PCT"; 
         case "CALC_NGAFB_AVG_ASSETS": 
-            form=FINS_NET_GFO_APHD_FIT_BRCGL(rbase,speriod,eperiod,frq,rel_item,curn,units)//((FINS_ASSETS(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)+FINS_ASSETS(rbase,speriod-1,eperiod-1,frq,rel_item,curn,units,rbase_add))/2);
+            form=100*(FINS_NET_GFO_APHD_FIT_BRCGL(rbase,speriod,eperiod,frq,rel_item,curn,units)//((FINS_ASSETS(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)+FINS_ASSETS(rbase,speriod-1,eperiod-1,frq,rel_item,curn,units,rbase_add))/2));
             data_units="PCT"; 
         case "CALC_NGAFB_SS": 
-            form=FINS_NET_GFO_APHD_FIT_BRCGL(rbase,speriod,eperiod,frq,rel_item,curn,units)//((FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_SURP(rbase,speriod-1,eperiod-1,frq,rel_item,curn,units))/2);
+            form=100*(FINS_NET_GFO_APHD_FIT_BRCGL(rbase,speriod,eperiod,frq,rel_item,curn,units)//((FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_SURP(rbase,speriod-1,eperiod-1,frq,rel_item,curn,units))/2));
             data_units="PCT"; 
         case "CALC_NII_NGAFB": 
-            form=FINS_NII(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_NET_GFO_APHD_FIT_BRCGL(rbase,speriod,eperiod,frq,rel_item,curn,units);
+            form=100*(FINS_NII(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_NET_GFO_APHD_FIT_BRCGL(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
         case "CALC_PAL_CIA": 
             form=FINS_PREM_AC_LIFE_AH(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_TOT_CASH_IA(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add);
             data_units="RATIO";
          case "CALC_NGAB_CIA": 
-            form=FINS_NET_GFO_APHD_BFIT(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_TOT_CASH_IA(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add);      
+            form=100*(FINS_NET_GFO_APHD_BFIT(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_TOT_CASH_IA(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add));      
             data_units="PCT";
          case "CALC_FFIT_NGAB_L": 
             form=100-(FINS_FFIT(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_NET_GFO_APHD_BFIT(rbase,speriod,eperiod,frq,rel_item,curn,units));  
@@ -1174,7 +1174,7 @@ string COMA_FFI_FORMULA(string keyword,string rbase_add="NET_ADMIT",string rbase
             form=(FINS_TOT_CASH_IA(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)-FINS_CASH_ST(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add))//FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units);  
             data_units="RATIO";
          case "CALC_NGAFB_SURP": 
-            form=FINS_NET_GFO_APHD_FIT_BRCGL(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units);  
+            form=100*(FINS_NET_GFO_APHD_FIT_BRCGL(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units));  
             data_units="PCT";
          case "CALC_PHD_NGAFB": 
             form=100-(FINS_PHD(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_NET_GFO_APHD_FIT_BRCGL(rbase,speriod,eperiod,frq,rel_item,curn,units)); 
@@ -1183,16 +1183,16 @@ string COMA_FFI_FORMULA(string keyword,string rbase_add="NET_ADMIT",string rbase
             form=(FINS_NET_GFO_APHD_FIT_BRCGL(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units))*(100-(FINS_PHD(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_NET_GFO_APHD_FIT_BRCGL(rbase,speriod,eperiod,frq,rel_item,curn,units))); 
             data_units="PCT";
          case "CALC_CIA_DO": 
-            form=FINS_TOT_CASH_IA(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)//FINS_DRAFT_OUT(rbase,speriod,eperiod,frq,rel_item,curn,units);
+            form=100*(FINS_TOT_CASH_IA(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)//FINS_DRAFT_OUT(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
          case "CALC_NGAFB_NIE": 
-            form=(FINS_NET_GFO_APHD_FIT_BRCGL(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_NII_INT_EXP(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_NII_INT_EXP(rbase,speriod,eperiod,frq,rel_item,curn,units);
+            form=100*((FINS_NET_GFO_APHD_FIT_BRCGL(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_NII_INT_EXP(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_NII_INT_EXP(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
          case "CALC_NGAFB_PHD": 
            form=FINS_NET_GFO_BPHD_FIT(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_PHD(rbase,speriod,eperiod,frq,rel_item,curn,units); 
             data_units="RATIO";
          case "CALC_ONC_NNIE": 
-            form=(FINS_OPER_NET_CF(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_NII_INT_EXP(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_NII_INT_EXP(rbase,speriod,eperiod,frq,rel_item,curn,units);
+            form=100*((FINS_OPER_NET_CF(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_NII_INT_EXP(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_NII_INT_EXP(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
          case "CALC_BORR_MON_SN_CN_NGAB_NIE": 
             form=(FINS_BORR_MON(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_SURP_NOTES(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_CAP_NOTES(rbase,speriod,eperiod,frq,rel_item,curn,units))//(FINS_NET_GFO_APHD_BFIT(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_NII_INT_EXP(rbase,speriod,eperiod,frq,rel_item,curn,units));
@@ -1207,62 +1207,62 @@ string COMA_FFI_FORMULA(string keyword,string rbase_add="NET_ADMIT",string rbase
             form=(FINS_BORR_MON(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_DRAFT_OUT(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_SURP_NOTES(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_CAP_NOTES(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_OPER_NET_CF(rbase,speriod,eperiod,frq,rel_item,curn,units);
             data_units="RATIO";
          case "CALC_LTC4_TOT_SURP": 
-           form=FINS_LTC4_TOT(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)//FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units); 
+           form=100*(FINS_LTC4_TOT(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)//FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units)); 
             data_units="RATIO";
          case "CALC_LTC4_TOT_CAP_SURP": 
-           form=FINS_LTC4_TOT(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)//FINS_CAP_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units);
+           form=100*(FINS_LTC4_TOT(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)//FINS_CAP_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
         case "CALC_BORR_MON_SN_CN_SURP": 
-            form=(FINS_BORR_MON(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_SURP_NOTES(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_CAP_NOTES(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units);
+            form=100*((FINS_BORR_MON(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_SURP_NOTES(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_CAP_NOTES(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
         case "CALC_BORR_MON_SN_CN_CAP_SURP": 
-            form=(FINS_BORR_MON(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_SURP_NOTES(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_CAP_NOTES(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_CAP_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units);
+            form=100*((FINS_BORR_MON(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_SURP_NOTES(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_CAP_NOTES(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_CAP_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
         case "CALC_DO_BORR_MON_SN_CN_SURP": 
-            form=(FINS_DRAFT_OUT(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_BORR_MON(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_SURP_NOTES(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_CAP_NOTES(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units);
+            form=100*((FINS_DRAFT_OUT(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_BORR_MON(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_SURP_NOTES(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_CAP_NOTES(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
         case "CALC_DO_BORR_MON_SN_CN_CAP_SURP": 
-            form=(FINS_DRAFT_OUT(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_BORR_MON(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_SURP_NOTES(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_CAP_NOTES(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_CAP_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units); 
+            form=100*((FINS_DRAFT_OUT(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_BORR_MON(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_SURP_NOTES(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_CAP_NOTES(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_CAP_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units)); 
             data_units="RATIO";
 \\
         case "CALC_MEM_MOS": 
-            form=FINS_MEM_MOS(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_MEM_MOS(rbase,speriod-1,eperiod-1,frq,rel_item,curn,units);
+            form=100*(FINS_MEM_MOS(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_MEM_MOS(rbase,speriod-1,eperiod-1,frq,rel_item,curn,units));
             data_units="PCT";
         case "CALC_LIABS_UNPD_CL_INCUR": 
             form_5yh=(FINS_5YR_LIABS_UNPD_CL(rbase,"[SDATE]","[EDATE]",frq,rel_item,curn,units,"[YR]")-FINS_5YR_CL_INCUR(rbase,"[SDATE]","[EDATE]",frq,rel_item,curn,units,"[YR]"))-(FINS_5YR_LIABS_UNPD_CL(rbase,"[SDATE_PREV]","[EDATE_PREV]",frq,rel_item,curn,units,"[YR_PREV]")-FINS_5YR_CL_INCUR(rbase,"[SDATE_PREV]","[EDATE_PREV]",frq,rel_item,curn,units,"[YR_PREV]"));
             data_units="PCT";
         case "CALC_MST_NPI": 
-            form=FINS_MED_SUBTOT(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)//FINS_NET_PREM_INC(rbase,speriod,eperiod,frq,rel_item,curn,units);  
+            form=100*(FINS_MED_SUBTOT(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)//FINS_NET_PREM_INC(rbase,speriod,eperiod,frq,rel_item,curn,units));  
             data_units="RATIO";
         case "CALC_GE_NPI": 
-            form=FINS_GA_EXP(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)//FINS_NET_PREM_INC(rbase,speriod,eperiod,frq,rel_item,curn,units); 
+            form=100*(FINS_GA_EXP(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)//FINS_NET_PREM_INC(rbase,speriod,eperiod,frq,rel_item,curn,units)); 
             data_units="";
         case "CALC_MST_GE_NPI": 
-            form=(FINS_MED_SUBTOT(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)+FINS_GA_EXP(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add))//FINS_NET_PREM_INC(rbase,speriod,eperiod,frq,rel_item,curn,units); 
+            form=100*((FINS_MED_SUBTOT(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)+FINS_GA_EXP(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add))//FINS_NET_PREM_INC(rbase,speriod,eperiod,frq,rel_item,curn,units)); 
             data_units="RATIO";
         case "CALC_CHG_LIABS_UNPD_CL_INCUR": 
-            form_5yh=FINS_5YR_LIABS_UNPD_CL(rbase,"[SDATE]","[EDATE]",frq,rel_item,curn,units,"[YR]")-FINS_5YR_CL_INCUR(rbase,"[SDATE]","[EDATE]",frq,rel_item,curn,units,"[YR]");
+            form_5yh=100*(FINS_5YR_LIABS_UNPD_CL(rbase,"[SDATE]","[EDATE]",frq,rel_item,curn,units,"[YR]")-FINS_5YR_CL_INCUR(rbase,"[SDATE]","[EDATE]",frq,rel_item,curn,units,"[YR]"));
             data_units="PCT";
         case "CALC_NIAB_RX_REV_NIG": 
-            form=(FINS_NET_INC_ACGT_BFIT(rbase,speriod,eperiod,frq,rel_item,curn,units)-FINS_RCGL_XCGT(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add))//(FINS_REV(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_NET_INVEST_GL(rbase,speriod,eperiod,frq,rel_item,curn,units));
+            form=100*((FINS_NET_INC_ACGT_BFIT(rbase,speriod,eperiod,frq,rel_item,curn,units)-FINS_RCGL_XCGT(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add))//(FINS_REV(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_NET_INVEST_GL(rbase,speriod,eperiod,frq,rel_item,curn,units)));
             data_units="PCT";
         case "CALC_NIAB_RX_CIA": 
-            form=(FINS_NET_INC_ACGT_BFIT(rbase,speriod,eperiod,frq,rel_item,curn,units)-FINS_RCGL_XCGT(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOTAL"))//FINS_TOT_CASH_IA(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add);
+            form=100*((FINS_NET_INC_ACGT_BFIT(rbase,speriod,eperiod,frq,rel_item,curn,units)-FINS_RCGL_XCGT(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOTAL"))//FINS_TOT_CASH_IA(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add));
             data_units="PCT";
         case "CALC_FFIT_NIAB": 
-            form=FINS_FFIT(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_NET_INC_ACGT_BFIT(rbase,speriod,eperiod,frq,rel_item,curn,units);
+            form=100*(FINS_FFIT(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_NET_INC_ACGT_BFIT(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="PCT";
         case "CALC_NI_RX_REV_NIG": 
-            form=(FINS_NET_INC(rbase,speriod,eperiod,frq,rel_item,curn,units)-FINS_RCGL_XCGT(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add))//(FINS_REV(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_NET_INVEST_GL(rbase,speriod,eperiod,frq,rel_item,curn,units));
+            form=100*((FINS_NET_INC(rbase,speriod,eperiod,frq,rel_item,curn,units)-FINS_RCGL_XCGT(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add))//(FINS_REV(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_NET_INVEST_GL(rbase,speriod,eperiod,frq,rel_item,curn,units)));
             data_units="PCT";
         case "CALC_NPI_CUV_US":
-            form=(FINS_NET_PREM_INC(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_CHG_UEP_V(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_UNASGD_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units);
+            form=100*((FINS_NET_PREM_INC(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_CHG_UEP_V(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_UNASGD_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
         case "CALC_HVIM_LV_PUV_HCV_US": 
-            form=(FINS_NET_CL_UNPD(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)+FINS_ACCR_MED_INCENT(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)+FINS_UNPD_CL_ADJ_EXP(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)+FINS_HLTH_V_INCL_MLRR(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)+FINS_LIFE_V(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)+FINS_PC_UEP_V(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)+FINS_HLTH_CL_V(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add))//FINS_UNASGD_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units);  
+            form=100*((FINS_NET_CL_UNPD(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)+FINS_ACCR_MED_INCENT(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)+FINS_UNPD_CL_ADJ_EXP(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)+FINS_HLTH_V_INCL_MLRR(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)+FINS_LIFE_V(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)+FINS_PC_UEP_V(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)+FINS_HLTH_CL_V(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add))//FINS_UNASGD_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units));  
             data_units="RATIO";
         case "CALC_NIAB_NNIE": 
-            form=(FINS_NET_INC_ACGT_BFIT(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_NII_INT_EXP(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_NII_INT_EXP(rbase,speriod,eperiod,frq,rel_item,curn,units);
+            form=100*((FINS_NET_INC_ACGT_BFIT(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_NII_INT_EXP(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_NII_INT_EXP(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
         case "CALC_NPI_CIA": 
             form=FINS_NET_PREM_INC(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_TOT_CASH_IA(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add);
@@ -1271,13 +1271,13 @@ string COMA_FFI_FORMULA(string keyword,string rbase_add="NET_ADMIT",string rbase
             form=100-(FINS_FFIT(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_NET_INC_APHD_CGT_BFIT(rbase,speriod,eperiod,frq,rel_item,curn,units));  
             data_units="PCT";
         case "CALC_NI_RX_CIA": 
-            form=(FINS_NET_INC(rbase,speriod,eperiod,frq,rel_item,curn,units)-FINS_RCGL_XCGT(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOTAL"))//FINS_TOT_CASH_IA(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add);
+            form=100*((FINS_NET_INC(rbase,speriod,eperiod,frq,rel_item,curn,units)-FINS_RCGL_XCGT(rbase,speriod,eperiod,frq,rel_item,curn,units,"TOTAL"))//FINS_TOT_CASH_IA(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add));
             data_units="PCT";
         case "CALC_CIA_SURP": 
             form=FINS_TOT_CASH_IA(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)//FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units);
             data_units="RATIO";
         case "CALC_NI_RX_SURP": 
-            form=(FINS_NET_INC(rbase,speriod,eperiod,frq,rel_item,curn,units)-FINS_RCGL_XCGT(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add))//FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units);
+            form=100*((FINS_NET_INC(rbase,speriod,eperiod,frq,rel_item,curn,units)-FINS_RCGL_XCGT(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add))//FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="PCT";
         case "CALC_SHD_NIAB": 
             form=100-(FINS_SHD(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_NET_INC_ACGT_BFIT(rbase,speriod,eperiod,frq,rel_item,curn,units));
@@ -1286,16 +1286,16 @@ string COMA_FFI_FORMULA(string keyword,string rbase_add="NET_ADMIT",string rbase
             form=((FINS_NET_INC(rbase,speriod,eperiod,frq,rel_item,curn,units)-FINS_RCGL_XCGT(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add))//FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units))*(100-(FINS_SHD(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_NET_INC_ACGT_BFIT(rbase,speriod,eperiod,frq,rel_item,curn,units)));
             data_units="PCT";
         case "CALC_NIE_CIA": 
-            form=FINS_NII_INT_EXP(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_TOT_CASH_IA(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add);
+            form=100*(FINS_NII_INT_EXP(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_TOT_CASH_IA(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add));
             data_units="PCT";
         case "CALC_CIA_BORR_MON_DO": 
-            form=FINS_TOT_CASH_IA(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)//(FINS_BORR_MON(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_DRAFT_OUT(rbase,speriod,eperiod,frq,rel_item,curn,units));
+            form=100*(FINS_TOT_CASH_IA(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)//(FINS_BORR_MON(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_DRAFT_OUT(rbase,speriod,eperiod,frq,rel_item,curn,units)));
             data_units="RATIO";
         case "CALC_NIAB_RX_NNIE": 
-            form=(FINS_NET_INC_ACGT_BFIT(rbase,speriod,eperiod,frq,rel_item,curn,units)-FINS_RCGL_XCGT(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)+FINS_NII_INT_EXP(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_NII_INT_EXP(rbase,speriod,eperiod,frq,rel_item,curn,units);
+            form=100*((FINS_NET_INC_ACGT_BFIT(rbase,speriod,eperiod,frq,rel_item,curn,units)-FINS_RCGL_XCGT(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)+FINS_NII_INT_EXP(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_NII_INT_EXP(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
         case "CALC_SHD_NI_AB": 
-            form=FINS_SHD(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_NET_INC_ACGT_BFIT(rbase,speriod,eperiod,frq,rel_item,curn,units);
+            form=100*(FINS_SHD(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_NET_INC_ACGT_BFIT(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
         case "CALC_BORR_MON_SN_NIAB_RX": 
             form=(FINS_BORR_MON(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_SURP_NOTES(rbase,speriod,eperiod,frq,rel_item,curn,units))//(FINS_NET_INC_ACGT_BFIT(rbase,speriod,eperiod,frq,rel_item,curn,units)-FINS_RCGL_XCGT(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add));  
@@ -1313,74 +1313,74 @@ string COMA_FFI_FORMULA(string keyword,string rbase_add="NET_ADMIT",string rbase
             form=FINS_OPER_NET_CF(rbase,speriod,eperiod,frq,rel_item,curn,units)//(FINS_BORR_MON(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_DRAFT_OUT(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_SURP_NOTES(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
         case "CALC_NET_CL_UNPD_CAP_SURP": 
-            form=FINS_NET_CL_UNPD(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)//FINS_CAP_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units);
+            form=100*(FINS_NET_CL_UNPD(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)//FINS_CAP_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
         case "CALC_NET_CL_UNPD_US": 
-            form=FINS_NET_CL_UNPD(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)//FINS_UNASGD_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units);
+            form=100*(FINS_NET_CL_UNPD(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)//FINS_UNASGD_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
         case "CALC_BORR_MON_SN_US": 
-            form=(FINS_BORR_MON(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_SURP_NOTES(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_UNASGD_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units);
+            form=100*((FINS_BORR_MON(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_SURP_NOTES(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_UNASGD_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
         case "CALC_BORR_MON_SN_CAP_SURP": 
-            form=(FINS_BORR_MON(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_SURP_NOTES(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_CAP_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units);
+            form=100*((FINS_BORR_MON(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_SURP_NOTES(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_CAP_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
         case "CALC_DO_BORR_MON_SN_US": 
-            form=(FINS_DRAFT_OUT(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_BORR_MON(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_SURP_NOTES(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_UNASGD_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units);
+            form=100*((FINS_DRAFT_OUT(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_BORR_MON(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_SURP_NOTES(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_UNASGD_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
         case "CALC_DO_BORR_MON_SN_CAP_SURP": 
-            form=(FINS_DRAFT_OUT(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_BORR_MON(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_SURP_NOTES(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_CAP_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units);
+            form=100*((FINS_DRAFT_OUT(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_BORR_MON(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_SURP_NOTES(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_CAP_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
 \\
         case "CALC_NPW_GPW": 
-            form_5yh=FINS_5YR_NET_PW(rbase,"[SDATE]","[EDATE]",frq,rel_item,curn,units,"TOTAL","[YR]")//FINS_5YR_GROSS_PW(rbase,"[SDATE]","[EDATE]",frq,rel_item,curn,units,"TOTAL","[YR]");
+            form_5yh=100*(FINS_5YR_NET_PW(rbase,"[SDATE]","[EDATE]",frq,rel_item,curn,units,"TOTAL","[YR]")//FINS_5YR_GROSS_PW(rbase,"[SDATE]","[EDATE]",frq,rel_item,curn,units,"TOTAL","[YR]"));
             data_units="RATIO";
         case "CALC_EP_NPW": 
-            form_5yh=FINS_EP(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_5YR_NET_PW(rbase,"[SDATE]","[EDATE]",frq,rel_item,curn,units,"TOTAL","[YR]");
+            form_5yh=100*(FINS_EP(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_5YR_NET_PW(rbase,"[SDATE]","[EDATE]",frq,rel_item,curn,units,"TOTAL","[YR]"));
             data_units="RATIO";
         case "CALC_BPC_NPW": 
-            form_5yh=FINS_BNFIT_PMTS_CF(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_5YR_NET_PW(rbase,"[SDATE]","[EDATE]",frq,rel_item,curn,units,"TOTAL","[YR]");
+            form_5yh=100*(FINS_BNFIT_PMTS_CF(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_5YR_NET_PW(rbase,"[SDATE]","[EDATE]",frq,rel_item,curn,units,"TOTAL","[YR]"));
             data_units="RATIO";
         case "CALC_BPC_INCUR_LL": 
-            form=FINS_BNFIT_PMTS_CF(rbase,speriod,eperiod,frq,rel_item,curn,units)//(FINS_INCUR_LOSS(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_INCUR_LOSS(rbase,speriod,eperiod,frq,rel_item,curn,units));
+            form=100*(FINS_BNFIT_PMTS_CF(rbase,speriod,eperiod,frq,rel_item,curn,units)//(FINS_INCUR_LOSS(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_INCUR_LOSS(rbase,speriod,eperiod,frq,rel_item,curn,units)));
             data_units="RATIO";
         case "CALC_DLLAE_PY_EP": 
-            form_5yh=FINS_5YR_DLLAE_PY(rbase,"[SDATE]","[EDATE]",frq,rel_item,curn,units,"[YR]")//FINS_EP(rbase,speriod,eperiod,frq,rel_item,curn,units);
+            form_5yh=100*(FINS_5YR_DLLAE_PY(rbase,"[SDATE]","[EDATE]",frq,rel_item,curn,units,"[YR]")//FINS_EP(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
         case "CALC_INCUR_LL_DLLAE_PY_EP": 
-            form_5yh=(FINS_INCUR_LOSS(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_INCUR_LOSS(rbase,speriod,eperiod,frq,rel_item,curn,units)-FINS_5YR_DLLAE_PY(rbase,"[SDATE]","[EDATE]",frq,rel_item,curn,units,"[YR]"))//FINS_EP(rbase,speriod,eperiod,frq,rel_item,curn,units);    
+            form_5yh=100*((FINS_INCUR_LOSS(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_INCUR_LOSS(rbase,speriod,eperiod,frq,rel_item,curn,units)-FINS_5YR_DLLAE_PY(rbase,"[SDATE]","[EDATE]",frq,rel_item,curn,units,"[YR]"))//FINS_EP(rbase,speriod,eperiod,frq,rel_item,curn,units));    
             data_units="RATIO";
         case "CALC_INCUR_LL_EP": 
-            form=(FINS_INCUR_LOSS(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_INCUR_LOSS(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_EP(rbase,speriod,eperiod,frq,rel_item,curn,units);
+            form=100*((FINS_INCUR_LOSS(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_INCUR_LOSS(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_EP(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
         case "CALC_OUE_WUD_EP": 
-            form=(FINS_OTH_UW_EXP(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_WI_UW_DEDUCT(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_EP(rbase,speriod,eperiod,frq,rel_item,curn,units);
+            form=100*((FINS_OTH_UW_EXP(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_WI_UW_DEDUCT(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_EP(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
         case "CALC_INCUR_LL_OUE_WUD_EP": 
-            form=(FINS_INCUR_LOSS(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_INCUR_LOSS(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_OTH_UW_EXP(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_WI_UW_DEDUCT(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_EP(rbase,speriod,eperiod,frq,rel_item,curn,units);
+            form=100*((FINS_INCUR_LOSS(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_INCUR_LOSS(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_OTH_UW_EXP(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_WI_UW_DEDUCT(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_EP(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
         case "CALC_INCUR_LL_DLLAE_PY_EP_OUE_WUD_EP": 
             form_5yh=(FINS_INCUR_LOSS(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_INCUR_LOSS(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_5YR_DLLAE_PY(rbase,"[SDATE]","[EDATE]",frq,rel_item,curn,units,"[YR]")+FINS_OTH_UW_EXP(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_WI_UW_DEDUCT(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_EP(rbase,speriod,eperiod,frq,rel_item,curn,units);
             data_units="RATIO";
         case "CALC_NIACB_EP_NIG_NIP_TOI": 
-            form=FINS_NET_INC_APHD_CGT_BFIT(rbase,speriod,eperiod,frq,rel_item,curn,units)//(FINS_EP(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_NET_INVEST_GL(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_NET_INC_PCELL(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_TOT_OTH_INC(rbase,speriod,eperiod,frq,rel_item,curn,units));
+            form=100*(FINS_NET_INC_APHD_CGT_BFIT(rbase,speriod,eperiod,frq,rel_item,curn,units)//(FINS_EP(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_NET_INVEST_GL(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_NET_INC_PCELL(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_TOT_OTH_INC(rbase,speriod,eperiod,frq,rel_item,curn,units)));
             data_units="PCT";
         case "CALC_FFIT_NIACB_PC": 
-            form=FINS_FFIT(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_NET_INC_APHD_CGT_BFIT(rbase,speriod,eperiod,frq,rel_item,curn,units);
+            form=100*(FINS_FFIT(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_NET_INC_APHD_CGT_BFIT(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="PCT";
         case "CALC_NI_RX_EP_NIG_NIP_TOI": 
-            form=(FINS_NET_INC(rbase,speriod,eperiod,frq,rel_item,curn,units)-FINS_RCGL_XCGT(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add))//(FINS_EP(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_NET_INVEST_GL(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_NET_INC_PCELL(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_TOT_OTH_INC(rbase,speriod,eperiod,frq,rel_item,curn,units));
+            form=100*((FINS_NET_INC(rbase,speriod,eperiod,frq,rel_item,curn,units)-FINS_RCGL_XCGT(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add))//(FINS_EP(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_NET_INVEST_GL(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_NET_INC_PCELL(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_TOT_OTH_INC(rbase,speriod,eperiod,frq,rel_item,curn,units)));
             data_units="PCT";
         case "CALC_NIACB_NNIE": 
-            form=(FINS_NET_INC_APHD_CGT_BFIT(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_NII_INT_EXP(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_NII_INT_EXP(rbase,speriod,eperiod,frq,rel_item,curn,units);
+            form=100*((FINS_NET_INC_APHD_CGT_BFIT(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_NII_INT_EXP(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_NII_INT_EXP(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
         case "CALC_EP_CIA": 
             form=FINS_EP(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_TOT_CASH_IA(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add);
             data_units="RATIO";
         case "CALC_NIACB_RX_EP_NIG_NIP_TOI": 
-            form=(FINS_NET_INC_APHD_CGT_BFIT(rbase,speriod,eperiod,frq,rel_item,curn,units)-FINS_RCGL_XCGT(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add))//(FINS_EP(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_NET_INVEST_GL(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_NET_INC_PCELL(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_TOT_OTH_INC(rbase,speriod,eperiod,frq,rel_item,curn,units));
+            form=100*((FINS_NET_INC_APHD_CGT_BFIT(rbase,speriod,eperiod,frq,rel_item,curn,units)-FINS_RCGL_XCGT(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add))//(FINS_EP(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_NET_INVEST_GL(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_NET_INC_PCELL(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_TOT_OTH_INC(rbase,speriod,eperiod,frq,rel_item,curn,units)));
             data_units="PCT";
         case "CALC_NIACB_CIA": 
-            form=FINS_NET_INC_APHD_CGT_BFIT(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_TOT_CASH_IA(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add);
+            form=100*(FINS_NET_INC_APHD_CGT_BFIT(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_TOT_CASH_IA(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add));
             data_units="PCT";
         case "CALC_PHD_NIBAB": 
             form=100-(FINS_PHD(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_NET_INC_BPHD_ACGT_BFIT(rbase,speriod,eperiod,frq,rel_item,curn,units));
@@ -1389,7 +1389,7 @@ string COMA_FFI_FORMULA(string keyword,string rbase_add="NET_ADMIT",string rbase
             form=((FINS_NET_INC(rbase,speriod,eperiod,frq,rel_item,curn,units)-FINS_RCGL_XCGT(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add))//((FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_SURP(rbase,speriod-1,eperiod-1,frq,rel_item,curn,units))/2))*(100-(FINS_PHD(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_NET_INC_BPHD_ACGT_BFIT(rbase,speriod,eperiod,frq,rel_item,curn,units)));
             data_units="PCT";
         case "CALC_CASH_ST_DO": 
-            form=FINS_CASH_ST(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)//FINS_DRAFT_OUT(rbase,speriod,eperiod,frq,rel_item,curn,units);
+            form=100*(FINS_CASH_ST(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)//FINS_DRAFT_OUT(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
         case "CALC_NIBAB_PHD": 
             form=FINS_NET_INC_BPHD_ACGT_BFIT(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_PHD(rbase,speriod,eperiod,frq,rel_item,curn,units);
@@ -1401,79 +1401,79 @@ string COMA_FFI_FORMULA(string keyword,string rbase_add="NET_ADMIT",string rbase
             form=(FINS_BORR_MON(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_DRAFT_OUT(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_SURP_NOTES(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_CAP_NOTES(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_NET_INC_APHD_CGT_BFIT(rbase,speriod,eperiod,frq,rel_item,curn,units);
             data_units="RATIO";
         case "CALC_RE_PROP_SALE_CIA": 
-           form=FINS_RE_PROP_SALE(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)//FINS_TOT_CASH_IA(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add);
+           form=100*(FINS_RE_PROP_SALE(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)//FINS_TOT_CASH_IA(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add));
             data_units="RATIO";
         case "CALC_LOSS_REINS_PAY_LAE_SURP": 
-           form=(FINS_LOSS(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_REINS_PAY(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_LAE(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units);
+           form=100*((FINS_LOSS(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_REINS_PAY(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_LAE(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
         case "CALC_LOSS_REINS_PAY_LAE_CAP_SURP": 
-           form=(FINS_LOSS(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_REINS_PAY(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_LAE(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_CAP_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units);
+           form=100*((FINS_LOSS(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_REINS_PAY(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_LAE(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_CAP_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
         case "CALC_DO_BORR_MON_SN_SURP": 
-            form=(FINS_DRAFT_OUT(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_BORR_MON(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_SURP_NOTES(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units);
+            form=100*((FINS_DRAFT_OUT(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_BORR_MON(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_SURP_NOTES(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
         case "CALC_BORR_MON_SN_SURP": 
-            form=(FINS_BORR_MON(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_SURP_NOTES(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units);
+            form=100*((FINS_BORR_MON(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_SURP_NOTES(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
         case "CALC_RE_PROP_INC_SALE_HQ_CIA": 
-           form=(FINS_RE_PROP_INC(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)+FINS_RE_PROP_SALE(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)+FINS_RE_PROP_HQ(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add))//FINS_TOT_CASH_IA(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add);
+           form=100*((FINS_RE_PROP_INC(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)+FINS_RE_PROP_SALE(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)+FINS_RE_PROP_HQ(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add))//FINS_TOT_CASH_IA(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add));
             data_units="RATIO";
         case "CALC_RE_PROP_INC_SALE_HQ_SURP": 
-           form=(FINS_RE_PROP_INC(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)+FINS_RE_PROP_SALE(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)+FINS_RE_PROP_HQ(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add))//FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add);
+           form=100*((FINS_RE_PROP_INC(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)+FINS_RE_PROP_SALE(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)+FINS_RE_PROP_HQ(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add))//FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add));
             data_units="RATIO";
         case "CALC_RE_PROP_INC_SALE_HQ_CAP_SURP": 
-           form=(FINS_RE_PROP_INC(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)+FINS_RE_PROP_SALE(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)+FINS_RE_PROP_HQ(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add))//FINS_CAP_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add);
+           form=100*((FINS_RE_PROP_INC(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)+FINS_RE_PROP_SALE(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)+FINS_RE_PROP_HQ(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add))//FINS_CAP_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add));
             data_units="RATIO";
 \\
         case "CALC_TPW_NET_DIR_T_TOT": 
-           form_5yh=FINS_TPW_NET(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_5YR_DIR_TPW_TOT(rbase,"[SDATE]","[EDATE]",frq,rel_item,curn,units,"[YR]");
+           form_5yh=100*(FINS_TPW_NET(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_5YR_DIR_TPW_TOT(rbase,"[SDATE]","[EDATE]",frq,rel_item,curn,units,"[YR]"));
             data_units="RATIO";
         case "CALC_TITLE_EP_TPW_NET": 
-            form=FINS_TITLE_EP(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_TPW_NET(rbase,speriod,eperiod,frq,rel_item,curn,units);
+            form=100*(FINS_TITLE_EP(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_TPW_NET(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
         case "CALC_TPD_DO_DIR_T_TOT": 
-            form_5yh=FINS_T_PW_DIR_DO(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)//FINS_5YR_DIR_TPW_TOT(rbase,"[SDATE]","[EDATE]",frq,rel_item,curn,units,"[YR]");
+            form_5yh=100*(FINS_T_PW_DIR_DO(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)//FINS_5YR_DIR_TPW_TOT(rbase,"[SDATE]","[EDATE]",frq,rel_item,curn,units,"[YR]"));
             data_units="RATIO";
         case "CALC_TPD_NAAO_DIR_T_TOT": 
-            form_5yh=FINS_T_PW_DIR_NAAO(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)//FINS_5YR_DIR_TPW_TOT(rbase,"[SDATE]","[EDATE]",frq,rel_item,curn,units,"[YR]");
+            form_5yh=100*(FINS_T_PW_DIR_NAAO(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)//FINS_5YR_DIR_TPW_TOT(rbase,"[SDATE]","[EDATE]",frq,rel_item,curn,units,"[YR]"));
             data_units="RATIO";
         case "CALC_TPD_AAO_DIR_T_TOT": 
-            form_5yh=FINS_T_PW_DIR_AAO(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)//FINS_5YR_DIR_TPW_TOT(rbase,"[SDATE]","[EDATE]",frq,rel_item,curn,units,"[YR]");
+            form_5yh=100*(FINS_T_PW_DIR_AAO(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)//FINS_5YR_DIR_TPW_TOT(rbase,"[SDATE]","[EDATE]",frq,rel_item,curn,units,"[YR]"));
             data_units="RATIO";
         case "CALC_BPC_TPW_NET": 
-            form=FINS_BNFIT_PMTS_CF(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_TPW_NET(rbase,speriod,eperiod,frq,rel_item,curn,units);
+            form=100*(FINS_BNFIT_PMTS_CF(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_TPW_NET(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
         case "CALC_BPC_INCUR_LLAE": 
-            form=FINS_BNFIT_PMTS_CF(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_INCUR_LLAE(rbase,speriod,eperiod,frq,rel_item,curn,units);
+            form=100*(FINS_BNFIT_PMTS_CF(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_INCUR_LLAE(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
         case "CALC_CPT_DLALAE_CL_PY": 
            form_5yh=100*(FINS_5YR_DLALAE_CL_PY(rbase,"[SDATE]","[EDATE]",frq,rel_item,curn,units,"[YR]"));
             data_units="PCT";
         case "CALC_INCUR_LLAE_DLALAE_CL_PY_TITLE_EP": 
-           form_5yh=(FINS_INCUR_LLAE(rbase,speriod,eperiod,frq,rel_item,curn,units)-FINS_5YR_DLALAE_CL_PY(rbase,"[SDATE]","[EDATE]",frq,rel_item,curn,units,"[YR]"))//FINS_TITLE_EP(rbase,speriod,eperiod,frq,rel_item,curn,units);
+           form_5yh=100*((FINS_INCUR_LLAE(rbase,speriod,eperiod,frq,rel_item,curn,units)-FINS_5YR_DLALAE_CL_PY(rbase,"[SDATE]","[EDATE]",frq,rel_item,curn,units,"[YR]"))//FINS_TITLE_EP(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
         case "CALC_INCUR_LLAE_TITLE_EP": 
-            form=FINS_INCUR_LLAE(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_TITLE_EP(rbase,speriod,eperiod,frq,rel_item,curn,units);
+            form=100*(FINS_INCUR_LLAE(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_TITLE_EP(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
         case "CALC_TOE_TITLE_EP": 
-            form=FINS_TOT_OPER_EXP(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_TITLE_EP(rbase,speriod,eperiod,frq,rel_item,curn,units);
+            form=100*(FINS_TOT_OPER_EXP(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_TITLE_EP(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
         case "CALC_INCUR_LLAE_TOE_TITLE_EP": 
-            form=(FINS_INCUR_LLAE(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_TOT_OPER_EXP(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_TITLE_EP(rbase,speriod,eperiod,frq,rel_item,curn,units);
+            form=100*((FINS_INCUR_LLAE(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_TOT_OPER_EXP(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_TITLE_EP(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
          case "CALC_INCUR_LLAE_TOE_DLALAE_CL_PY_TITLE_EP": 
-           form_5yh=(FINS_INCUR_LLAE(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_TOT_OPER_EXP(rbase,speriod,eperiod,frq,rel_item,curn,units)-FINS_5YR_DLALAE_CL_PY(rbase,"[SDATE]","[EDATE]",frq,rel_item,curn,units,"[YR]"))//FINS_TITLE_EP(rbase,speriod,eperiod,frq,rel_item,curn,units);
+           form_5yh=100*((FINS_INCUR_LLAE(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_TOT_OPER_EXP(rbase,speriod,eperiod,frq,rel_item,curn,units)-FINS_5YR_DLALAE_CL_PY(rbase,"[SDATE]","[EDATE]",frq,rel_item,curn,units,"[YR]"))//FINS_TITLE_EP(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
          case "CALC_NIAB_TOI_NII_WMI": 
            form=FINS_NET_INC_ACGT_BFIT(rbase,speriod,eperiod,frq,rel_item,curn,units)//(FINS_TOT_OPER_EXP(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_NII(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)+FINS_WI_MISC_INC(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="PCT";
          case "CALC_NI_RX_TOI_NII_WMI": 
-           form=(FINS_NET_INC(rbase,speriod,eperiod,frq,rel_item,curn,units)-FINS_RCGL_XCGT(rbase,speriod,eperiod,frq,rel_item,curn,units))//(FINS_TOT_OPER_EXP(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_NII(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)+FINS_WI_MISC_INC(rbase,speriod,eperiod,frq,rel_item,curn,units));
+           form=100*((FINS_NET_INC(rbase,speriod,eperiod,frq,rel_item,curn,units)-FINS_RCGL_XCGT(rbase,speriod,eperiod,frq,rel_item,curn,units))//(FINS_TOT_OPER_EXP(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_NII(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add)+FINS_WI_MISC_INC(rbase,speriod,eperiod,frq,rel_item,curn,units)));
             data_units="PCT";
         case "CALC_TITLE_EP_CIA": 
             form=FINS_TITLE_EP(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_TOT_CASH_IA(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add);
         case "CALC_NIAB_CIA": 
-            form=FINS_NET_INC_ACGT_BFIT(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_TOT_CASH_IA(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add);
+            form=100*(FINS_NET_INC_ACGT_BFIT(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_TOT_CASH_IA(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add));
             data_units="PCT";
         case "CALC_FFIT_NIAB_TL": 
             form=100-(FINS_FFIT(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_NET_INC_ACGT_BFIT(rbase,speriod,eperiod,frq,rel_item,curn,units));
@@ -1488,19 +1488,19 @@ string COMA_FFI_FORMULA(string keyword,string rbase_add="NET_ADMIT",string rbase
             form=((FINS_NET_INC(rbase,speriod,eperiod,frq,rel_item,curn,units)-FINS_RCGL_XCGT(rbase,speriod,eperiod,frq,rel_item,curn,units,rbase_add))//((FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_SURP(rbase,speriod-1,eperiod-1,frq,rel_item,curn,units))/2))*(100-(FINS_SHD(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_NET_INC(rbase,speriod,eperiod,frq,rel_item,curn,units)-FINS_SHD(rbase,speriod,eperiod,frq,rel_item,curn,units)));
             data_units="PCT";
         case "CALC_TPW_NET_SURP": 
-            form=FINS_TPW_NET(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units);
+            form=100*(FINS_TPW_NET(rbase,speriod,eperiod,frq,rel_item,curn,units)//FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
         case "CALC_KCV_SPV_OV_SV_SURP": 
-            form=(FINS_KNOWN_CL_V(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_STAT_PREM_V(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_OTH_V(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_SUPPL_V(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units);
+            form=100*((FINS_KNOWN_CL_V(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_STAT_PREM_V(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_OTH_V(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_SUPPL_V(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
         case "CALC_BORR_MON_SN_SURP_BORR_MON_DO": 
-            form=(FINS_BORR_MON(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_SURP_NOTES(rbase,speriod,eperiod,frq,rel_item,curn,units))//(FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_BORR_MON(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_DRAFT_OUT(rbase,speriod,eperiod,frq,rel_item,curn,units));
+            form=100*((FINS_BORR_MON(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_SURP_NOTES(rbase,speriod,eperiod,frq,rel_item,curn,units))//(FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_BORR_MON(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_DRAFT_OUT(rbase,speriod,eperiod,frq,rel_item,curn,units)));
             data_units="RATIO";
         case "CALC_BORR_MON_DO_SN_SURP": 
-            form=(FINS_BORR_MON(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_DRAFT_OUT(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_SURP_NOTES(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units);
+            form=100*((FINS_BORR_MON(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_DRAFT_OUT(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_SURP_NOTES(rbase,speriod,eperiod,frq,rel_item,curn,units))//FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units));
             data_units="RATIO";
         case "CALC_BORR_MON_DO_SN_SURP_BORR_MON_DO": 
-            form=(FINS_BORR_MON(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_DRAFT_OUT(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_SURP_NOTES(rbase,speriod,eperiod,frq,rel_item,curn,units))//(FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_BORR_MON(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_DRAFT_OUT(rbase,speriod,eperiod,frq,rel_item,curn,units));
+            form=100*((FINS_BORR_MON(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_DRAFT_OUT(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_SURP_NOTES(rbase,speriod,eperiod,frq,rel_item,curn,units))//(FINS_SURP(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_BORR_MON(rbase,speriod,eperiod,frq,rel_item,curn,units)+FINS_DRAFT_OUT(rbase,speriod,eperiod,frq,rel_item,curn,units)));
             data_units="RATIO";
 /*
 \\OPERATING EFFICIENCY (EFF) ITEMS 
