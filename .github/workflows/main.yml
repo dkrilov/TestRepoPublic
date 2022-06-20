@@ -31,7 +31,7 @@ jobs:
         uses: QAInsights/PerfAction@3.0
         with:
           # jmeter test plan to execute
-          test-plan-path: './sample_test.jmx'
+          test-plan-path: 'sample_test.jmx'
         
       - name: Upload Results
         uses: actions/upload-artifact@v3
