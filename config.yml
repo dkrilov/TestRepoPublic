@@ -1,0 +1,2 @@
+- name: PerfAction for JMeter
+  uses: QAInsights/PerfAction@3.0
