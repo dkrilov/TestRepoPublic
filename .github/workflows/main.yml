@@ -34,7 +34,7 @@ jobs:
           test-plan-path: './sample_test.jmx'
         
       - name: Upload Results
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: jmeter-results
           path: result.jtl
