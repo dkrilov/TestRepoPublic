@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.4-SNAPSHOT 3e4e5d8">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="BZT Generated Test Plan" enabled="true">
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <stringProp name="TestPlan.comments"></stringProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Seperate Account - Life/Health_Defaults_API" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">0</stringProp>
+        <stringProp name="ThreadGroup.start_time"></stringProp>
+        <stringProp name="ThreadGroup.end_time"></stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration">0</stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="UserName" elementType="Argument">
+              <stringProp name="Argument.name">UserName</stringProp>
+              <stringProp name="Argument.value">FDSQAR_C</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="SerialNumber" elementType="Argument">
+              <stringProp name="Argument.name">SerialNumber</stringProp>
+              <stringProp name="Argument.value">493663</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="Override" elementType="Argument">
+              <stringProp name="Argument.name">Override</stringProp>
+              <stringProp name="Argument.value">review_ks-financials_all-feat-upgrade_178</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="Environment" elementType="Argument">
+              <stringProp name="Argument.name">Environment</stringProp>
+              <stringProp name="Argument.value">${__P(Stage,QA)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="Base" elementType="Argument">
+              <stringProp name="Argument.name">Base</stringProp>
+              <stringProp name="Argument.value">${__BeanShell(import org.apache.jmeter.services.FileServer; FileServer.getFileServer().getBaseDir().split(&quot;(?i)spec&quot;)[0]+&quot;Config/&quot;;)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="Token" elementType="Argument">
+              <stringProp name="Argument.name">Token</stringProp>
+              <stringProp name="Argument.value">${__P(Token)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="WebAPI" elementType="Argument">
+              <stringProp name="Argument.name">WebAPI</stringProp>
+              <stringProp name="Argument.value">${__P(WebAPI)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="param" elementType="Argument">
+              <stringProp name="Argument.name">param</stringProp>
+              <stringProp name="Argument.value"> Test</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <AuthManager guiclass="AuthPanel" testclass="AuthManager" testname="HTTP Authorization Manager" enabled="true">
+          <collectionProp name="AuthManager.auth_list">
+            <elementProp name="" elementType="Authorization">
+              <stringProp name="Authorization.url"></stringProp>
+              <stringProp name="Authorization.username">dkrilov</stringProp>
+              <stringProp name="Authorization.password">Stayin1224</stringProp>
+              <stringProp name="Authorization.domain"></stringProp>
+              <stringProp name="Authorization.realm"></stringProp>
+              <stringProp name="Authorization.mechanism">BASIC_DIGEST</stringProp>
+            </elementProp>
+          </collectionProp>
+          <boolProp name="AuthManager.controlledByThreadGroup">false</boolProp>
+        </AuthManager>
+        <hashTree/>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="false">
+          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="filename">${Base}${Environment}.csv</stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">URL</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="Cache" enabled="true">
+          <boolProp name="clearEachIteration">true</boolProp>
+          <boolProp name="useExpires">false</boolProp>
+          <boolProp name="CacheManager.controlledByThread">false</boolProp>
+        </CacheManager>
+        <hashTree/>
+        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="Cookies" enabled="true">
+          <collectionProp name="CookieManager.cookies"/>
+          <boolProp name="CookieManager.clearEachIteration">true</boolProp>
+          <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
+        </CookieManager>
+        <hashTree/>
+        <DNSCacheManager guiclass="DNSCachePanel" testclass="DNSCacheManager" testname="DNS Cache Manager" enabled="true">
+          <collectionProp name="DNSCacheManager.servers"/>
+          <boolProp name="DNSCacheManager.clearEachIteration">false</boolProp>
+          <boolProp name="DNSCacheManager.isCustomResolver">false</boolProp>
+        </DNSCacheManager>
+        <hashTree/>
+        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="Defaults" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="user_defined" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <boolProp name="HTTPSampler.image_parser">true</boolProp>
+          <boolProp name="HTTPSampler.concurrentDwn">true</boolProp>
+          <stringProp name="HTTPSampler.concurrentPool">4</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </ConfigTestElement>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Lima_Session_ID" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="username" elementType="HTTPArgument">
+                <stringProp name="Argument.name">username</stringProp>
+                <stringProp name="Argument.value">${UserName}</stringProp>
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="serial" elementType="HTTPArgument">
+                <stringProp name="Argument.name">serial</stringProp>
+                <stringProp name="Argument.value">${SerialNumber}</stringProp>
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">lima-staging.factset.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/api-lima/credentials</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout">0</stringProp>
+          <stringProp name="HTTPSampler.response_timeout">0</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Token" enabled="true">
+          <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+          <stringProp name="RegexExtractor.refname">Token</stringProp>
+          <stringProp name="RegexExtractor.regex">&quot;token&quot;:&quot;(.+?)&quot;}</stringProp>
+          <stringProp name="RegexExtractor.template">$1$</stringProp>
+          <stringProp name="RegexExtractor.default">False</stringProp>
+          <stringProp name="RegexExtractor.match_number">1</stringProp>
+        </RegexExtractor>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Seperate Account - Life/Health_Defaults_API" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="ksBalanceSheetTable[componentName]" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">ksBalanceSheetTable[componentName]</stringProp>
+                <stringProp name="Argument.value">ksFinancialsTable</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="ksBalanceSheetTable[options]" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">ksBalanceSheetTable[options]</stringProp>
+                <stringProp name="Argument.value">rpt=BAL&amp;stdOrArpt=INS_L&amp;rptType=ANN&amp;speriod=0&amp;eperiod=-9&amp;restated=1&amp;grthType=YOY&amp;showExpand=0&amp;showInlineCalc=1&amp;showSpark=1&amp;showGrowthTable=1&amp;showCsizeTable=0&amp;showComp=0&amp;curn=LOCAL&amp;segType=BUS&amp;keyword=SALES&amp;acctStd=DEFAULT&amp;part=1&amp;business=SUM&amp;assetType=RE&amp;holdType=OWN&amp;fperiod=0&amp;decimals=-1&amp;units=AUTO&amp;reversePeriods=0&amp;showAudit=1&amp;compId=DEFAULT&amp;showUnreported=0&amp;showExpandHdr=1&amp;id=KCLI-US</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">my.apps.factset.com</stringProp>
+          <stringProp name="HTTPSampler.port">443</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/financial-reports/api/aggr/json</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://my.apps.factset.com/financial-reports/balance-sheet?system=LinuxOnly&amp;navigator=1&amp;instance=company-security&amp;fdsweb=1&amp;initialId=KCLI-US&amp;lang=en-US</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US</stringProp>
+              </elementProp>
+              <elementProp name="X-Fdsa-Long-Request-Deadline" elementType="Header">
+                <stringProp name="Header.name">X-Fdsa-Long-Request-Deadline</stringProp>
+                <stringProp name="Header.value">25</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+              <elementProp name="ot-tracer-sampled" elementType="Header">
+                <stringProp name="Header.name">ot-tracer-sampled</stringProp>
+                <stringProp name="Header.value">true</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="X-Fds-Auth-Token" elementType="Header">
+                <stringProp name="Header.name">X-Fds-Auth-Token</stringProp>
+                <stringProp name="Header.value">${Token}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="Python script" enabled="true">
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="script"># Get jmeter parameters
+user = vars.get(&quot;user&quot;)
+print &quot;Dimitry hello&quot;# output log
+log.info(&quot;Get the variable user:&quot; + Str(user))
+# Set the response information
+SampleResult.setResponseData(&quot;return message&quot;);
+SampleResult.setResponseCode(&quot;502&quot;)
+SampleResult.setSuccessful(False)</stringProp>
+            <stringProp name="scriptLanguage">jython</stringProp>
+          </JSR223Assertion>
+          <hashTree/>
+          <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="Python script1" enabled="true">
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="script">import logging
+import json
+
+#Get jmeter parameter
+param =vars.get(&quot;param&quot;)
+log.info(&quot;Hello&quot;+param)
+
+ #urlRequest return code
+ResponseCode=prev.getResponseCode()
+log.info(&quot;\nHTTP ResponseCode: &quot;+ResponseCode)
+ 
+ #Get request content
+Request=prev.getSamplerData()
+log.info(&quot;\nRequest: &quot;+Request)
+
+ #Get response content
+Response=prev.getResponseDataAsString()
+log.info(&quot;\nResponse: &quot;+Response)
+
+ 
+header=prev.getResponseHeaders()
+log.info(&quot;\nHeaders: &quot;+header)
+
+#
+##Test JSON
+##json_string = Response.json()
+#parsed_json = json.loads(Response)
+##log.info(&quot;\nParsedResponse: &quot;+parsed_json)
+#log.info(&quot;ksBalanceSheetTable: &quot;+str(parsed_json[&apos;ksBalanceSheetTable&apos;]))
+ 
+
+if ResponseCode==&quot;200&quot;:
+ AssertionResult.setFailure(True)
+ Failure = True	
+ message=&quot;The system does not respond, no data is obtained&quot;
+ msg=&quot;\nRequest header information:&quot;+header+&quot;\nmsg:&quot;+message
+ AssertionResult.setFailureMessage(msg)#Add log in generated html report
+ log.info(msg)
+ 
+# elif &quot;${code}&quot;!=status and &quot;${code}&quot;!=status1: 
+# AssertionResult.setFailure(True)
+# Failure = True
+# msg=&quot;\ncode:&quot;+&quot;${code}&quot;+&quot;\nRequest data:&quot;+Request+&quot;\nResponse content:&quot;+Response+&quot;\nRequest header information:&quot;+header
+# AssertionResult.setFailureMessage(msg)#Add log in generated html report
+# log.info(msg)
+ 
+#else:
+# log.info(u&quot;\nResponse content: &quot;+Response)</stringProp>
+            <stringProp name="scriptLanguage">jython</stringProp>
+          </JSR223Assertion>
+          <hashTree/>
+          <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="Python script2" enabled="false">
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="script">import re
+
+line = &quot;Cats are smarter than dogs&quot;
+
+matchObj = re.match( r&apos;(.*) are (.*?) .*&apos;, line, re.M|re.I)
+
+if matchObj:
+   print &quot;matchObj.group() : &quot;, matchObj.group()
+   print &quot;matchObj.group(1) : &quot;, matchObj.group(1)
+   print &quot;matchObj.group(2) : &quot;, matchObj.group(2)
+else:
+   print &quot;No match!!&quot;</stringProp>
+            <stringProp name="scriptLanguage">jython</stringProp>
+          </JSR223Assertion>
+          <hashTree/>
+          <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="Excel script1" enabled="true">
+            <stringProp name="scriptLanguage">jython</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">#import requests
+import logging
+import json
+import csv
+
+#download = csv.reader(open(&apos;C:/Users/dkrilov/OneDrive - FactSet/Documents/GitHub/fds-qa-test-financials-jmeter/spec/BalanceSheet/jvl_translation.csv&apos;))
+with open(&apos;C:/Users/dkrilov/OneDrive - FactSet/Documents/GitHub/Backups/jvl_translation.csv&apos;) as download:
+   download= csv.reader(download)
+   for row in download:
+       log.info(str(row))
+       print str(row)
+###
+with open(&apos;C:/Users/dkrilov/OneDrive - FactSet/Documents/GitHub/Backups/jvl_translation.csv&apos;) as download:
+    csv_reader = csv.reader(download)
+    line_count = 0
+    for row in download:
+        log.info(str(row))
+        if line_count == 0:
+#            log.info(str(f&apos;Column names are {&quot;, &quot;.join(row)}&apos;))
+            line_count += 1
+        else:
+#            log.info(str(f&apos;\t{row[0]} and {row[1]} and {row[2]}.&apos;))
+            line_count += 1
+    log.info(&quot;Line items count: &quot;+str(line_count))
+
+</stringProp>
+          </JSR223Assertion>
+          <hashTree/>
+          <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="Python script2" enabled="true">
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="script">from datetime import timedelta
+d = str(timedelta(microseconds=-1))
+log.info(d)</stringProp>
+            <stringProp name="scriptLanguage">jython</stringProp>
+          </JSR223Assertion>
+          <hashTree/>
+          <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="Python script3" enabled="false">
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="script">import logging
+import json
+
+ 
+ #Get request content
+Request=prev.getSamplerData()
+log.info(&quot;\nRequest: &quot;+Request)
+
+ #Get response content
+Response=prev.getResponseDataAsString()
+#log.info(&quot;\nResponse: &quot;+Response)
+#json.dumps(Response, separators=(&apos;,&apos;,&apos;\n&apos;))
+#log.info(&quot;\nResponse: &quot;+Response)
+#parsed_json = json.dumps(Response, sort_keys=True, indent=4, separators=(&apos;,&apos;, &apos;: &apos;))
+log.info(&quot;\nResponse: &quot;+Response)
+
+#Test JSON
+#json_string = Response.json()
+#parsed_json = json.loads(Response)
+##dumped_json = json.dumps(Response), separators=(&apos;,&apos;,&apos;:&apos;))
+##log.info(&quot;\nParsedResponse: &quot;+str(parsed_json))
+#log.info(&quot;ksBalanceSheetTable: &quot;+str(parsed_json[&apos;ksBalanceSheetTable&apos;]))
+#log.info(&quot;ksBalanceSheetTable: Dump&quot;+str(dumped_json[&apos;ksBalanceSheetTable&apos;]))
+#json.dumps([1,2,3,{&apos;4&apos;: 5, &apos;6&apos;: 7}], separators=(&apos;,&apos;,&apos;:&apos;)
+ 
+
+# log.info(msg)
+ 
+#else:
+# log.info(u&quot;\nResponse content: &quot;+Response)</stringProp>
+            <stringProp name="scriptLanguage">jython</stringProp>
+          </JSR223Assertion>
+          <hashTree/>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.gui.JSONPathAssertionGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion" testname="Table Title" enabled="false">
+            <stringProp name="JSON_PATH">$[&apos;ksBalanceSheetTable&apos;][&apos;title&apos;]</stringProp>
+            <stringProp name="EXPECTED_VALUE">Balance Sheet</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+            <stringProp name="INPUT_FORMAT">JSON</stringProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathassertion.JSONPathAssertion>
+          <hashTree/>
+          <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="Excel test1" enabled="false">
+            <stringProp name="scriptLanguage">jython</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import csv
+import logging
+
+download1 = csv.reader(open(&apos;C:/Users/dkrilov/OneDrive - FactSet/Documents/GitHub/fds-qa-test-financials-jmeter/spec/BalanceSheet/jvl_translation1.csv&apos;))
+download2 = csv.reader(open(&apos;C:/Users/dkrilov/OneDrive - FactSet/Documents/GitHub/fds-qa-test-financials-jmeter/spec/BalanceSheet/jvl_translation2.csv&apos;))
+
+fileone = download1.readlines()
+filetwo = download2.readlines()
+download1.close()
+download2.close()
+
+outFile = open(&apos;update.csv&apos;, &apos;w&apos;)
+x = 0
+for i in fileone:
+    if i != filetwo[x]:
+        outFile.write(filetwo[x])
+    x += 1
+outFile.close()
+
+#with open(&apos;C:/Users/dkrilov/OneDrive - FactSet/Documents/GitHub/fds-qa-test-financials-jmeter/spec/BalanceSheet/download1.csv&apos;) as csv_file:
+#    csv_reader = csv.reader(csv_file)
+#    line_count = 0
+#    for row in csv_reader:
+#        if line_count == 0:
+##            log.info(str(f&apos;Column names are {&quot;, &quot;.join(row)}&apos;))
+#            line_count += 1
+#        else:
+##            log.info(str(f&apos;\t{row[0]} works in the {row[1]} department, and was born in {row[2]}.&apos;))
+#            line_count += 1
+#    log.info(str(line_count))
+
+</stringProp>
+          </JSR223Assertion>
+          <hashTree/>
+          <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="Excel test1" enabled="false">
+            <stringProp name="scriptLanguage">jython</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import org.python.util.PythonInterpreter;
+
+public class JythonHelloWorld {
+  public static void main(String[] args) {
+    try(PythonInterpreter pyInterp = new PythonInterpreter()) {
+      pyInterp.exec(&quot;print(&apos;Hello Python World!&apos;)&quot;);
+    }
+  }
+}</stringProp>
+          </JSR223Assertion>
+          <hashTree/>
+          <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="Excel test2" enabled="false">
+            <stringProp name="scriptLanguage">jython</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import csv
+import logging
+
+
+#final desired format
+# - Charts [[&quot;Test Name&quot;,&lt;diff from avg&gt;]]
+# - spreadsheet [[&quot;Test Name&quot;,&lt;current run time&gt;]]
+
+timing_data = []
+with open(&apos;C:/Users/dkrilov/OneDrive - FactSet/Documents/GitHub/fds-qa-test-financials-jmeter/spec/BalanceSheet/jvl_translation2.csv&apos;) as csv_file:
+    file_reader = csv.reader(csv_file)
+#    log.info(file_reader)
+    for row in file_reader:
+        timing_data.append(row)
+
+column_chart_data = [[&quot;Test Name&quot;,&quot;Diff from Avg&quot;]]
+table_data = [[&quot;Test Name&quot;,&quot;Run Time (s)&quot;]]
+
+for row in timing_data[1:]:
+    test_name = row[0]
+    if not row[1] or not row[2]:
+        continue
+    current_run_time = float(row[1])
+    avg_run_time = float(row[2])
+    diff_from_avg = avg_run_time - current_run_time
+    column_chart_data.append([test_name,diff_from_avg])
+    table_data.append([test_name,current_run_time])
+
+log.info(str(column_chart_data))
+log.info(str(table_data))</stringProp>
+          </JSR223Assertion>
+          <hashTree/>
+          <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="Excel test3" enabled="false">
+            <stringProp name="scriptLanguage">jython</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import sys
+sys.path.append(&quot;C:\Python27\Lib\site-packages&quot;) 
+from dateutil.parser import *
+now = parse(&quot;Sat Oct 11 17:13:46 UTC 2003&quot;) 
+log.info(&quot;Now is: &quot; + str(now))</stringProp>
+          </JSR223Assertion>
+          <hashTree/>
+          <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="Excel test4" enabled="false">
+            <stringProp name="scriptLanguage">jython</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import sys
+#sys.path.append(&apos;C:/Python27/Lib/site-packages&apos;)
+sys.path.append(&apos;C:/Python27/Lib/site-packages/python_dateutil-2.8.2.dist-info&apos;)
+
+from dateutil.parser import *
+sourceDateTimeOfEvent = &quot;&quot;
+dateTimeOfEvent = &quot;&quot;
+
+a=parse(&apos;2016-07-01 13:00:00&apos;)
+sourceDateTimeOfEvent = a.isoformat()+&quot;+05:30Z&quot;
+dateTimeOfEvent = a.isoformat()+ &quot;Z&quot;
+
+log.info(&quot;sourceDateTimeOfEvent&quot;, sourceDateTimeOfEvent)
+log.info(&quot;dateTimeOfEvent&quot;, dateTimeOfEvent)</stringProp>
+          </JSR223Assertion>
+          <hashTree/>
+          <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="1111123" enabled="false">
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="script">import logging
+import types
+
+def log_newline(self, how_many_lines=1):
+    # Switch handler, output a blank line
+    self.removeHandler(self.console_handler)
+    self.addHandler(self.blank_handler)
+    for i in range(how_many_lines):
+        self.info(&apos;&apos;)
+
+    # Switch back
+    self.removeHandler(self.blank_handler)
+    self.addHandler(self.console_handler)
+
+def create_logger():
+    # Create a handler
+    console_handler = logging.StreamHandler()
+    console_handler.setLevel(logging.DEBUG)
+    console_handler.setFormatter(logging.Formatter(fmt=&quot;%(name)s %(levelname)-8s: %(message)s&quot;))
+
+    # Create a &quot;blank line&quot; handler
+    blank_handler = logging.StreamHandler()
+    blank_handler.setLevel(logging.DEBUG)
+    blank_handler.setFormatter(logging.Formatter(fmt=&apos;&apos;))
+
+    # Create a logger, with the previously-defined handler
+    logger = logging.getLogger(&apos;logging_test&apos;)
+    logger.setLevel(logging.DEBUG)
+    logger.addHandler(console_handler)
+
+    # Save some data and add a method to logger object
+    logger.console_handler = console_handler
+    logger.blank_handler = blank_handler
+    logger.newline = types.MethodType(log_newline, logger)
+
+    return logger
+
+if __name__ == &apos;__main__&apos;:
+    logger = create_logger()
+    logger.info(&apos;Start reading database&apos;)
+    logger.info(&apos;Updating records ...&apos;)
+    logger.newline()
+    logger.info(&apos;Finish updating records&apos;)</stringProp>
+            <stringProp name="scriptLanguage">jython</stringProp>
+          </JSR223Assertion>
+          <hashTree/>
+          <DurationAssertion guiclass="DurationAssertionGui" testclass="DurationAssertion" testname="Timeout Check" enabled="true">
+            <stringProp name="DurationAssertion.duration">30000</stringProp>
+          </DurationAssertion>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
